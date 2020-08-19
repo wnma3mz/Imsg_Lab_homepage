@@ -11,8 +11,24 @@
   <link rel="stylesheet" href="css/fotter.css">
 
   <!-- <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"> -->
-
+  <script>
+    function display(id_) {
+      var id_div = document.getElementById(id_)
+      if (id_div.style.display == "none") {
+        id_div.style.display = "";
+      } else {
+        id_div.style.display = "none";
+      }
+    }
+  </script>
   <style type="text/css">
+    .bibtex {
+      margin-left: 40px;
+      font-family: courier, sans-serif;
+      padding: 5px;
+      line-height: 20px;
+    }
+
     /*paper*/
     .publications {
       padding: 30px;
@@ -98,7 +114,6 @@
           <span>Information</span>
         </a>
       </li>
-
     </ul>
   </div>
   <div class="wrapper">
@@ -162,8 +177,24 @@
         <div class="plink">
           <a href="https://www.sciencedirect.com/science/article/pii/S003132032030371X" target="_blank"
             target="_blank">[Paper]</a>
-          <a href="https://www.sciencedirect.com/sdfe/arp/cite?pii=S003132032030371X&format=text%2Fx-bibtex&withabstract=true"
-            target="#">[BibTex]</a>
+          <a onclick="display('JIA2020107568')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="JIA2020107568">
+            <pre class="bibtex">
+@article{JIA2020107568,
+  title = "View-specific subspace learning and re-ranking for semi-supervised person re-identification",
+  journal = "Pattern Recognition",
+  volume = "108",
+  pages = "107568",
+  year = "2020",
+  issn = "0031-3203",
+  doi = "https://doi.org/10.1016/j.patcog.2020.107568",
+  url = "http://www.sciencedirect.com/science/article/pii/S003132032030371X",
+  author = "Jieru Jia and Qiuqi Ruan and Yi Jin and Gaoyun An and Shiming Ge",
+  keywords = "Person re-identification, Metric learning, Semi-supervised learning, Re-ranking",
+}
+           </pre>
+          </div>
         </div>
       </div>
 
@@ -226,8 +257,20 @@
         <div class="plink">
           <a href="http://www.researchgate.net/publication/340697094_Cascaded_Correlation_Refinement_for_Robust_Deep_Tracking"
             target="_blank" target="_blank">[Paper]
-            <a href="https://www.researchgate.net/lite.publication.PublicationDownloadCitationModal.downloadCitation.html?fileType=BibTeX&citation=citationAndAbstract&publicationUid=340697094"
-              target="#">[BibTex]</a>
+            <a onclick="display('ge2020cascaded')" style="color: #1c3ed3">
+              [Bibtex] </a>
+            <div style="display: none;" class="BibtexExpand" id="ge2020cascaded">
+              <pre class="bibtex">
+@article{ge2020cascaded,
+  title="Cascaded Correlation Refinement for Robust Deep Tracking.",
+  author="Shiming {Ge} and Chunhui {Zhang} and Shikun {Li} and Dan {Zeng} and Dacheng {Tao}",
+  journal="IEEE Transactions on Neural Networks",
+  pages="1--13",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/3016744474",
+  year="2020"
+}
+              </pre>
+            </div>
           </a></div>
       </div>
 
@@ -239,8 +282,20 @@
         <div class="pvenue">IEEE Transactions on Circuits and Systems for Video Technology (TCSVT), 2020.</div>
         <div class="plink">
           <a href="http://ieeexplore.ieee.org/document/8963643" target="_blank" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F8963643&sign=aefa535f7928eca57daa14f8717a5a83&diversion=null&paperid=113c0a402a3f08c0mn5g04506j412888&allversion=%5B%22http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F8963643%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('ge2020occluded')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="ge2020occluded">
+            <pre class="bibtex">
+@article{ge2020occluded,
+  title="Occluded Face Recognition in the Wild by Identity-Diversity Inpainting",
+  author="Shiming {Ge} and Chenyu {Li} and Shengwei {Zhao} and Dan {Zeng}",
+  journal="IEEE Transactions on Circuits and Systems for Video Technology",
+  pages="1--1",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/3000996870",
+  year="2020"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -253,8 +308,22 @@
         <div class="pvenue">IEEE J. Sel. Top. Signal Process. 14(1): 209-221 (2020)</div>
         <div class="plink">
           <a href="https://ieeexplore.ieee.org/document/8903278" target="_blank" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F8903278&sign=a5afdeefc83dd08b27770eefe788dab4&diversion=null&paperid=1p7806j0yt6c0a70fk200jf0e0595791&allversion=%5B%22http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F8903278%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('li2020attentive')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="li2020attentive">
+            <pre class="bibtex">
+@article{li2020attentive,
+  title="Attentive Deep Stitching and Quality Assessment for 360 $^{\circ }$ Omnidirectional Images",
+  author="Jia {Li} and Yifan {Zhao} and Weihua {Ye} and Kaiwen {Yu} and Shiming {Ge}",
+  journal="IEEE Journal of Selected Topics in Signal Processing",
+  volume="14",
+  number="1",
+  pages="209--221",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2990246360",
+  year="2020"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -266,8 +335,21 @@
         <div class="pvenue">IEEE Trans. Image Process. 29: 1902-1914 (2020)</div>
         <div class="plink">
           <a href="https://www.ncbi.nlm.nih.gov/pubmed/31613767" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F332342395_Spatiotemporal_Knowledge_Distillation_for_Efficient_Estimation_of_Aerial_Video_Saliency&sign=70ededbad8630c1b4eb1455794e71ed7&diversion=null&paperid=1c480mw0pa680pq0f33a04400j455526&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F332342395_Spatiotemporal_Knowledge_Distillation_for_Efficient_Estimation_of_Aerial_Video_Saliency%22%2C%22http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F8868103%2F%22%2C%22http%3A%2F%2Farxiv.org%2Fabs%2F1904.04992%3Fcontext%3Dcs.CV%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('li2020spatiotemporal')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="li2020spatiotemporal">
+            <pre class="bibtex">
+@article{li2020spatiotemporal,
+  title="Spatiotemporal Knowledge Distillation for Efficient Estimation of Aerial Video Saliency",
+  author="Jia {Li} and Kui {Fu} and Shengwei {Zhao} and Shiming {Ge}",
+  journal="IEEE Transactions on Image Processing",
+  volume="29",
+  pages="1902--1914",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2939308562",
+  year="2020"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -279,8 +361,21 @@
         <div class="pvenue">IEEE Trans. Image Process. 29: 2610-2621 (2020)</div>
         <div class="plink">
           <a href="https://ieeexplore.ieee.org/document/8891903" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F337040946_Distilling_Channels_for_Efficient_Deep_Tracking&sign=953a2fb5ecf964d7a3c72a3c5d382e61&diversion=null&paperid=12240rk0ha240au0dw2y0a30y3349991&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F337040946_Distilling_Channels_for_Efficient_Deep_Tracking%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('ge2020distilling')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="ge2020distilling">
+            <pre class="bibtex">
+@article{ge2020distilling,
+  title="Distilling Channels for Efficient Deep Tracking",
+  author="Shiming {Ge} and Zhao {Luo} and Chunhui {Zhang} and Yingying {Hua} and Dacheng {Tao}",
+  journal="IEEE Transactions on Image Processing",
+  volume="29",
+  pages="2610--2621",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2987906097",
+  year="2020"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -292,8 +387,21 @@
         <div class="pvenue">IEEE Trans. Image Process. 29: 6096-6109 (2020)</div>
         <div class="plink">
           <a href="https://ieeexplore.ieee.org/document/9075365" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F340824049_Receptive_Multi-Granularity_Representation_for_Person_Re-Identification&sign=2a480764162f15eac498ce491b499406&diversion=null&paperid=1r0q0eq0pv5d0mj0027t02q0py442226&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F340824049_Receptive_Multi-Granularity_Representation_for_Person_Re-Identification%22%2C%22http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F9075365%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('wang2020receptive')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="wang2020receptive">
+            <pre class="bibtex">
+@article{wang2020receptive,
+  title="Receptive Multi-Granularity Representation for Person Re-Identification",
+  author="Guanshuo {Wang} and Yufeng {Yuan} and Jiwei {Li} and Shiming {Ge} and Xi {Zhou}",
+  journal="IEEE Transactions on Image Processing",
+  volume="29",
+  pages="6096--6109",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/3019968127",
+  year="2020"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -305,8 +413,20 @@
         <div class="pvenue">IEEE Trans. Image Process. 29: 6898-6908 (2020)</div>
         <div class="plink">
           <a href="https://ieeexplore.ieee.org/document/9098036" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F341558513_Efficient_Low-Resolution_Face_Recognition_via_Bridge_Distillation&sign=1afe7c7f1bf47e9e08978b72628d4c64&diversion=null&paperid=122m08e013170v606s7h0r70dm289081&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F341558513_Efficient_Low-Resolution_Face_Recognition_via_Bridge_Distillation%22%2C%22http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F9098036%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('ge2020efficient')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="ge2020efficient">
+            <pre class="bibtex">
+@article{ge2020efficient,
+  title="Efficient Low-Resolution Face Recognition via Bridge Distillation",
+  author="Shiming {Ge} and Shengwei {Zhao} and Chenyu {Li} and Yu {Zhang} and Jia {Li}",
+  journal="IEEE Transactions on Image Processing",
+  pages="1--1",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/3026860374",
+  year="2020"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -319,8 +439,20 @@
         <div class="pvenue">AAAI 2020: 4667-4674</div>
         <div class="plink">
           <a href="https://aaai.org/ojs/index.php/AAAI/article/view/5898" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F342545024_Coupled-View_Deep_Classifier_Learning_from_Multiple_Noisy_Annotators&sign=4bc144c0d65c63e3eb31ebf0bc684749&diversion=null&paperid=11760pk0yw0t0t50wy3d0p609g622164&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F342545024_Coupled-View_Deep_Classifier_Learning_from_Multiple_Noisy_Annotators%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('li2020coupled')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="li2020coupled">
+            <pre class="bibtex">
+@inproceedings{li2020coupled,
+  title="Coupled-view Deep Classifier Learning from Multiple Noisy Annotators",
+  author="Shikun {Li} and Shiming {Ge} and Yingying {Hua} and Chunhui {Zhang} and Hao {Wen} and Tengfei {Liu} and Weiqiang {Wang}",
+  booktitle="AAAI 2020 : The Thirty-Fourth AAAI Conference on Artificial Intelligence",
+  pages="4667--4674",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2997312573",
+  year="2020"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -332,8 +464,20 @@
         <div class="pvenue">AAAI 2020: 10802-10809</div>
         <div class="plink">
           <a href="https://aaai.org/ojs/index.php/AAAI/article/view/6710" target="_blank">[Paper]</a>
-          <a href="https://www.researchgate.net/lite.publication.PublicationDownloadCitationModal.downloadCitation.html?fileType=BibTeX&citation=citationAndAbstract&publicationUid=332316510"
-            target="#">[BibTex]</a>
+          <a onclick="display('fu2020ultrafast')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="fu2020ultrafast">
+            <pre class="bibtex">
+@inproceedings{fu2020ultrafast,
+  title="Ultrafast Video Attention Prediction with Coupled Knowledge Distillation",
+  author="Kui {Fu} and peipei {shi} and Yafei {Song} and Shiming {Ge} and Xiangju {Lu} and Jia {Li}",
+  booktitle="AAAI 2020 : The Thirty-Fourth AAAI Conference on Artificial Intelligence",
+  pages="10802--10809",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2997128429",
+  year="2020"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -346,8 +490,20 @@
         <div class="pvenue">AAAI 2020: 10810-10817</div>
         <div class="plink">
           <a href="https://aaai.org/ojs/index.php/AAAI/article/view/6711" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F339813901_Accurate_Temporal_Action_Proposal_Generation_with_Relation-Aware_Pyramid_Network&sign=60025aa270f894977e04744a5039ed60&diversion=null&paperid=1j1u0pf03d1y0jk024480c40k8249305&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F339813901_Accurate_Temporal_Action_Proposal_Generation_with_Relation-Aware_Pyramid_Network%22%2C%22http%3A%2F%2Farxiv.org%2Fabs%2F2003.04145%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('gao2020accurate')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="gao2020accurate">
+            <pre class="bibtex">
+@inproceedings{gao2020accurate,
+  title="Accurate Temporal Action Proposal Generation with Relation-Aware Pyramid Network",
+  author="Jialin {Gao} and zhixiang {shi} and Guanshuo {Wang} and jiani {li} and Yufeng {Yuan} and Shiming {Ge} and Xi {Zhou}",
+  booktitle="AAAI 2020 : The Thirty-Fourth AAAI Conference on Artificial Intelligence",
+  pages="10810--10817",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2998582438",
+  year="2020"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -361,8 +517,20 @@
         <div class="pvenue">AAAI 2020: 10845-10852</div>
         <div class="plink">
           <a href="https://aaai.org/ojs/index.php/AAAI/article/view/6715" target="_blank">[Paper]</a>
-          <a href="https://www.researchgate.net/lite.publication.PublicationDownloadCitationModal.downloadCitation.html?fileType=BibTeX&citation=citationAndAbstract&publicationUid=342540884"
-            target="#">[BibTex]</a>
+          <a onclick="display('ge2020look')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="ge2020look">
+            <pre class="bibtex">
+@inproceedings{ge2020look,
+  title="Look One and More: Distilling Hybrid Order Relational Knowledge for Cross-Resolution Image Recognition",
+  author="Shiming {Ge} and Kangkai {Zhang} and Haolin {Liu} and Yingying {Hua} and Shengwei {Zhao} and Xin {Jin} and Hao {Wen}",
+  booktitle="AAAI 2020 : The Thirty-Fourth AAAI Conference on Artificial Intelligence",
+  pages="10845--10852",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2998081460",
+  year="2020"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -375,8 +543,21 @@
         <div class="pvenue">IEEE Access 7: 60947-60956 (2019)</div>
         <div class="plink">
           <a href="https://ieeexplore.ieee.org/document/8304247" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F8304247%2F&sign=5a3eac39cc45e9d043642a778d80bcb1&diversion=6859205502102929409&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('8304247')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="8304247">
+            <pre class="bibtex">
+@INPROCEEDINGS{8304247,  
+  author={F. {Long} and W. {Ou} and K. {Zhang} and Y. {Tan} and Y. {Xue} and G. {Li}},  
+  booktitle={2017 International Conference on Security, Pattern Analysis, and Cybernetics (SPAC)},   
+  title={Discriminative multiview nonnegative matrix factorization with large margin for image classification},   
+  year={2017},  
+  volume={},  
+  number={},  
+  pages={37-42},
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -388,8 +569,21 @@
         <div class="pvenue">IEEE Access 7: 91966-91979 (2019)</div>
         <div class="plink">
           <a href="https://ieeexplore.ieee.org/document/8754681" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F334288179_Adaptive_Wavelet_Filter_with_Edge_Compensation_for_Remote_Sensing_Image_Denoising&sign=af39540a6e8cfe4d1004df011d26437f&diversion=null&paperid=160906r0ps2v0ev09y4704n0rq295911&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F334288179_Adaptive_Wavelet_Filter_with_Edge_Compensation_for_Remote_Sensing_Image_Denoising%22%2C%22http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F8754681%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('2019Adaptive')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="2019Adaptive">
+            <pre class="bibtex">
+@article{2019Adaptive,
+  title={Adaptive Wavelet Filter with Edge Compensation for Remote Sensing Image Denoising},
+  author={ Chen, Boyang  and  Feng, Xuan  and  Wu, Ronghua  and  Guo, Qiang  and  Ge, Shiming },
+  journal={IEEE Access},
+  volume={7},
+  number={99},
+  pages={91966-91979},
+  year={2019},
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -403,8 +597,22 @@
         <div class="pvenue">IET Comput. Vis. 13(2): 206-212 (2019)</div>
         <div class="plink">
           <a href="https://arxiv.org/abs/1610.02256" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F326064936_ILGNet_Inception_Modules_with_Connected_Local_and_Global_Features_for_Efficient_Image_Aesthetic_Quality_Classification_using_Domain_Adaptation&sign=30600a28cc914fc7f3954d91eebdd6bb&diversion=null&paperid=e947d8785e50d9087b47fa5d92e2149e&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F326064936_ILGNet_Inception_Modules_with_Connected_Local_and_Global_Features_for_Efficient_Image_Aesthetic_Quality_Classification_using_Domain_Adaptation%22%2C%22http%3A%2F%2Farxiv.org%2Fabs%2F1610.02256%22%2C%22http%3A%2F%2Fqe3gw7ge4p.search.serialssolutions.com%2F%3Fctx_ver%3DZ39.88-2004%26ctx_enc%3Dinfo%253Aofi%252Fenc%253AUTF-8%26rfr_id%3Dinfo%3Asid%2Fxueshu.baidu.com%26rft_val_fmt%3Dinfo%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal%26rft.genre%3Darticle%26rft.atitle%3DILGNet%253A%2520Inception%2520Modules%2520with%2520Connected%2520Local%2520and%2520Global%2520Features%2520for%2520Efficient%2520Image%2520Aesthetic%2520Quality%2520Classification%2520using%2520Domain%2520Adaptation%26rft.jtitle%3DIet%2520Computer%2520Vision%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('jin2019ilgnet')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="jin2019ilgnet">
+            <pre class="bibtex">
+@article{jin2019ilgnet,
+  title="ILGNet: inception modules with connected local and global features for efficient image aesthetic quality classification using domain adaptation",
+  author="Xin {Jin} and Le {Wu} and Xiaodong {Li} and Xiaokun {Zhang} and Jingying {Chi} and Siwei {Peng} and Shiming {Ge} and Geng {Zhao} and Shuying {Li}",
+  journal="Iet Computer Vision",
+  volume="13",
+  number="2",
+  pages="206--212",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2798868169",
+  year="2019"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -416,8 +624,21 @@
         <div class="pvenue">Inf. Sci. 495: 136-149 (2019)</div>
         <div class="plink">
           <a href="https://www.sciencedirect.com/science/article/pii/S0020025519300611" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0020025519300611&sign=559d6e3eb17d883ed0f77aa3bf87b799&diversion=null&paperid=1d7r0x30d06202x0p7730m405f552817&allversion=%5B%22http%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0020025519300611%22%2C%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F332692870_Proposal_Pyramid_Networks_for_Fast_Face_Detection%22%2C%22http%3A%2F%2Fwww.onacademic.com%2Fdetail%2Fjournal_1000042277774599_da3c.html%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('zeng2019proposal')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="zeng2019proposal">
+            <pre class="bibtex">
+@article{zeng2019proposal,
+  title="Proposal pyramid networks for fast face detection",
+  author="Dan {Zeng} and Han {Liu} and Fan {Zhao} and Shiming {Ge} and Wei {Shen} and Zhijiang {Zhang}",
+  journal="Information Sciences",
+  volume="495",
+  pages="136--149",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2941768204",
+  year="2019"
+}   
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -429,8 +650,21 @@
         <div class="pvenue">Pattern Recognit. Lett. 119: 180-186 (2019)</div>
         <div class="plink">
           <a href="https://www.sciencedirect.com/science/article/pii/S0167865518302125" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0167865518302125&sign=354b98bf5e544f79aa103c1db6aa92f8&diversion=null&paperid=4b0555526015eb229e9971ff7b97295f&allversion=%5B%22http%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0167865518302125%22%2C%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F325467944_Fast_Cascade_Face_Detection_with_Pyramid_Network%22%2C%22http%3A%2F%2Fqe3gw7ge4p.search.serialssolutions.com%2F%3Fctx_ver%3DZ39.88-2004%26ctx_enc%3Dinfo%253Aofi%252Fenc%253AUTF-8%26rfr_id%3Dinfo%3Asid%2Fxueshu.baidu.com%26rft_val_fmt%3Dinfo%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal%26rft.genre%3Darticle%26rft.atitle%3DFast%2520Cascade%2520Face%2520Detection%2520with%2520Pyramid%2520Network%26rft.jtitle%3DPattern%2520Recognition%2520Letters%22%2C%22http%3A%2F%2Fwww.zhangqiaokeyan.com%2Facademic-journal-foreign_other_thesis%2F0204112724335.html%22%2C%22http%3A%2F%2Fwww.onacademic.com%2Fdetail%2Fjournal_1000040436385310_6e3d.html%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('zeng2019fast')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="zeng2019fast">
+            <pre class="bibtex">
+@article{zeng2019fast,
+  title="Fast cascade face detection with pyramid network",
+  author="Dan {Zeng} and Fan {Zhao} and Shiming {Ge} and Wei {Shen}",
+  journal="Pattern Recognition Letters",
+  volume="119",
+  pages="180--186",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2805054562",
+  year="2019"
+}     
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -443,8 +677,22 @@
         <div class="pvenue">Soft Comput. 23(23): 12813-12820 (2019)</div>
         <div class="plink">
           <a href="https://link.springer.com/article/10.1007/s00500-019-03834-6" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F331232936_Secure_face_retrieval_for_group_mobile_users&sign=ef60d8d3fb9cabe4c590ffa0287031a2&diversion=null&paperid=1h5a0cj0rk390vj0541s04q0ed459092&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F331232936_Secure_face_retrieval_for_group_mobile_users%22%2C%22http%3A%2F%2Fwww.socolar.com%2FArticle%2FIndex%3Faid%3D100016617399%26jid%3D100000001536%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('jin2019secure')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="jin2019secure">
+            <pre class="bibtex">
+@article{jin2019secure,
+  title="Secure face retrieval for group mobile users",
+  author="Xin {Jin} and Yujie {Li} and Shiming {Ge} and Chenggen {Song} and Le {Wu} and Xinghui {Zhou}",
+  journal="soft computing",
+  volume="23",
+  number="23",
+  pages="12813--12820",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2916577793",
+  year="2019"
+}           
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -456,8 +704,22 @@
         <div class="pvenue">IEEE Trans. Image Process. 28(4): 2051-2062 (2019)</div>
         <div class="plink">
           <a href="https://arxiv.org/pdf/1811.09998.pdf" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F329333991_Low-Resolution_Face_Recognition_in_the_Wild_via_Selective_Knowledge_Distillation&sign=8e54da237bd18ad67b4cdc227088ec24&diversion=null&paperid=1b4n0a00p02v0rw02b7t0a709c035299&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F329333991_Low-Resolution_Face_Recognition_in_the_Wild_via_Selective_Knowledge_Distillation%22%2C%22http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F8554301%2F%22%2C%22http%3A%2F%2Farxiv.org%2Fabs%2F1811.09998%22%2C%22http%3A%2F%2Fwww.zhangqiaokeyan.com%2Facademic-journal-foreign_other_thesis%2F0204112857714.html%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('ge2019low')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="ge2019low">
+            <pre class="bibtex">
+@article{ge2019low,
+  title="Low-Resolution Face Recognition in the Wild via Selective Knowledge Distillation",
+  author="Shiming {Ge} and Shengwei {Zhao} and Chenyu {Li} and Jia {Li}",
+  journal="IEEE Transactions on Image Processing",
+  volume="28",
+  number="4",
+  pages="2051--2062",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2901505625",
+  year="2019"
+}              
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -469,8 +731,20 @@
         <div class="pvenue">BigMM 2019: 148-154</div>
         <div class="plink">
           <a href="https://ieeexplore.ieee.org/document/8919361/" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F8554301%2F&sign=1ccfec777c5eac26a1c9585972d8ca43&diversion=6859205502102929409&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('zhao2019low')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="zhao2019low">
+            <pre class="bibtex">
+@inproceedings{zhao2019low,
+  title="Low-Resolution Face Recognition in the Wild with Mixed-Domain Distillation",
+  author="Shengwei {Zhao} and Xindi {Gao} and Shikun {Li} and Shiming {Ge}",
+  booktitle="2019 IEEE Fifth International Conference on Multimedia Big Data (BigMM)",
+  pages="148--154",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2993952408",
+  year="2019"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -482,8 +756,20 @@
         <div class="pvenue">ICME 2019: 1774-1779</div>
         <div class="plink">
           <a href="https://ieeexplore.ieee.org/document/8785041" target="_blank">[Paper]</a>
-          <a href="https://www.researchgate.net/lite.publication.PublicationDownloadCitationModal.downloadCitation.html?fileType=BibTeX&citation=citationAndAbstract&publicationUid=334992342"
-            target="#">[BibTex]</a>
+          <a onclick="display('zhang2019robust')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="zhang2019robust">
+            <pre class="bibtex">
+@inproceedings{zhang2019robust,
+  title="Robust Deep Tracking with Two-step Augmentation Discriminative Correlation Filters",
+  author="Chunhui {Zhang} and Shiming {Ge} and Yingying {Hua} and Dan {Zeng}",
+  booktitle="2019 IEEE International Conference on Multimedia and Expo (ICME)",
+  pages="1774--1779",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2965219740",
+  year="2019"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -495,8 +781,20 @@
         <div class="pvenue">ACM Multimedia 2019: 229-237</div>
         <div class="plink">
           <a href="https://dl.acm.org/doi/10.1145/3343031.3351082" target="_blank">[Paper]</a>
-          <a href="https://www.researchgate.net/lite.publication.PublicationDownloadCitationModal.downloadCitation.html?fileType=BibTeX&citation=citationAndAbstract&publicationUid=336710752"
-            target="#">[BibTex]</a>
+          <a onclick="display('ge2019fewer')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="ge2019fewer">
+            <pre class="bibtex">
+@inproceedings{ge2019fewer,
+  title="Fewer-Shots and Lower-Resolutions: Towards Ultrafast Face Recognition in the Wild",
+  author="Shiming {Ge} and Shengwei {Zhao} and Xindi {Gao} and Jia {Li}",
+  booktitle="Proceedings of the 27th ACM International Conference on Multimedia",
+  pages="229--237",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2981647706",
+  year="2019"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -509,8 +807,20 @@
         <div class="pvenue">ACM Multimedia 2019: 311-319</div>
         <div class="plink">
           <a href="https://arxiv.org/abs/1907.04983" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F334413687_Aesthetic_Attributes_Assessment_of_Images&sign=ab3bb9a1c66fb1a86781bf96e4282614&diversion=null&paperid=1w0604c0dg040jq03s6t0ga07m290867&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F334413687_Aesthetic_Attributes_Assessment_of_Images%22%2C%22http%3A%2F%2Fdl.acm.org%2Fdoi%2Fabs%2F10.1145%2F3343031.3350970%22%2C%22http%3A%2F%2Farxiv.org%2Fabs%2F1907.04983v1%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('jin2019aesthetic')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="jin2019aesthetic">
+            <pre class="bibtex">
+@inproceedings{jin2019aesthetic,
+  title="Aesthetic Attributes Assessment of Images",
+  author="Xin {Jin} and Le {Wu} and Geng {Zhao} and Xiaodong {Li} and Xiaokun {Zhang} and Shiming {Ge} and Dongqing {Zou} and Bin {Zhou} and Xinghui {Zhou}",
+  booktitle="Proceedings of the 27th ACM International Conference on Multimedia",
+  pages="311--319",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2981671251",
+  year="2019"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -522,8 +832,20 @@
         <div class="pvenue">ACM Multimedia 2019: 2106-2114</div>
         <div class="plink">
           <a href="https://dl.acm.org/doi/10.1145/3343031.3351012" target="_blank">[Paper]</a>
-          <a href="https://www.researchgate.net/lite.publication.PublicationDownloadCitationModal.downloadCitation.html?fileType=BibTeX&citation=citationAndAbstract&publicationUid=336713526"
-            target="#">[BibTex]</a>
+          <a onclick="display('hua2019defending')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="hua2019defending">
+            <pre class="bibtex">
+@inproceedings{hua2019defending,
+  title="Defending Against Adversarial Examples via Soft Decision Trees Embedding",
+  author="Yingying {Hua} and Shiming {Ge} and Xindi {Gao} and Xin {Jin} and Dan {Zeng}",
+  booktitle="Proceedings of the 27th ACM International Conference on Multimedia",
+  pages="2106--2114",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2981727209",
+  year="2019"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -535,8 +857,20 @@
         <div class="pvenue">Cognitive Internet of Things 2019: 427-437</div>
         <div class="plink">
           <a href="https://link.springer.com/chapter/10.1007%2F978-3-030-04946-1_41" target="_blank">[Paper]</a>
-          <a href="https://www.researchgate.net/lite.publication.PublicationDownloadCitationModal.downloadCitation.html?fileType=BibTeX&citation=citationAndAbstract&publicationUid=331192201"
-            target="#">[BibTex]</a>
+          <a onclick="display('li2019occluded')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="li2019occluded">
+            <pre class="bibtex">
+@inproceedings{li2019occluded,
+  title="Occluded Face Recognition by Identity-Preserving Inpainting.",
+  author="Chenyu {Li} and Shiming {Ge} and Yingying {Hua} and Haolin {Liu} and Xin {Jin}",
+  booktitle="Cognitive Internet of Things",
+  pages="427--437",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2931773140",
+  year="2019"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -549,8 +883,19 @@
         <div class="pvenue">CoRR abs/1912.11521 (2019)</div>
         <div class="plink">
           <a href="https://arxiv.org/abs/1912.11521" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F338228920_Focusing_and_Diffusion_Bidirectional_Attentive_Graph_Convolutional_Networks_for_Skeleton-based_Action_Recognition&sign=f3ee0b93b130a0cf6ca6f0b5e1563a8e&diversion=null&paperid=1s6w0gg0bb1a0ay07r4704a0eq765412&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F338228920_Focusing_and_Diffusion_Bidirectional_Attentive_Graph_Convolutional_Networks_for_Skeleton-based_Action_Recognition%22%2C%22http%3A%2F%2Farxiv.org%2Fabs%2F1912.11521%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('gao2019focusing')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="gao2019focusing">
+            <pre class="bibtex">
+@article{gao2019focusing,
+  title="Focusing and Diffusion: Bidirectional Attentive Graph Convolutional Networks for Skeleton-based Action Recognition.",
+  author="Jialin {Gao} and Tong {He} and Xi {Zhou} and Shiming {Ge}",
+  journal="arXiv preprint arXiv:1912.11521",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2997852764",
+  year="2019"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -564,8 +909,22 @@
         <div class="pvenue">Cogn. Comput. 10(2): 359-367 (2018)</div>
         <div class="plink">
           <a href="https://link.springer.com/article/10.1007/s12559-017-9506-0" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Flink.springer.com%2F10.1007%2Fs12559-017-9506-0&sign=b9865d3e89de5614ce61fc3f10ff76c2&diversion=null&paperid=31319c8e0ac72f4da1338e0e17530056&allversion=%5B%22http%3A%2F%2Flink.springer.com%2F10.1007%2Fs12559-017-9506-0%22%2C%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F319874209_Compressing_and_Accelerating_Neural_Network_for_Facial_Point_Localization%22%2C%22http%3A%2F%2Fwww.scititles.com%2Farticles%2Fda851100-6a2e-4b2a-a6b8-4d513d8478a5%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('zeng2018compressing')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="zeng2018compressing">
+            <pre class="bibtex">
+@article{zeng2018compressing,
+  title="Compressing and Accelerating Neural Network for Facial Point Localization",
+  author="Dan {Zeng} and Fan {Zhao} and Wei {Shen} and Shiming {Ge}",
+  journal="Cognitive Computation",
+  volume="10",
+  number="2",
+  pages="359--367",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2755245065",
+  year="2018"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -577,8 +936,22 @@
         <div class="pvenue">Comput. Vis. Media 4(1): 71-82 (2018)</div>
         <div class="plink">
           <a href="https://link.springer.com/article/10.1007/s41095-017-0102-8" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fen.cnki.com.cn%2FArticle_en%2FCJFDTotal-CVME201801007.htm&sign=a5e8f0253d2c387181fa82e9dfded7cf&diversion=null&paperid=1r5m0mn0d7280p0069180gy06a197098&allversion=%5B%22http%3A%2F%2Fen.cnki.com.cn%2FArticle_en%2FCJFDTotal-CVME201801007.htm%22%2C%22http%3A%2F%2Fwww.zhangqiaokeyan.com%2Facademic-journal-cn_computational-visual-media_thesis%2F0201263796034.html%22%2C%22http%3A%2F%2Fwww.ixueshu.com%2Fapi%2Fsearch%2Finfo%2F6a3261ae85e489b81e926f5037bdda53318947a18e7f9386.html%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('ge2018image')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="ge2018image">
+            <pre class="bibtex">
+@article{ge2018image,
+  title="Image editing by object-aware optimal boundary searching and mixed-domain composition",
+  author="Shiming {Ge} and Xin {Jin} and Qiting {Ye} and Zhao {Luo} and Qiang {Li}",
+  journal="Computational Visual Media",
+  volume="4",
+  number="1",
+  pages="71--82",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2793886546",
+  year="2018"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -591,8 +964,22 @@
         <div class="pvenue">Multim. Tools Appl. 77(1): 1437-1452 (2018)</div>
         <div class="plink">
           <a href="https://link.springer.com/article/10.1007/s11042-017-4347-0" target="_blank">[Paper]</a>
-          <a href="https://citation-needed.springer.com/v2/references/10.1007/s11042-017-4347-0?format=refman&flavour=citation"
-            target="#">[BibTex]</a>
+          <a onclick="display('wei2018enhancing')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="wei2018enhancing">
+            <pre class="bibtex">
+@article{wei2018enhancing,
+  title="Enhancing heterogeneous similarity estimation via neighborhood reversibility",
+  author="Shikui {Wei} and Yao {Zhao} and Tao {Yang} and Zhili {Zhou} and Shiming {Ge}",
+  journal="Multimedia Tools and Applications",
+  volume="77",
+  number="1",
+  pages="1437--1452",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2573825801",
+  year="2018"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -605,8 +992,22 @@
         <div class="pvenue">Multim. Tools Appl. 77(12): 15851-15873 (2018)</div>
         <div class="plink">
           <a href="https://link.springer.com/article/10.1007/s11042-017-5159-y" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Flink.springer.com%2F10.1007%2Fs11042-017-5159-y&sign=b99ef3e4ebef6f5f5d3e0bb2ae7753e6&diversion=null&paperid=e42fe616563348881fb8505386e94c97&allversion=%5B%22http%3A%2F%2Flink.springer.com%2F10.1007%2Fs11042-017-5159-y%22%2C%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F319492700_Color_image_encryption_in_non-RGB_color_spaces%22%2C%22http%3A%2F%2Fgateway.proquest.com%2Fopenurl%3Fres_dat%3Dxri%3Apqm%26ctx_ver%3DZ39.88-2004%26rfr_id%3Dinfo%3Axri%2Fsid%3Abaidu%26rft_val_fmt%3Dinfo%3Aofi%2Ffmt%3Akev%3Amtx%3Aarticle%26genre%3Darticle%26jtitle%3DMultimedia%2520Tools%2520and%2520Applications%26atitle%3DColor%2520image%2520encryption%2520in%2520non-RGB%2520color%2520spaces%22%2C%22http%3A%2F%2Fqe3gw7ge4p.search.serialssolutions.com%2F%3Fctx_ver%3DZ39.88-2004%26ctx_enc%3Dinfo%253Aofi%252Fenc%253AUTF-8%26rfr_id%3Dinfo%3Asid%2Fxueshu.baidu.com%26rft_val_fmt%3Dinfo%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal%26rft.genre%3Darticle%26rft.atitle%3DColor%2520image%2520encryption%2520in%2520non-RGB%2520color%2520spaces%26rft.jtitle%3DMultimedia%2520Tools%2520and%2520Applications%22%2C%22http%3A%2F%2Fwww.onacademic.com%2Fdetail%2Fjournal_1000040091193310_75e4.html%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('jin2018color')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="jin2018color">
+            <pre class="bibtex">
+@article{jin2018color,
+  title="Color image encryption in non-RGB color spaces",
+  author="Xin {Jin} and Sui {Yin} and Ningning {Liu} and Xiaodong {Li} and Geng {Zhao} and Shiming {Ge}",
+  journal="Multimedia Tools and Applications",
+  volume="77",
+  number="12",
+  pages="15851--15873",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2750591897",
+  year="2018"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -619,8 +1020,20 @@
         <div class="pvenue">AAAI 2018: 77-84</div>
         <div class="plink">
           <a href="https://arxiv.org/abs/1708.07089" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F319256132_Predicting_Aesthetic_Score_Distribution_through_Cumulative_Jensen-Shannon_Divergence&sign=71a65d2ba367ad7687c9bda49deeeedb&diversion=null&paperid=8d25c0843bb2ecdcdb442156758d7863&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F319256132_Predicting_Aesthetic_Score_Distribution_through_Cumulative_Jensen-Shannon_Divergence%22%2C%22http%3A%2F%2Farxiv.org%2Fabs%2F1708.07089%22%2C%22http%3A%2F%2Fadsabs.harvard.edu%2Fabs%2F2017arXiv170807089J%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('jin2018predicting')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="jin2018predicting">
+            <pre class="bibtex">
+@inproceedings{jin2018predicting,
+  title="Predicting Aesthetic Score Distribution through Cumulative Jensen-Shannon Divergence",
+  author="Xin {Jin} and Le {Wu} and Xiaodong {Li} and Siyu {Chen} and Siwei {Peng} and Jingying {Chi} and Shiming {Ge} and Chenggen {Song} and Geng {Zhao}",
+  booktitle="AAAI-18 AAAI Conference on Artificial Intelligence",
+  pages="77--84",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2964084596",
+  year="2018"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -632,8 +1045,20 @@
         <div class="pvenue">ICIMCS 2018: 23:1-23:5</div>
         <div class="plink">
           <a href="https://dl.acm.org/doi/abs/10.1145/3240876.3240902" target="_blank">[Paper]</a>
-          <a href="https://www.researchgate.net/lite.publication.PublicationDownloadCitationModal.downloadCitation.html?fileType=BibTeX&citation=citationAndAbstract&publicationUid=329741636"
-            target="#">[BibTex]</a>
+          <a onclick="display('liu2018generative')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="liu2018generative">
+            <pre class="bibtex">
+@inproceedings{liu2018generative,
+  title="Generative image inpainting with neural features",
+  author="Haolin {Liu} and Chenyu {Li} and Shiming {Ge} and Shengwei {Zhao} and Xin {Jin}",
+  booktitle="Proceedings of the 10th International Conference on Internet Multimedia Computing and Service",
+  pages="23",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2892573153",
+  year="2018"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -645,8 +1070,20 @@
         <div class="pvenue">PCM (1) 2018: 414-425</div>
         <div class="plink">
           <a href="https://link.springer.com/chapter/10.1007/978-3-030-00776-8_38" target="_blank">[Paper]</a>
-          <a href="https://citation-needed.springer.com/v2/references/10.1007/978-3-030-00776-8_38?format=bibtex&flavour=citation"
-            target="#">[BibTex]</a>
+          <a onclick="display('luo2018extracting')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="luo2018extracting">
+            <pre class="bibtex">
+@inproceedings{luo2018extracting,
+  title="Extracting Features of Interest from Small Deep Networks for Efficient Visual Tracking",
+  author="Zhao {Luo} and Shiming {Ge} and Yingying {Hua} and Haolin {Liu} and Xin {Jin}",
+  booktitle="Pacific Rim Conference on Multimedia",
+  pages="414--425",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2891961991",
+  year="2018"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -659,8 +1096,20 @@
         <div class="pvenue">PRCV (2) 2018: 41-50</div>
         <div class="plink">
           <a href="https://link.springer.com/chapter/10.1007/978-3-030-03335-4_4" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Flink.springer.com%2Fchapter%2F10.1007%2F978-3-030-03335-4_4&sign=63c84565b4aff50799f2504943205f86&diversion=null&paperid=1c2p0cj0n10k0em0mg3300g05k696310&allversion=%5B%22http%3A%2F%2Flink.springer.com%2Fchapter%2F10.1007%2F978-3-030-03335-4_4%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('jin2018predicting')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="jin2018predicting">
+            <pre class="bibtex">
+@inproceedings{jin2018predicting,
+  title="Predicting Aesthetic Radar Map Using a Hierarchical Multi-task Network",
+  author="Xin {Jin} and Le {Wu} and Xinghui {Zhou} and Geng {Zhao} and Xiaokun {Zhang} and Xiaodong {Li} and Shiming {Ge}",
+  booktitle="Chinese Conference on Pattern Recognition and Computer Vision  (PRCV)",
+  pages="41--50",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2898960356",
+  year="2018"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -673,8 +1122,22 @@
         <div class="pvenue">SAC 2018: 487-494</div>
         <div class="plink">
           <a href="https://dl.acm.org/doi/abs/10.1145/3167132.3167186" target="_blank">[Paper]</a>
-          <a href="https://www.researchgate.net/lite.publication.PublicationDownloadCitationModal.downloadCitation.html?fileType=BibTeX&citation=citationAndAbstract&publicationUid=326163659"
-            target="#">[BibTex]</a>
+          <a onclick="display('jin20173d')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="jin20173d">
+            <pre class="bibtex">
+@inproceedings{inproceedings,
+  author = {Wang, Xiaoyu and Hasegawa, Osamu and Ge, Shiming},
+  year = {2018},
+  month = {04},
+  pages = {487-494},
+  title = {Error analysis and topology modifications of a self-organizing incremental neural network},
+  isbn = {978-1-4503-5191-1},
+  journal = {SAC '18: Proceedings of the 33rd Annual ACM Symposium on Applied Computing},
+  doi = {10.1145/3167132.3167186}
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -687,8 +1150,22 @@
         <div class="pvenue">Sci. China Inf. Sci. 60(12): 122107:1-122107:9 (2017)</div>
         <div class="plink">
           <a href="https://link.springer.com/article/10.1007/s11432-017-9266-1" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs11432-017-9266-1&sign=caa53b17dd9a01af7307e690b3539dbb&diversion=null&paperid=387e6ef0f2529419979638653109381a&allversion=%5B%22http%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs11432-017-9266-1%22%2C%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F320033193_3D_Textured_Model_Encryption_via_3D_Lu_Chaotic_Mapping%22%2C%22http%3A%2F%2Fexport.arxiv.org%2Fabs%2F1709.08364%22%2C%22http%3A%2F%2Farxiv.org%2Fabs%2F1709.08364%22%2C%22http%3A%2F%2Fadsabs.harvard.edu%2Fabs%2F2017arXiv170908364J%22%2C%22http%3A%2F%2Fwww.en.cnki.com.cn%2FArticle_en%2FCJFDTotal-JFXG201712021.htm%22%2C%22http%3A%2F%2Fwww.scichina.com%2Fdoi%2F10.1007%2Fs11432-017-9266-1%22%2C%22http%3A%2F%2Fwww.onacademic.com%2Fdetail%2Fjournal_1000040155834210_ee02.html%22%2C%22http%3A%2F%2Fwww.zhangqiaokeyan.com%2Facademic-journal-cn_science-china-information-sciences_thesis%2F0201258280839.html%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('jin20173d')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="jin20173d">
+            <pre class="bibtex">
+@article{jin20173d,
+  title="3D textured model encryption via 3D Lu chaotic mapping",
+  author="Xin {Jin} and Shuyun {Zhu} and Chaoen {Xiao} and Hongbo {Sun} and Xiaodong {Li} and Geng {Zhao} and Shiming {Ge}",
+  journal="Science in China Series F: Information Sciences",
+  volume="60",
+  number="12",
+  pages="122107",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2757675219",
+  year="2017"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -701,8 +1178,22 @@
         <div class="pvenue">Remote. Sens. 9(6): 587 (2017)</div>
         <div class="plink">
           <a href="https://www.mdpi.com/2072-4292/9/6/587" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F317553425_Geometry-Based_Global_Alignment_for_GSMS_Remote_Sensing_Images&sign=3e7ffe4f8b0feb11f9f3e49ed1fff9e0&diversion=null&paperid=b746b474ac67737afc8268a6207c5591&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F317553425_Geometry-Based_Global_Alignment_for_GSMS_Remote_Sensing_Images%22%2C%22http%3A%2F%2Fadsabs.harvard.edu%2Fabs%2F2017RemS....9..587Z%22%2C%22http%3A%2F%2Fqe3gw7ge4p.search.serialssolutions.com%2F%3Fctx_ver%3DZ39.88-2004%26ctx_enc%3Dinfo%253Aofi%252Fenc%253AUTF-8%26rfr_id%3Dinfo%3Asid%2Fxueshu.baidu.com%26rft_val_fmt%3Dinfo%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal%26rft.genre%3Darticle%26rft.atitle%3DGeometry-Based%2520Global%2520Alignment%2520for%2520GSMS%2520Remote%2520Sensing%2520Images%26rft.jtitle%3DRemote%2520Sensing%22%2C%22http%3A%2F%2Fwww.onacademic.com%2Fdetail%2Fjournal_1000040544443510_cc6e.html%22%2C%22http%3A%2F%2Fdx.doi.org%2F10.3390%2Frs9060587%22%2C%22http%3A%2F%2Fwww.scititles.com%2Farticles%2F093349bb-cae0-4c84-88fc-48c94361e001%22%2C%22http%3A%2F%2Fwww.mdpi.com%2F2072-4292%2F9%2F6%2F587%22%2C%22http%3A%2F%2Fwww.zhangqiaokeyan.com%2Fopen-access_resources_thesis%2F0100097700692.html%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('zeng2017geometry')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="zeng2017geometry">
+            <pre class="bibtex">
+@article{zeng2017geometry,
+  title="Geometry-Based Global Alignment for GSMS Remote Sensing Images",
+  author="Dan {Zeng} and Rui {Fang} and Shiming {Ge} and Shuying {Li} and Zhijiang {Zhang}",
+  journal="Remote Sensing",
+  volume="9",
+  number="6",
+  pages="587",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2621426279",
+  year="2017"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -715,8 +1206,20 @@
         <div class="pvenue">BigMM 2017: 193-196</div>
         <div class="plink">
           <a href="https://ieeexplore.ieee.org/abstract/document/7966741/" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F318127230_Try_Everything_Detecting_Occluded_Faces_by_Cascading_Outrageous_Proposal_Generation_and_Deep_Convolutional_Neural_Network%3Fev%3Dauth_pub&sign=c3e5f46bee69ca72c6e867bbb85c5ec5&diversion=null&paperid=1bf9fcb94c9e0da305d4a5a1accd781c&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F318127230_Try_Everything_Detecting_Occluded_Faces_by_Cascading_Outrageous_Proposal_Generation_and_Deep_Convolutional_Neural_Network%3Fev%3Dauth_pub%22%2C%22http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F7966741%2F%22%2C%22http%3A%2F%2Fwww.computer.org%2Fcsdl%2Fproceedings%2Fbigmm%2F2017%2F6549%2F00%2F07966741-abs.html%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('ge2017try')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="ge2017try">
+            <pre class="bibtex">
+@inproceedings{ge2017try,
+  title="Try Everything: Detecting Occluded Faces by Cascading Outrageous Proposal Generation and Deep Convolutional Neural Network",
+  author="Shiming {Ge} and Qiting {Ye} and Zhao {Luo} and Shengwei {Zhao}",
+  booktitle="2017 IEEE Third International Conference on Multimedia Big Data (BigMM)",
+  pages="193--196",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2725615208",
+  year="2017"
+} 
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -728,8 +1231,18 @@
         <div class="pvenue">BigMM 2017: 248-249</div>
         <div class="plink">
           <a href="https://ieeexplore.ieee.org/abstract/document/7966755/" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F318126999_An_Ultra-Fast_and_Energy-Efficient_Object_Tracker&sign=091f3b784eafa23bb841fb3472a2ebc8&diversion=null&paperid=c7fffb2bbd0bebfba82d2fa95424f038&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F318126999_An_Ultra-Fast_and_Energy-Efficient_Object_Tracker%22%2C%22http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F7966755%2F%22%2C%22http%3A%2F%2Fwww.computer.org%2Fcsdl%2Fproceedings%2Fbigmm%2F2017%2F6549%2F00%2F07966755-abs.html%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('2017GeLoGo')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="2017GeLoGo">
+            <pre class="bibtex">
+@inproceedings{2017An,
+  title={An Ultra-Fast and Energy-Efficient Object Tracker},
+  author={ Luo, Zhao  and  Ye, Qiting  and  Zhao, Shengwei  and  Ge, Shiming },
+  booktitle={2017 IEEE Third International Conference on Multimedia Big Data (BigMM)},
+  year={2017},
+} 
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -742,8 +1255,18 @@
         <div class="plink">
           <a href="https://www.computer.org/csdl/proceedings-article/bigmm/2017/07966756/12OmNy68EAq"
             target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F318127000_GeLoGo_Detecting_TV_Logos_from_Web-Scale_Videos&sign=a001873b8d3d940035e130520e80b64d&diversion=null&paperid=90f6be32a884893ce3a0717b661fcc11&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F318127000_GeLoGo_Detecting_TV_Logos_from_Web-Scale_Videos%22%2C%22http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F7966756%2F%22%2C%22http%3A%2F%2Fwww.computer.org%2Fcsdl%2Fproceedings%2Fbigmm%2F2017%2F6549%2F00%2F07966756-abs.html%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('2017GeLoGo')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="2017GeLoGo">
+            <pre class="bibtex">
+@inproceedings{2017GeLoGo,
+  title={GeLoGo: Detecting TV Logos from Web-Scale Videos},
+  author={ Ye, Qiting  and  Luo, Zhao  and  Xiao, Xiaobing  and  Ge, Shiming },
+  booktitle={2017 IEEE Third International Conference on Multimedia Big Data (BigMM)},
+  year={2017},
+}  
+              </pre>
+          </div>
         </div>
       </div>
 
@@ -755,8 +1278,20 @@
         <div class="pvenue">CCCV (3) 2017: 178-186</div>
         <div class="plink">
           <a href="https://link.springer.com/chapter/10.1007/978-981-10-7305-2_16" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Flink.springer.com%2F10.1007%2F978-981-10-7305-2_16&sign=3cf189a1f55c34e67f7317c82c7c46e2&diversion=6859205502102929409&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('luo2017scratchnet')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="luo2017scratchnet">
+            <pre class="bibtex">
+@article{luo2017scratchnet,
+  title="ScratchNet: Detecting the Scratches on Cellphone Screen",
+  author="Zhao {Luo} and Xiaobing {Xiao} and Shiming {Ge} and Qiting {Ye} and Shengwei {Zhao} and Xin {Jin}",
+  journal="CCF Chinese Conference on Computer Vision",
+  pages="178--186",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2772263957",
+  year="2017"
+}    
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -770,8 +1305,20 @@
           <a href="http://openaccess.thecvf.com/content_cvpr_2017/html/Ge_Detecting_Masked_Faces_CVPR_2017_paper.html"
             target="_blank
           ">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F320968270_Detecting_Masked_Faces_in_the_Wild_with_LLE-CNNs&sign=9f0a69188381ee2b1d4bd780db6aec7f&diversion=null&paperid=e63f413b6a75fcdcb1a8d1a360726ba6&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F320968270_Detecting_Masked_Faces_in_the_Wild_with_LLE-CNNs%22%2C%22http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F8099536%2F%22%2C%22http%3A%2F%2Fdoi.ieeecomputersociety.org%2F10.1109%2FCVPR.2017.53%22%2C%22http%3A%2F%2Fopenaccess.thecvf.com%2Fcontent_cvpr_2017%2Fhtml%2FGe_Detecting_Masked_Faces_CVPR_2017_paper.html%22%2C%22http%3A%2F%2Fwww.computer.org%2Fcsdl%2Fproceedings%2Fcvpr%2F2017%2F0457%2F00%2F0457a426-abs.html%22%5D&t=bib"
-            target=" #">[BibTex]</a>
+          <a onclick="display('ge2017detecting')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="ge2017detecting">
+            <pre class="bibtex">
+@inproceedings{ge2017detecting,
+  title="Detecting Masked Faces in the Wild with LLE-CNNs",
+  author="Shiming {Ge} and Jia {Li} and Qiting {Ye} and Zhao {Luo}",
+  booktitle="2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
+  pages="426--434",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2739722733",
+  year="2017"
+}     
+            </pre>
+          </div>
           <a href="https://drive.google.com/open?id=1nbtM1n0--iZ3VVbNGhocxbnBGhMau_OG">[MAFA Datasets(Google
             Drive)]</a>
           <a href="https://pan.baidu.com/s/15NsUpSIFeHfoGKHAjQBISQ">[MAFA Train Datasets(Baidu Pan)]</a>
@@ -791,8 +1338,21 @@
         <div class="pvenue">ICCS 2017: 394-403</div>
         <div class="plink">
           <a href="https://www.sciencedirect.com/science/article/pii/S1877050917306191" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS1877050917306191&sign=fc83d814154e9e81538e5e717581be92&diversion=null&paperid=3ac896c02e0885a6114c77a0a67cbcfa&allversion=%5B%22http%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS1877050917306191%22%2C%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F317488039_Discriminative_Learning_from_Selective_Recommendation_and_Its_Application_in_AdaBoost%22%2C%22http%3A%2F%2Fwww.onacademic.com%2Fdetail%2Fjournal_1000039930484410_ca4f.html%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('zhang2017discriminative')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="zhang2017discriminative">
+            <pre class="bibtex">
+@article{zhang2017discriminative,
+  title="Discriminative Learning from Selective Recommendation and Its Application in AdaBoost",
+  author="Xiao-Yu {Zhang} and Shupeng {Wang} and Chao {Li} and Shiming {Ge} and Yong {Wang} and Binbin {Li}",
+  journal="international conference on conceptual structures",
+  volume="108",
+  pages="394--403",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2621741903",
+  year="2017"
+}        
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -804,8 +1364,20 @@
         <div class="pvenue">ICME 2017: 667-672</div>
         <div class="plink">
           <a href="https://ieeexplore.ieee.org/abstract/document/8019465/" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F319566424_Compressing_deep_neural_networks_for_efficient_visual_inference&sign=a42b1fefe58eb30e8d47634c81f5e0d5&diversion=null&paperid=08e13d10a3d44f3b5719769e8fbbf237&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F319566424_Compressing_deep_neural_networks_for_efficient_visual_inference%22%2C%22http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F8019465%2F%22%2C%22http%3A%2F%2Fdoi.ieeecomputersociety.org%2F10.1109%2FICME.2017.8019465%22%2C%22http%3A%2F%2Fdoi.org%2F10.1109%2FICME.2017.8019465%22%2C%22http%3A%2F%2Fwww.computer.org%2Fcsdl%2Fproceedings%2Ficme%2F2017%2F6067%2F00%2F08019465-abs.html%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('ge2017compressing')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="ge2017compressing">
+            <pre class="bibtex">
+@inproceedings{ge2017compressing,
+  title="Compressing deep neural networks for efficient visual inference",
+  author="Shiming {Ge} and Zhao {Luo} and Shengwei {Zhao} and Xin {Jin} and Xiao-Yu {Zhang}",
+  booktitle="2017 IEEE International Conference on Multimedia and Expo (ICME)",
+  pages="667--672",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2750958979",
+  year="2017"
+}           
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -819,8 +1391,20 @@
         <div class="pvenue">ICME 2017: 673-678</div>
         <div class="plink">
           <a href="https://ieeexplore.ieee.org/abstract/document/8019497/" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F319569737_Efficient_privacy_preserving_Viola-Jones_type_object_detection_via_random_base_image_representation&sign=9680b47a9bb5f55558e0c612a01e4069&diversion=null&paperid=c35bdaf69fc4e51d05b88bb3eb9c40b8&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F319569737_Efficient_privacy_preserving_Viola-Jones_type_object_detection_via_random_base_image_representation%22%2C%22http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F8019497%2F%22%2C%22http%3A%2F%2Fdoi.ieeecomputersociety.org%2F10.1109%2FICME.2017.8019497%22%2C%22http%3A%2F%2Farxiv.org%2Fabs%2F1702.08318%22%2C%22http%3A%2F%2Fwww.zhangqiaokeyan.com%2Fopen-access_resources_thesis%2F0100091329905.html%22%2C%22http%3A%2F%2Fwww.computer.org%2Fcsdl%2Fproceedings%2Ficme%2F2017%2F6067%2F00%2F08019497-abs.html%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('jin2017efficient')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="jin2017efficient">
+            <pre class="bibtex">
+@inproceedings{jin2017efficient,
+  title="Efficient privacy preserving Viola-Jones type object detection via random base image representation",
+  author="Xin {Jin} and Peng {Yuan} and Xiaodong {Li} and Chenggen {Song} and Shiming {Ge} and Geng {Zhao} and Yingya {Chen}",
+  booktitle="2017 IEEE International Conference on Multimedia and Expo (ICME)",
+  pages="673--678",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2593542493",
+  year="2017"
+}              
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -833,8 +1417,18 @@
         <div class="pvenue">INFOCOM Workshops 2017: 1000-1001</div>
         <div class="plink">
           <a href="https://ieeexplore.ieee.org/abstract/document/8116530/" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F321259173_Poster_abstract_MicroBrain_Compressing_deep_neural_networks_for_energy-efficient_visual_inference_service&sign=5095d46d925e71dadbae0af3647e7b0c&diversion=null&paperid=5e96648421e1418fa060193892b65b20&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F321259173_Poster_abstract_MicroBrain_Compressing_deep_neural_networks_for_energy-efficient_visual_inference_service%22%2C%22http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F8116530%2F%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('2017Poster')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="2017Poster">
+            <pre class="bibtex">
+@inproceedings{2017Poster,
+  title={Poster abstract: MicroBrain: Compressing deep neural networks for energy-efficient visual inference service},
+  author={ Ge, Shiming  and  Luo, Zhao  and  Ye, Qiting  and  Zhang, Xiao Yu },
+  booktitle={IEEE INFOCOM 2017 -IEEE Conference on Computer Communications Workshops (INFOCOM WKSHPS)},
+  year={2017},
+}
+              </pre>
+          </div>
         </div>
       </div>
 
@@ -846,8 +1440,17 @@
         <div class="pvenue">CoRR abs/1708.02872 (2017)</div>
         <div class="plink">
           <a href="https://arxiv.org/abs/1708.02872" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F319035668_Privacy_Preserving_Face_Retrieval_in_the_Cloud_for_Mobile_Users&sign=744dfd9ee8e2934def9fb4588a1c599f&diversion=null&paperid=60d1d2db430345521af1bca8427ac8f3&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F319035668_Privacy_Preserving_Face_Retrieval_in_the_Cloud_for_Mobile_Users%22%2C%22http%3A%2F%2Farxiv.org%2Fabs%2F1708.02872%22%2C%22http%3A%2F%2Fadsabs.harvard.edu%2Fabs%2F2017arXiv170802872J%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('2017Privacy')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="2017Privacy">
+            <pre class="bibtex">
+@article{2017Privacy,
+  title={Privacy Preserving Face Retrieval in the Cloud for Mobile Users},
+  author={ Jin, Xin  and  Ge, Shiming  and  Song, Chenggen },
+  year={2017},
+}
+              </pre>
+          </div>
         </div>
       </div>
 
@@ -860,8 +1463,20 @@
         <div class="pvenue">CoRR abs/1708.07066 (2017)</div>
         <div class="plink">
           <a href="https://www.sciencedirect.com/science/article/pii/S0030399217311088" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0030399217311088&sign=8ed66c0bbe8d660ef365d259cf5d3778&diversion=null&paperid=2581098917d9f684f291f2f7fc9afafc&allversion=%5B%22http%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0030399217311088%22%2C%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F319256548_Single_Reference_Image_based_Scene_Relighting_via_Material_Guided_Filtering%22%2C%22http%3A%2F%2Farxiv.org%2Fabs%2F1708.07066%22%2C%22http%3A%2F%2Fqe3gw7ge4p.search.serialssolutions.com%2F%3Fctx_ver%3DZ39.88-2004%26ctx_enc%3Dinfo%253Aofi%252Fenc%253AUTF-8%26rfr_id%3Dinfo%3Asid%2Fxueshu.baidu.com%26rft_val_fmt%3Dinfo%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal%26rft.genre%3Darticle%26rft.atitle%3DSingle%2520Reference%2520Image%2520based%2520Scene%2520Relighting%2520via%2520Material%2520Guided%2520Filtering%26rft.jtitle%3DOptics%2520and%2520Laser%2520Technology%22%2C%22http%3A%2F%2Fwww.onacademic.com%2Fdetail%2Fjournal_1000040165592110_7efc.html%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('jin2018scene')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="jin2018scene">
+            <pre class="bibtex">
+@article{jin2018scene,
+  title="Scene Relighting Using a Single Reference Image Through Material Constrained Layer Decomposition",
+  author="Xin {Jin} and Yannan {Li} and Ningning {Liu} and Xiaodong {Li} and Quan {Zhou} and Yulu {Tian} and Shiming {Ge}",
+  journal="",
+  pages="37--44",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2765281049",
+  year="2018"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -874,8 +1489,21 @@
         <div class="pvenue">Neurocomputing 173: 418-424 (2016)</div>
         <div class="plink">
           <a href="https://www.sciencedirect.com/science/article/pii/S0925231215012898" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0925231215012898&sign=bde14c5cf2c3c7007f081e0036382847&diversion=null&paperid=e9dc21cd37878d081fd6f2ef10d6441a&allversion=%5B%22http%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0925231215012898%22%2C%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F283897651_Learning_Multi-Channel_Correlation_Filter_Bank_for_Eye_Localization%22%2C%22http%3A%2F%2Fdl.acm.org%2Fcitation.cfm%3Fid%3D2850908%22%2C%22http%3A%2F%2Fqe3gw7ge4p.search.serialssolutions.com%2F%3Fctx_ver%3DZ39.88-2004%26ctx_enc%3Dinfo%253Aofi%252Fenc%253AUTF-8%26rfr_id%3Dinfo%3Asid%2Fxueshu.baidu.com%26rft_val_fmt%3Dinfo%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal%26rft.genre%3Darticle%26rft.atitle%3DLearning%2520multi-channel%2520correlation%2520filter%2520bank%2520for%2520eye%2520localization%26rft.jtitle%3DNeurocomputing%22%2C%22http%3A%2F%2Fwww.zentralblatt-math.org%2Fioport%2Fen%2F%3Fid%3D1185501%26amp%3Btype%3Dtxt%22%2C%22http%3A%2F%2Fwww.mendeley.com%2Fresearch%2Flearning-multichannel-correlation-filter-bank-eye-localization%2F%22%2C%22http%3A%2F%2For.nsfc.gov.cn%2Fhandle%2F00001903-5%2F331634%22%2C%22http%3A%2F%2Fwww.socolar.com%2FArticle%2FIndex%3Faid%3D100063610885%26jid%3D100000001723%22%2C%22http%3A%2F%2Fwww.zhangqiaokeyan.com%2Facademic-journal-foreign_other_thesis%2F0204110234384.html%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('ge2016learning')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="ge2016learning">
+            <pre class="bibtex">
+@article{ge2016learning,
+  title="Learning multi-channel correlation filter bank for eye localization",
+  author="Shiming {Ge} and Rui {Yang} and Yuqing {He} and Kaixuan {Xie} and Hongsong {Zhu} and Shuixian {Chen}",
+  journal="Neurocomputing",
+  volume="173",
+  pages="418--424",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/1223861734",
+  year="2016"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -887,9 +1515,22 @@
         <div class="pvenue">Signal Process. 124: 147-155 (2016)</div>
         <div class="plink">
           <a href="https://www.sciencedirect.com/science/article/pii/S0165168415003357" target="_blank">[Paper]</a>
-
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0165168415003357&sign=4ce427ad1483e70ea5dd68730bc16002&diversion=null&paperid=f19959744e12646013ae24a4409d1a22&allversion=%5B%22http%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0165168415003357%22%2C%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F283553353_Global_Image_Completion_with_Joint_Sparse_Patch_Selection_and_Optimal_Seam_Synthesis%22%2C%22http%3A%2F%2Fdl.acm.org%2Fcitation.cfm%3Fid%3D2905992%22%2C%22http%3A%2F%2Fqe3gw7ge4p.search.serialssolutions.com%2F%3Fctx_ver%3DZ39.88-2004%26ctx_enc%3Dinfo%253Aofi%252Fenc%253AUTF-8%26rfr_id%3Dinfo%3Asid%2Fxueshu.baidu.com%26rft_val_fmt%3Dinfo%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal%26rft.genre%3Darticle%26rft.atitle%3DGlobal%2520image%2520completion%2520with%2520joint%2520sparse%2520patch%2520selection%2520and%2520optimal%2520seam%2520synthesis%26rft.jtitle%3DSignal%2520Processing%22%2C%22http%3A%2F%2Fdx.doi.org%2F10.1016%2Fj.sigpro.2015.09.031%22%2C%22http%3A%2F%2For.nsfc.gov.cn%2Fhandle%2F00001903-5%2F323411%22%2C%22http%3A%2F%2Fwww.zentralblatt-math.org%2Fioport%2Fen%2Fsearch%2F%3Fq%3Dan%253A10714018%22%2C%22http%3A%2F%2Fwww.onacademic.com%2Fdetail%2Fjournal_1000038968686010_5b38.html%22%2C%22http%3A%2F%2Fwww.infona.pl%2Fresource%2Fbwmeta1.element.elsevier-29544ff7-cf52-3038-a8af-077efde00840%22%2C%22http%3A%2F%2Fwww.zhangqiaokeyan.com%2Facademic-journal-foreign_other_thesis%2F020418033360.html%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('ge2016global')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="ge2016global">
+            <pre class="bibtex">
+@article{ge2016global,
+  title="Global image completion with joint sparse patch selection and optimal seam synthesis",
+  author="Shiming {Ge} and Kaixuan {Xie} and Shuying {Li} and Rui {Yang}",
+  journal="Signal Processing",
+  volume="124",
+  number="124",
+  pages="147--155",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2196171355",
+  year="2016"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -902,9 +1543,20 @@
         <div class="pvenue">PCM (1) 2016: 201-210</div>
         <div class="plink">
           <a href="https://link.springer.com/chapter/10.1007%2F978-3-319-48890-5_20" target="_blank">[Paper]</a>
-
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Flink.springer.com%2Fcontent%2Fpdf%2F10.1007%2F978-3-319-48890-5_20.pdf&sign=2122aa4ce437d12ea6950a5ffd630ed5&diversion=null&paperid=742eed23881f7d72de52b718465f7996&allversion=%5B%22http%3A%2F%2Flink.springer.com%2Fcontent%2Fpdf%2F10.1007%2F978-3-319-48890-5_20.pdf%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('xie2016traffic')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="xie2016traffic">
+            <pre class="bibtex">
+@inproceedings{xie2016traffic,
+  title="Traffic Sign Recognition Based on Attribute-Refinement Cascaded Convolutional Neural Networks",
+  author="Kaixuan {Xie} and Shiming {Ge} and Qiting {Ye} and Zhao {Luo}",
+  booktitle="PCM 2016 17th Pacific-Rim Conference on Advances in Multimedia Information Processing - Volume 9916",
+  pages="201--210",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2549915986",
+  year="2016"
+}
+            </pre>
+          </div>
         </div>
       </div>
 
@@ -916,10 +1568,22 @@
         <div class="pvenue">CCCV (1) 2015: 249-257</div>
         <div class="plink">
           <a href="http://www.researchgate.net/publication/300253566_Negative-Supervised_Cascaded_Deep_Learning_for_Traffic_Sign_Classification"
-            target="_blank">[Paper]
-            <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F300253566_Negative-Supervised_Cascaded_Deep_Learning_for_Traffic_Sign_Classification&sign=6ed1c999a9ea9312b7f1aae4b1c3fd7b&diversion=null&paperid=fe1c474cd0d32c89cb08ce2620ccd4db&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F300253566_Negative-Supervised_Cascaded_Deep_Learning_for_Traffic_Sign_Classification%22%2C%22http%3A%2F%2Fdx.doi.org%2F10.1007%2F978-3-662-48558-3_25%22%2C%22http%3A%2F%2Fwww.zentralblatt-math.org%2Fioport%2Fen%2F%3Fq%3Dan%253A11565809%22%2C%22http%3A%2F%2For.nsfc.gov.cn%2Fhandle%2F00001903-5%2F158295%22%2C%22http%3A%2F%2Fwww.onacademic.com%2Fdetail%2Fjournal_1000038296369910_b639.html%22%5D&t=bib"
-              target="#">[BibTex]</a>
-          </a></div>
+            target="_blank">[Paper]</a>
+          <a onclick="display('xie2015negative')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="xie2015negative">
+            <pre class="bibtex">
+@article{xie2015negative,
+  title="Negative-Supervised Cascaded Deep Learning for Traffic Sign Classification",
+  author="Kaixuan {Xie} and Shiming {Ge} and Rui {Yang} and Xiang {Lu} and Limin {Sun}",
+  journal="CCF Chinese Conference on Computer Vision",
+  pages="249--257",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2296764314",
+  year="2015"
+}
+            </pre>
+          </div>
+        </div>
       </div>
 
       <div class="paper">
@@ -931,9 +1595,22 @@
         <div class="pvenue">GLOBECOM 2015: 1-6</div>
         <div class="plink">
           <a href="http://www.researchgate.net/publication/300416518_Target_Domain_Adaptation_for_Face_Detection_in_a_Smart_Camera_Network_with_Peer-to-Peer_Communications"
-            target="_blank">[Paper]</a></div>
-        <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F300416518_Target_Domain_Adaptation_for_Face_Detection_in_a_Smart_Camera_Network_with_Peer-to-Peer_Communications&sign=c27c14495acceff41a0c7c31158d27fe&diversion=null&paperid=111g0270c25b0c50rj460ma0fd796840&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F300416518_Target_Domain_Adaptation_for_Face_Detection_in_a_Smart_Camera_Network_with_Peer-to-Peer_Communications%22%5D&t=bib"
-          target=" #">[BibTex]</a>
+            target="_blank">[Paper]</a>
+          <a onclick="display('chen2014target')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="chen2014target">
+            <pre class="bibtex">
+@inproceedings{chen2014target,
+  title="Target Domain Adaptation for Face Detection in a Smart Camera Network with Peer-to-Peer Communications",
+  author="Shuixian {Chen} and Xiang {Lu} and Limin {Sun} and Shiming {Ge}",
+  booktitle="2015 IEEE Global Communications Conference (GLOBECOM)",
+  pages="1--6",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2291696674",
+  year="2014"
+}
+             </pre>
+          </div>
+        </div>
       </div>
 
       <div class="paper">
@@ -945,8 +1622,20 @@
         <div class="plink">
           <a href="http://www.researchgate.net/publication/285613640_Centroid_location_algorithm_in_three_dimensions_based_on_big_data"
             target="_blank">[Paper]
-            <a href="https://www.researchgate.net/lite.publication.PublicationDownloadCitationModal.downloadCitation.html?fileType=BibTeX&citation=citationAndAbstract&publicationUid=285613640"
-              target="#">[BibTex]</a>
+            <a onclick="display('chen2015centroid')" style="color: #1c3ed3">
+              [Bibtex] </a>
+            <div style="display: none;" class="BibtexExpand" id="chen2015centroid">
+              <pre class="bibtex">
+@inproceedings{chen2015centroid,
+  title="Centroid location algorithm in three dimensions based on big data",
+  author="Boyang {Chen} and Shiming {Ge} and Kaixuan {Xie}",
+  booktitle="Proceedings of the 7th International Conference on Internet Multimedia Computing and Service",
+  pages="40",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2042437842",
+  year="2015"
+}
+             </pre>
+            </div>
           </a></div>
       </div>
 
@@ -959,8 +1648,20 @@
         <div class="plink">
           <a href="http://www.researchgate.net/publication/308848756_Abnormal_event_detection_via_adaptive_cascade_dictionary_learning"
             target="_blank">[Paper]
-            <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F308848756_Abnormal_event_detection_via_adaptive_cascade_dictionary_learning&sign=ce2386deb14136a978c854b0757afe92&diversion=null&paperid=65ae01b199bce2bc28a7d9dbbec4973c&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F308848756_Abnormal_event_detection_via_adaptive_cascade_dictionary_learning%22%2C%22http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D7350919%22%2C%22http%3A%2F%2Fdx.doi.org%2F10.1109%2FICIP.2015.7350919%22%2C%22http%3A%2F%2Fwww.zentralblatt-math.org%2Fioport%2Fen%2F%3Fq%3Dan%253A11552001%22%2C%22http%3A%2F%2Fwww.infona.pl%2Fresource%2Fbwmeta1.element.ieee-art-000007350919%22%2C%22http%3A%2F%2Fwww.deepdyve.com%2Flp%2Finstitute-of-electrical-and-electronics-engineers%2Fabnormal-event-detection-via-adaptive-cascade-dictionary-learning-cQXqnUGEyb%22%5D&t=bib"
-              target="#">[BibTex]</a>
+            <a onclick="display('wen2015abnormal')" style="color: #1c3ed3">
+              [Bibtex] </a>
+            <div style="display: none;" class="BibtexExpand" id="wen2015abnormal">
+              <pre class="bibtex">
+@inproceedings{wen2015abnormal,
+  title="Abnormal event detection via adaptive cascade dictionary learning",
+  author="Hui {Wen} and Shiming {Ge} and Shuixian {Chen} and Hongtao {Wang} and Limin {Sun}",
+  booktitle="2015 IEEE International Conference on Image Processing (ICIP)",
+  pages="847--851",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2295658252",
+  year="2015"
+}
+             </pre>
+            </div>
           </a></div>
       </div>
 
@@ -972,9 +1673,20 @@
         <div class="pvenue">CCPR (1) 2014: 325-334</div>
         <div class="plink">
           <a href="http://link.springer.com/10.1007/978-3-662-45646-0_33" target="_blank">[Paper]</a>
-
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Flink.springer.com%2F10.1007%2F978-3-662-45646-0_33&sign=e09f07410940daaa9db6643ed634f703&diversion=null&paperid=8253cce8ee0526c5b46d7bc609f3a7e9&allversion=%5B%22http%3A%2F%2Flink.springer.com%2F10.1007%2F978-3-662-45646-0_33%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('yang2014eye')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="yang2014eye">
+            <pre class="bibtex">
+@inproceedings{yang2014eye,
+  title="Eye Localization Based on Multi-Channel Correlation Filter Bank",
+  author="Rui {Yang} and Shiming {Ge} and Kaixuan {Xie} and Shuixian {Chen}",
+  booktitle="Chinese Conference on Pattern Recognition",
+  pages="325--334",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/378509809",
+  year="2014"
+}
+           </pre>
+          </div>
         </div>
       </div>
 
@@ -987,8 +1699,20 @@
         <div class="plink">
           <a href="http://www.researchgate.net/publication/286680040_Image_Completion_Using_Global_Patch_Matching_and_Optimal_Seam_Synthesis"
             target="_blank">[Paper]
-            <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F286680040_Image_Completion_Using_Global_Patch_Matching_and_Optimal_Seam_Synthesis&sign=7d2281f54406e25b52178d6363585331&diversion=null&paperid=ff6a830db70aa7860c1536068144c1b9&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F286680040_Image_Completion_Using_Global_Patch_Matching_and_Optimal_Seam_Synthesis%22%2C%22http%3A%2F%2Fdl.acm.org%2Fcitation.cfm%3Fid%3D2703786%22%2C%22http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F6976870%2F%22%2C%22http%3A%2F%2Fdoi.ieeecomputersociety.org%2F10.1109%2FICPR.2014.160%22%2C%22http%3A%2F%2Fqe3gw7ge4p.search.serialssolutions.com%2F%3Fctx_ver%3DZ39.88-2004%26ctx_enc%3Dinfo%253Aofi%252Fenc%253AUTF-8%26rfr_id%3Dinfo%3Asid%2Fxueshu.baidu.com%26rft_val_fmt%3Dinfo%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal%26rft.genre%3Darticle%26rft.atitle%3DImage%2520Completion%2520Using%2520Global%2520Patch%2520Matching%2520and%2520Optimal%2520Seam%2520Synthesis%26rft.jtitle%3DInternational%2520Conference%2520on%2520Pattern%2520Recognition%22%2C%22http%3A%2F%2Fdx.doi.org%2F10.1109%2FICPR.2014.160%22%2C%22http%3A%2F%2Fwww.mendeley.com%2Fresearch%2Fimage-completion-using-global-patch-matching-optimal-seam-synthesis%2F%22%2C%22http%3A%2F%2Fwww.computer.org%2Fcsdl%2Fproceedings%2Ficpr%2F2014%2F5209%2F00%2F5209a871.pdf%22%2C%22http%3A%2F%2Fwww.zentralblatt-math.org%2Fioport%2Fen%2F%3Fq%3Dan%253A10310289%22%2C%22http%3A%2F%2Fwww.infona.pl%2Fresource%2Fbwmeta1.element.ieee-art-000006976870%2Ftab%2Fsummary%22%2C%22http%3A%2F%2Fwww.deepdyve.com%2Flp%2Finstitute-of-electrical-and-electronics-engineers%2Fimage-completion-using-global-patch-matching-and-optimal-seam-kw6TawrhA1%22%5D&t=bib"
-              target="#">[BibTex]</a>
+            <a onclick="display('ge2014image')" style="color: #1c3ed3">
+              [Bibtex] </a>
+            <div style="display: none;" class="BibtexExpand" id="ge2014image">
+              <pre class="bibtex">
+@inproceedings{ge2014image,
+  title="Image Completion Using Global Patch Matching and Optimal Seam Synthesis",
+  author="Shiming {Ge} and Kaixuan {Xie} and Rui {Yang} and Zhiqiang {Shi}",
+  booktitle="ICPR '14 Proceedings of the 2014 22nd International Conference on Pattern Recognition",
+  pages="871--876",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2094689177",
+  year="2014"
+}
+             </pre>
+            </div>
           </a></div>
       </div>
 
@@ -1000,10 +1724,20 @@
         <div class="pvenue">MobiSys 2014: 384</div>
         <div class="plink">
           <a href="http://www.researchgate.net/publication/266657741_poster_crowdsourcing_for_video_traffic_surveillance"
-            target="_blank">[Paper]
-            <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F266657741_poster_crowdsourcing_for_video_traffic_surveillance&sign=f3f5aeb706a2546325fbf73e32fe707f&diversion=null&paperid=680a2c5982071cb83b6d47fff7273a11&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F266657741_poster_crowdsourcing_for_video_traffic_surveillance%22%5D&t=bib"
-              target="#">[BibTex]</a>
-          </a></div>
+            target="_blank">[Paper]</a>
+          <a onclick="display('2014Poster')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="2014Poster">
+            <pre class="bibtex">
+@book{2014Poster,
+  title={Poster: Crowdsourcing for video traffic surveillance},
+  author={ Wen, Hui  and  Li, Qiang  and  Han, Qi  and  Ge, Shiming  and  Sun, Limin },
+  publisher={ACM},
+  year={2014},
+}
+                 </pre>
+          </div>
+        </div>
       </div>
 
       <div class="paper">
@@ -1014,10 +1748,23 @@
         <div class="pvenue">ICIMCS 2009: 119-122</div>
         <div class="plink">
           <a href="http://www.researchgate.net/publication/247926928_Interactive_sketch_template_creation_from_realistic_pictures_for_tracing_applications"
-            target="_blank">[Paper]
-            <a href="https://www.researchgate.net/lite.publication.PublicationDownloadCitationModal.downloadCitation.html?fileType=BibTeX&citation=citationAndAbstract&publicationUid=247926928"
-              target="#">[BibTex]</a>
-          </a></div>
+            target="_blank">[Paper]</a>
+          <a onclick="display('ge-ICIMCS-2009')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="ge-ICIMCS-2009">
+            <pre class="bibtex">
+@article{ge-ICIMCS-2009,
+  author = {ge, Shiming and Wang, Hao and Wang, Kongqiao and Xu, Lei},
+  year = {2009},
+  month = {11},
+  pages = {},
+  title = {Interactive sketch template creation from realistic pictures for tracing applications},
+  journal = {1st International Conference on Internet Multimedia Computing and Service, ICIMCS 2009},
+  doi = {10.1145/1734605.1734635}
+}
+             </pre>
+          </div>
+        </div>
       </div>
 
       <div class="paper">
@@ -1028,8 +1775,20 @@
         <div class="pvenue">ICIP 2009: 1361-1364</div>
         <div class="plink">
           <a href="https://dl.acm.org/doi/10.5555/1818719.1819106" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpl%2FarticleDetails.jsp%3Freload%3Dtrue%26amp%3Btp%3D%26amp%3Barnumber%3D5413557&sign=b67700f52598c22de85b14639305ccb7&diversion=null&paperid=a511de025cd1ae73931299ae8339f051&allversion=%5B%22http%3A%2F%2Fieeexplore.ieee.org%2Fxpl%2FarticleDetails.jsp%3Freload%3Dtrue%26amp%3Btp%3D%26amp%3Barnumber%3D5413557%22%2C%22http%3A%2F%2Fwww.zentralblatt-math.org%2Fioport%2Fen%2Fsearch%2F%3Fid%3D1365518%26amp%3Btype%3Dtex%22%2C%22http%3A%2F%2Fwww.deepdyve.com%2Flp%2Finstitute-of-electrical-and-electronics-engineers%2Fa-unified-gradient-domain-method-for-seamless-image-processing-sdrfeBLWoZ%3FarticleList%3D%252Fsearch%253Fauthor%253DGe%25252C%252BShiming%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('ge2009a')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="ge2009a">
+            <pre class="bibtex">
+@inproceedings{ge2009a,
+  title="A unified gradient domain method for seamless image processing",
+  author="Shiming {Ge} and Kongqiao {Wang} and Hao {Wang} and Feng {Zhao}",
+  booktitle="2009 16th IEEE International Conference on Image Processing (ICIP)",
+  pages="1353--1356",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2169292113",
+  year="2009"
+}
+           </pre>
+          </div>
         </div>
       </div>
 
@@ -1041,8 +1800,20 @@
         <div class="pvenue">ICIP 2009: 2097-2100</div>
         <div class="plink">
           <a href="http://www.escience.cn/system/download/97967" target="_blank">[Paper]</a>
-          <a href="https://xueshu.baidu.com/u/citation?&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F221119332_A_fast_and_effective_outlier_detection_method_for_matching_uncalibrated_images&sign=b7909434d1fd4f8236ea92c60d15158e&diversion=null&paperid=fe222990ed950467f79c250f87e4cef3&allversion=%5B%22http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F221119332_A_fast_and_effective_outlier_detection_method_for_matching_uncalibrated_images%22%2C%22http%3A%2F%2Fdl.acm.org%2Fcitation.cfm%3Fid%3D1819316%22%2C%22http%3A%2F%2Fieeexplore.ieee.org%2Fdocument%2F5414409%2F%22%2C%22http%3A%2F%2Fyadda.icm.edu.pl%2Fyadda%2Felement%2Fbwmeta1.element.ieee-000005414409%22%2C%22http%3A%2F%2Fnro-dd.sagepub.com%2Flp%2Finstitute-of-electrical-and-electronics-engineers%2Fa-fast-and-effective-outlier-detection-method-for-matching-xo56O5dYoz%22%2C%22http%3A%2F%2Fwww.mendeley.com%2Fresearch%2Ffast-effective-outlier-detection-method-matching-uncalibrated-images%2F%22%2C%22http%3A%2F%2Flibra.msra.cn%2FPublication%2F13288243%2Fa-fast-and-effective-outlier-detection-method-for-matching-uncalibrated-images%22%2C%22http%3A%2F%2Fwww.zentralblatt-math.org%2Fioport%2Fen%2F%3Fq%3Dan%253A10825557%22%2C%22http%3A%2F%2Fwww.deepdyve.com%2Flp%2Finstitute-of-electrical-and-electronics-engineers%2Fa-fast-and-effective-outlier-detection-method-for-matching-xo56O5dYoz%3FarticleList%3D%252Fsearch%253Fauthor%253DGe%25252C%252BShiming%22%5D&t=bib"
-            target="#">[BibTex]</a>
+          <a onclick="display('zhao2009a')" style="color: #1c3ed3">
+            [Bibtex] </a>
+          <div style="display: none;" class="BibtexExpand" id="zhao2009a">
+            <pre class="bibtex">
+@inproceedings{zhao2009a,
+  title="A fast and effective outlier detection method for matching uncalibrated images",
+  author="Feng {Zhao} and Hao {Wang} and Xiujuan {Chai} and Shiming {Ge}",
+  booktitle="2009 16th IEEE International Conference on Image Processing (ICIP)",
+  pages="2073--2076",
+  notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2116329490",
+  year="2009"
+}
+           </pre>
+          </div>
         </div>
       </div>
     </div>
@@ -1051,7 +1822,8 @@
   <div class="footer">
     <div class="container">
       <div class="footer-text text-center">
-        Copyright© 2020 IMSG | <a href="http://beian.miit.gov.cn" target="_blank" style="color: white">京ICP备20030229号</a> <br>
+        Copyright© 2020 IMSG | <a href="http://beian.miit.gov.cn" target="_blank"
+          style="color: white">京ICP备20030229号</a> <br>
         <!-- Address: East Section C11, Yiyuan Wenchuang Base, Xingshikou Road, Haidian District, Beijing -->
         地址: 北京市海淀区杏石口路益园文创基地C11东段
       </div>

@@ -15,6 +15,26 @@
     ul {
       margin-left: 20px;
     }
+
+    .media {
+      border-bottom: solid 1px #E4E4E4;
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+
+    .media .img-fluid {
+      float: left;
+      /* 左侧图片混排 */
+      margin-right: 10px;
+      /* 图片右端与文字的距离 */
+      margin-bottom: 10px;
+    }
+
+    .media .body {
+      padding-left: 220px;
+      text-align: justify;
+
+    }
   </style>
 
   <script defer src="https://use.fontawesome.com/releases/v5.9.0/js/all.js"></script>
@@ -107,17 +127,18 @@
     <div class="container mt-2">
       <div class="row">
 
-        <!-- ADD NEW COLUM HERE TO ADD A NEW ITEM -->
-
         <div class="col-md-6">
-          <div class="service-block media">
-            <a href="#"><img src="#" class="img-fluid service-img border"></a>
-            <div class="service-inner-content media-body px-1">
+          <div class="media">
+            <a class="img-fluid" href="#"><img src="./img/research/masked.png" width="200px"></a>
+            <div class="body">
               <h3><a href="#">Masked Face Detection and Recognition</a></h3>
-              <p>===</p>
+              Many real-world applications today like video surveillance and urban governance need
+              to address the
+              recognition of masked faces, where content replacement by diverse masks often brings in incomplete
+              appearance, ambiguous representation, and leads to a sharp drop in accuracy.
             </div>
           </div>
-        </div> <!-- / .col -->
+        </div>
 
         <div class="col-md-6">
           <div class="service-block media">
@@ -172,7 +193,8 @@
   <div class="footer">
     <div class="container">
       <div class="footer-text text-center">
-        Copyright© 2020 IMSG | <a href="http://beian.miit.gov.cn" target="_blank" style="color: white">京ICP备20030229号</a> <br>
+        Copyright© 2020 IMSG | <a href="http://beian.miit.gov.cn" target="_blank"
+          style="color: white">京ICP备20030229号</a> <br>
         <!-- Address: East Section C11, Yiyuan Wenchuang Base, Xingshikou Road, Haidian District, Beijing -->
         地址: 北京市海淀区杏石口路益园文创基地C11东段
       </div>
