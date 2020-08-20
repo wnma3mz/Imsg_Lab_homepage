@@ -1,0 +1,534 @@
+<!-- <script src="http://www.google.com/jsapi" type="text/javascript"></script> -->
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+    body {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 300;
+        font-size: 18px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1000px;
+    }
+
+    h1 {
+        font-weight: 300;
+    }
+
+    .disclaimerbox {
+        background-color: #eee;
+        border: 1px solid #eeeeee;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        padding: 20px;
+    }
+
+    video.header-vid {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+
+    img.header-img {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+
+    img.rounded {
+        border: 0px solid #eeeeee;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+
+    a:link,
+    a:visited {
+        color: #1367a7;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #208799;
+    }
+
+    td.dl-link {
+        height: 160px;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .vert-cent {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+</style>
+
+<html>
+
+<head>
+    <title>Self-Labelling via Simultaneous Clustering and Representation Learning</title>
+    <meta property="og:image" content="./asset/splash.png" />
+    <meta property="og:title"
+        content="Self-Labelling via Simultaneous Clustering and Representation Learning. In ICLR, 2020." />
+</head>
+
+<body>
+    <br>
+    <center>
+        <span style="font-size:42px">Efficient Low-Resolution Face Recognition via Bridge Distillation</span><br>
+
+        <table align=center width=1000px>
+            <tr>
+                <td align=center width=1000px>
+                    <span style="font-size:22px"><a href="#">Shiming Ge</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Shengwei Zhao</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Chenyu Li</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Yu Zhang</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Jia Li</a></span> &emsp;
+                </td>
+            </tr>
+        </table>
+
+        <!-- <table align=center width=900px>
+        <tr>
+            <td align=center width=300px>
+                <span style="font-size:22px"><a href='./asset/iclr2020_self-label.pdf'> Paper [ICLR 2020]</a></span> &emsp;&emsp;
+                <span style="font-size:22px"><a href='http://www.robots.ox.ac.uk/~vgg/blog/self-labelling-via-simultaneous-clustering-and-representation-learning.html'> Blogpost</a></span> &emsp;&emsp;
+		<span style="font-size:22px"><a href='https://github.com/yukimasano/self-label'> Code [PyTorch]</a></span>
+            </td>
+        </tr>
+    </table> -->
+    </center>
+    <br>
+
+    <table align=center width=800px>
+        <tr>
+            <td width=600px>
+                <center>
+                    <img class="rounded" src="../img/research/GeZLZL20.png" height="400px"></img>
+                    <br>
+                </center>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <hr>
+
+    <table align=center width=900px>
+        <center>
+            <h1>Abstract</h1>
+        </center>
+        <p>
+            Face recognition in the wild is now advancing towards light-weight models, fast inference speed and
+            resolution-adapted capability. In this paper, we propose a bridge distillation approach to turn a complex
+            face model pretrained on private high-resolution faces into a light-weight one for low-resolution face
+            recognition. In our approach, such a cross-dataset resolution-adapted knowledge transfer problem is solved
+            via two-step distillation. In the first step, we conduct cross-dataset distillation to transfer the prior
+            knowledge from private high-resolution faces to public high-resolution faces and generate compact and
+            discriminative features. In the second step, the resolution-adapted distillation is conducted to further
+            transfer the prior knowledge to synthetic low-resolution faces via multi-task learning. By learning
+            low-resolution face representations and mimicking the adapted high-resolution knowledge, a light-weight
+            student model can be constructed with high efficiency and promising accuracy in recognizing low-resolution
+            faces. Experimental results show that the student model performs impressively in recognizing low-resolution
+            faces with only 0.21M parameters and 0.057MB memory. Meanwhile, its speed reaches up to 14,705, 934 and 763
+            faces per second on GPU, CPU and mobile phone, respectively.</p>
+    </table>
+    <hr>
+
+    <table align=center width=900px>
+        <center>
+            <h1>BibTex</h1>
+        </center>
+        <pre>
+            <span class="inner-pre" style="font-size: 14px">
+@article{DBLP:journals/tip/GeZLZL20,
+    author    = {Shiming Ge and Shengwei Zhao and Chenyu Li and Yu Zhang and Jia Li},
+    title     = {Efficient Low-Resolution Face Recognition via Bridge Distillation},
+    journal   = {{IEEE} Trans. Image Process.},
+    volume    = {29},
+    pages     = {6898--6908},
+    year      = {2020},
+}           
+</span>
+        </pre>
+    </table>
+    <hr>
+
+    <br><br>
+
+    <br>
+    <center>
+        <span style="font-size:42px">Look One and More: Distilling Hybrid Order Relational Knowledge for
+            Cross-Resolution Image Recognition</span><br>
+
+        <table align=center width=1000px>
+            <tr>
+                <td align=center width=1000px>
+                    <span style="font-size:22px"><a href="#">Shiming Ge</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Kangkai Zhang</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Haolin Liu</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Yingying Hua</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Shengwei Zhao</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Xin Jin</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Hao Wen</a></span> &emsp;
+                </td>
+            </tr>
+        </table>
+
+
+        <br>
+        <br>
+
+        <!-- <table align=center width=900px>
+        <tr>
+            <td align=center width=300px>
+                <span style="font-size:22px"><a href='./asset/iclr2020_self-label.pdf'> Paper [ICLR 2020]</a></span> &emsp;&emsp;
+                <span style="font-size:22px"><a href='http://www.robots.ox.ac.uk/~vgg/blog/self-labelling-via-simultaneous-clustering-and-representation-learning.html'> Blogpost</a></span> &emsp;&emsp;
+		<span style="font-size:22px"><a href='https://github.com/yukimasano/self-label'> Code [PyTorch]</a></span>
+
+            </td>
+        </tr>
+    </table> -->
+    </center>
+    <br>
+
+    <table align=center width=800px>
+        <tr>
+            <td width=600px>
+                <center>
+                    <img class="rounded" src="../img/research/GeZLHZJW20.png" height="400px"></img>
+                    <br>
+                </center>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <hr>
+
+    <table align=center width=900px>
+        <center>
+            <h1>Abstract</h1>
+        </center>
+        <p>
+            In spite of great success in many image recognition tasks achieved by recent deep models, directly applying
+            them to recognize low-resolution images may suffer from low accuracy due to the missing of informative
+            details during resolution degradation. However, these images are still recognizable for subjects who are
+            familiar with the corresponding high-resolution ones. Inspired by that, we propose a teacher-student
+            learning approach to facilitate low-resolution image recognition via hybrid order relational knowledge
+            distillation. The approach refers to three streams: the teacher stream is pretrained to recognize
+            high-resolution images in high accuracy, the student stream is learned to identify low-resolution images by
+            mimicking the teacher's behaviors, and the extra assistant stream is introduced as bridge to help knowledge
+            transfer across the teacher to the student. To extract sufficient knowledge for reducing the loss in
+            accuracy, the learning of student is supervised with multiple losses, which preserves the similarities in
+            various order relational structures. In this way, the capability of recovering missing details of familiar
+            low-resolution images can be effectively enhanced, leading to a better knowledge transfer. Extensive
+            experiments on metric learning, low-resolution image classification and low-resolution face recognition
+            tasks show the effectiveness of our approach, while taking reduced models.</p>
+    </table>
+    <hr>
+
+    <table align=center width=900px>
+        <center>
+            <h1>BibTex</h1>
+        </center>
+        <pre>
+            <span class="inner-pre" style="font-size: 14px">
+@inproceedings{DBLP:conf/aaai/GeZLHZJW20,
+    author    = {Shiming Ge and Kangkai Zhang and Haolin Liu and Yingying Hua and Shengwei Zhao and Xin Jin and Hao Wen},
+    title     = {Look One and More: Distilling Hybrid Order Relational Knowledge for Cross-Resolution Image Recognition},
+    booktitle = {The Thirty-Fourth {AAAI} Conference on Artificial Intelligence, {AAAI}
+                    2020, The Thirty-Second Innovative Applications of Artificial Intelligence
+                    Conference, {IAAI} 2020, The Tenth {AAAI} Symposium on Educational
+                    Advances in Artificial Intelligence, {EAAI} 2020, New York, NY, USA,
+                    February 7-12, 2020},
+    pages     = {10845--10852},
+    publisher = {{AAAI} Press},
+    year      = {2020},
+}    
+</span>
+        </pre>
+    </table>
+    <hr>
+    <br><br>
+
+    <br>
+    <center>
+        <span style="font-size:42px">Low-Resolution Face Recognition in the Wild via Selective Knowledge
+            Distillation</span><br>
+
+        <table align=center width=1000px>
+            <tr>
+                <td align=center width=1000px>
+                    <span style="font-size:22px"><a href="#">Shiming Ge</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Shengwei Zhao</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Chenyu Li</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Jia Li</a></span> &emsp;
+                </td>
+            </tr>
+        </table>
+
+
+        <br>
+        <br>
+
+        <!-- <table align=center width=900px>
+        <tr>
+            <td align=center width=300px>
+                <span style="font-size:22px"><a href='./asset/iclr2020_self-label.pdf'> Paper [ICLR 2020]</a></span> &emsp;&emsp;
+                <span style="font-size:22px"><a href='http://www.robots.ox.ac.uk/~vgg/blog/self-labelling-via-simultaneous-clustering-and-representation-learning.html'> Blogpost</a></span> &emsp;&emsp;
+		<span style="font-size:22px"><a href='https://github.com/yukimasano/self-label'> Code [PyTorch]</a></span>
+
+            </td>
+        </tr>
+    </table> -->
+    </center>
+    <br>
+
+    <table align=center width=800px>
+        <tr>
+            <td width=600px>
+                <center>
+                    <img class="rounded" src="../img/research/GeZLL19.png" height="400px"></img>
+                    <br>
+                </center>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <hr>
+
+    <table align=center width=900px>
+        <center>
+            <h1>Abstract</h1>
+        </center>
+        <p>
+            Typically, the deployment of face recognition models in the wild needs to identify low-resolution faces with
+            extremely low computational cost. To address this problem, a feasible solution is compressing a complex face
+            model to achieve higher speed and lower memory at the cost of minimal performance drop. Inspired by that,
+            this paper proposes a learning approach to recognize low-resolution faces via selective knowledge
+            distillation. In this approach, a two-stream convolutional neural network (CNN) is first initialized to
+            recognize high-resolution faces and resolution-degraded faces with a teacher stream and a student stream,
+            respectively. The teacher stream is represented by a complex CNN for high-accuracy recognition, and the
+            student stream is represented by a much simpler CNN for low-complexity recognition. To avoid significant
+            performance drop at the student stream, we then selectively distil the most informative facial features from
+            the teacher stream by solving a sparse graph optimization problem, which are then used to regularize the
+            fine-tuning process of the student stream. In this way, the student stream is actually trained by
+            simultaneously handling two tasks with limited computational resources: approximating the most informative
+            facial cues via feature regression, and recovering the missing facial cues via low-resolution face
+            classification. Experimental results show that the student stream performs impressively in recognizing
+            low-resolution faces and costs only 0.15-MB memory and runs at 418 faces per second on CPU and 9433 faces
+            per second on GPU.</p>
+    </table>
+    <hr>
+
+    <table align=center width=900px>
+        <center>
+            <h1>BibTex</h1>
+        </center>
+        <pre>
+            <span class="inner-pre" style="font-size: 14px">
+@article{DBLP:journals/tip/GeZLL19,
+    author    = {Shiming Ge and Shengwei Zhao and Chenyu Li and Jia Li},
+    title     = {Low-Resolution Face Recognition in the Wild via Selective Knowledge Distillation},
+    journal   = {{IEEE} Trans. Image Process.},
+    volume    = {28},
+    number    = {4},
+    pages     = {2051--2062},
+    year      = {2019},
+}
+</span>
+        </pre>
+    </table>
+    <hr>
+
+    <br>
+    <center>
+        <span style="font-size:42px">Low-Resolution Face Recognition in the Wild with Mixed-Domain
+            Distillation</span><br>
+
+        <table align=center width=1000px>
+            <tr>
+                <td align=center width=1000px>
+                    <span style="font-size:22px"><a href="#">Shengwei Zhao</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Xindi Gao</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Shikun Li</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Shiming Ge</a></span> &emsp;
+                </td>
+            </tr>
+        </table>
+
+
+        <br>
+        <br>
+
+        <!-- <table align=center width=900px>
+        <tr>
+            <td align=center width=300px>
+                <span style="font-size:22px"><a href='./asset/iclr2020_self-label.pdf'> Paper [ICLR 2020]</a></span> &emsp;&emsp;
+                <span style="font-size:22px"><a href='http://www.robots.ox.ac.uk/~vgg/blog/self-labelling-via-simultaneous-clustering-and-representation-learning.html'> Blogpost</a></span> &emsp;&emsp;
+		<span style="font-size:22px"><a href='https://github.com/yukimasano/self-label'> Code [PyTorch]</a></span>
+
+            </td>
+        </tr>
+    </table> -->
+    </center>
+    <br>
+
+    <table align=center width=800px>
+        <tr>
+            <td width=600px>
+                <center>
+                    <img class="rounded" src="../img/research/ZhaoGLG19.png" height="400px"></img>
+                    <br>
+                </center>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <hr>
+
+    <table align=center width=900px>
+        <center>
+            <h1>Abstract</h1>
+        </center>
+        <p>
+            Low-resolution face recognition in the wild still is an open problem. In this paper, we propose to address
+            this problem via a novel learning approach called Mixed-Domain Distillation (MDD). The approach applies a
+            teacher-student framework to mix and distill knowledge from four different domain datasets, including
+            private high-resolution, public high-resolution, public low-resolution web and target lowresolution wild
+            face datasets. In this way, high-resolution knowledge from the well-trained complex teacher model is first
+            adapted to public high-resolution faces and then transferred to a simply student model. The student model is
+            designed to identify low-resolution faces, and could perform face recognition in the wild effectively and
+            efficiently. Experimental results show that our proposed model outperforms several existing models for
+            low-resolution face recognition in the wild.
+        </p>
+    </table>
+    <hr>
+
+    <table align=center width=900px>
+        <center>
+            <h1>BibTex</h1>
+        </center>
+        <pre>
+            <span class="inner-pre" style="font-size: 14px">
+@inproceedings{DBLP:conf/bigmm/ZhaoGLG19,
+    author    = {Shengwei Zhao and Xindi Gao and Shikun Li and Shiming Ge},
+    title     = {Low-Resolution Face Recognition in the Wild with Mixed-Domain Distillation},
+    booktitle = {Fifth {IEEE} International Conference on Multimedia Big Data, BigMM
+                    2019, Singapore, September 11-13, 2019},
+    pages     = {148--154},
+    publisher = {{IEEE}},
+    year      = {2019},
+}        
+</span>
+        </pre>
+    </table>
+    <hr>
+
+    <br>
+    <center>
+        <span style="font-size:42px">Fewer-Shots and Lower-Resolutions: Towards Ultrafast Face Recognition in the
+            Wild</span><br>
+
+        <table align=center width=1000px>
+            <tr>
+                <td align=center width=1000px>
+                    <span style="font-size:22px"><a href="#">Shiming Ge</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Shengwei Zhao</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Xindi Gao</a></span> &emsp;
+                    <span style="font-size:22px"><a href="#">Jia Li</a></span> &emsp;
+                </td>
+            </tr>
+        </table>
+        <br>
+        <br>
+
+        <!-- <table align=center width=900px>
+        <tr>
+            <td align=center width=300px>
+                <span style="font-size:22px"><a href='./asset/iclr2020_self-label.pdf'> Paper [ICLR 2020]</a></span> &emsp;&emsp;
+                <span style="font-size:22px"><a href='http://www.robots.ox.ac.uk/~vgg/blog/self-labelling-via-simultaneous-clustering-and-representation-learning.html'> Blogpost</a></span> &emsp;&emsp;
+		<span style="font-size:22px"><a href='https://github.com/yukimasano/self-label'> Code [PyTorch]</a></span>
+
+            </td>
+        </tr>
+    </table> -->
+    </center>
+    <br>
+
+    <table align=center width=800px>
+        <tr>
+            <td width=600px>
+                <center>
+                    <img class="rounded" src="../img/research/GeZG019.png" height="400px"></img>
+                    <br>
+                </center>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <hr>
+
+    <table align=center width=900px>
+        <center>
+            <h1>Abstract</h1>
+        </center>
+        <p>
+            Is it possible to train an effective face recognition model with fewer shots that works efficiently on
+            low-resolution faces in the wild? To answer this question, this paper proposes a few-shot knowledge
+            distillation approach to learn an ultrafast face recognizer via two steps. In the first step, we initialize
+            a simple yet effective face recognition model on synthetic low-resolution faces by distilling knowledge from
+            an existing complex model. By removing the redundancies in both face images and the model structure, the
+            initial model can provide an ultrafast speed with impressive recognition accuracy. To further adapt this
+            model into the wild scenarios with fewer faces per person, the second step refines the model via few-shot
+            learning by incorporating a relation module that compares low-resolution query faces with faces in the
+            support set. In this manner, the performance of the model can be further enhanced with only fewer
+            low-resolution faces in the wild. Experimental results show that the proposed approach performs favorably
+            against state-of-the-arts in recognizing low-resolution faces with an extremely low memory of 30KB and runs
+            at an ultrafast speed of 1,460 faces per second on CPU or 21,598 faces per second on GPU.
+        </p>
+    </table>
+    <hr>
+
+    <table align=center width=900px>
+        <center>
+            <h1>BibTex</h1>
+        </center>
+        <pre>
+            <span class="inner-pre" style="font-size: 14px">
+@inproceedings{DBLP:conf/mm/GeZG019,
+    author    = {Shiming Ge and Shengwei Zhao and Xindi Gao and Jia Li},
+    title     = {Fewer-Shots and Lower-Resolutions: Towards Ultrafast Face Recognition in the Wild},
+    booktitle = {Proceedings of the 27th {ACM} International Conference on Multimedia,
+                    {MM} 2019, Nice, France, October 21-25, 2019},
+    pages     = {229--237},
+    publisher = {{ACM}},
+    year      = {2019},
+}    
+</span>
+        </pre>
+    </table>
+    <hr>
+
+
+</body>
+
+</html>
