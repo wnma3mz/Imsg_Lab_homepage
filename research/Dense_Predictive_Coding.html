@@ -1,0 +1,926 @@
+<!-- saved from url=(0046)https://www.robots.ox.ac.uk/~vgg/research/DPC/ -->
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style class="darkreader darkreader--fallback" media="screen"></style>
+  <style class="darkreader darkreader--text" media="screen"></style>
+  <style class="darkreader darkreader--invert" media="screen">
+    .jfk-bubble.gtx-bubble,
+    embed[type="application/pdf"] {
+      filter: sepia(40%) !important;
+    }
+  </style>
+  <style class="darkreader darkreader--inline" media="screen">
+    [data-darkreader-inline-bgcolor] {
+      background-color: var(--darkreader-inline-bgcolor) !important;
+    }
+
+    [data-darkreader-inline-bgimage] {
+      background-image: var(--darkreader-inline-bgimage) !important;
+    }
+
+    [data-darkreader-inline-border] {
+      border-color: var(--darkreader-inline-border) !important;
+    }
+
+    [data-darkreader-inline-border-bottom] {
+      border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+    }
+
+    [data-darkreader-inline-border-left] {
+      border-left-color: var(--darkreader-inline-border-left) !important;
+    }
+
+    [data-darkreader-inline-border-right] {
+      border-right-color: var(--darkreader-inline-border-right) !important;
+    }
+
+    [data-darkreader-inline-border-top] {
+      border-top-color: var(--darkreader-inline-border-top) !important;
+    }
+
+    [data-darkreader-inline-boxshadow] {
+      box-shadow: var(--darkreader-inline-boxshadow) !important;
+    }
+
+    [data-darkreader-inline-color] {
+      color: var(--darkreader-inline-color) !important;
+    }
+
+    [data-darkreader-inline-fill] {
+      fill: var(--darkreader-inline-fill) !important;
+    }
+
+    [data-darkreader-inline-stroke] {
+      stroke: var(--darkreader-inline-stroke) !important;
+    }
+
+    [data-darkreader-inline-outline] {
+      outline-color: var(--darkreader-inline-outline) !important;
+    }
+  </style>
+  <style class="darkreader darkreader--variables" media="screen">
+    :root {
+      --darkreader-neutral-background: #dcdad7;
+      --darkreader-neutral-text: #181a1b;
+      --darkreader-selection-background: #596b7e;
+      --darkreader-selection-text: #faecd3;
+    }
+  </style>
+  <style class="darkreader darkreader--user-agent" media="screen">
+    html {
+      background-color: #faecd3 !important;
+    }
+
+    html,
+    body,
+    input,
+    textarea,
+    select,
+    button {
+      background-color: #faecd3;
+    }
+
+    html,
+    body,
+    input,
+    textarea,
+    select,
+    button {
+      border-color: #5c5a54;
+      color: #1c1c1a;
+    }
+
+    a {
+      color: #586491;
+    }
+
+    table {
+      border-color: #918673;
+    }
+
+    ::placeholder {
+      color: #b4a792;
+    }
+
+    input:-webkit-autofill,
+    textarea:-webkit-autofill,
+    select:-webkit-autofill {
+      background-color: #ffffa9 !important;
+      color: #1c1c1a !important;
+    }
+
+    ::-webkit-scrollbar {
+      background-color: #eee1c8;
+      color: #6c6b63;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #b9ac97;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #9f937f;
+    }
+
+    ::-webkit-scrollbar-thumb:active {
+      background-color: #6c6b63;
+    }
+
+    ::-webkit-scrollbar-corner {
+      background-color: #faecd3;
+    }
+
+    * {
+      scrollbar-color: #eee1c8 #b9ac97;
+    }
+
+    ::selection {
+      background-color: #596b7e !important;
+      color: #faecd3 !important;
+    }
+
+    ::-moz-selection {
+      background-color: #596b7e !important;
+      color: #faecd3 !important;
+    }
+  </style>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="./Dense Predictive Coding_files/js"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-101183834-3');
+  </script>
+
+
+  <!-- head -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Masked Face Detection and Recognition, MAFA">
+  <meta name="description" content="Masked Face Detection and Recognition">
+  <title>Masked Face Detection and Recognition</title>
+
+  <script src="./Dense Predictive Coding_files/jsapi" type="text/javascript"></script>
+  <meta name="darkreader" content="a1480c3032d10ec696b0750612a01c41">
+  <style class="darkreader darkreader--override" media="screen">
+    .vimvixen-hint {
+      background-color: #ffe791 !important;
+      border-color: #c5a537 !important;
+      color: #302710 !important;
+    }
+
+    ::placeholder {
+      opacity: 0.5 !important;
+    }
+  </style>
+  <script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+  <link rel="stylesheet" type="text/css" href="./Dense Predictive Coding_files/text.css">
+  <style class="darkreader darkreader--cors" media="screen">
+    body {
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 800px;
+    }
+
+    h1 {
+      font-weight: 300;
+    }
+
+    .disclaimerbox {
+      background-color: #eee;
+      border: 1px solid #eeeeee;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      padding: 20px;
+    }
+
+    video.header-vid {
+      height: 140px;
+      border: 1px solid black;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+    }
+
+    img.header-img {
+      height: 140px;
+      border: 1px solid black;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+    }
+
+    img.rounded {
+      border: 0px solid #eeeeee;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+    }
+
+    a:link,
+    a:visited {
+      color: #1367a7;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #208799;
+    }
+
+    td.dl-link {
+      height: 160px;
+      text-align: center;
+      font-size: 22px;
+    }
+
+    .layered-paper-big {
+      box-shadow:
+        0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+        5px 5px 0 0px #fff,
+        5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+        10px 10px 0 0px #fff,
+        10px 10px 1px 1px rgba(0, 0, 0, 0.35),
+        15px 15px 0 0px #fff,
+        15px 15px 1px 1px rgba(0, 0, 0, 0.35),
+        20px 20px 0 0px #fff,
+        20px 20px 1px 1px rgba(0, 0, 0, 0.35),
+        25px 25px 0 0px #fff,
+        25px 25px 1px 1px rgba(0, 0, 0, 0.35);
+      margin-left: 10px;
+      margin-right: 45px;
+    }
+
+    .paper-big {
+      box-shadow:
+        0px 0px 1px 1px rgba(0, 0, 0, 0.35);
+
+      margin-left: 10px;
+      margin-right: 45px;
+    }
+
+
+    .layered-paper {
+      box-shadow:
+        0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+        5px 5px 0 0px #fff,
+        5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+        10px 10px 0 0px #fff,
+        10px 10px 1px 1px rgba(0, 0, 0, 0.35);
+      margin-top: 5px;
+      margin-left: 10px;
+      margin-right: 30px;
+      margin-bottom: 5px;
+    }
+
+    .vert-cent {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+  </style>
+  <style class="darkreader darkreader--sync" media="screen"></style>
+
+  <meta property="og:image" content="asset/images/mm20masked_overview.png">
+  <meta property="og:title" content="Masked Face Detection and Recognition">
+</head>
+
+
+<body>
+  <br>
+  <center>
+    <span style="font-size:36px">
+      Masked Face Detection and Recognition </span></center>
+  <br>
+  <hr>
+
+  <!-- <center><span style="font-size:36px"> 
+  Detecting Masked Faces in the Wild with LLE-CNNs </span></center> -->
+  <br>
+
+  <table align="center" width="600px">
+    <tbody>
+      <tr>
+        <td align="center" width="100px">
+          <center>
+            <span style="font-size:24px">
+              <a href="https://imsg.ac.cn/people/geshiming.html" target="_blank">Shiming Ge
+              </a></span>
+          </center>
+        </td>
+        <td align="center" width="100px">
+          <center>
+            <span style="font-size:24px">
+              <a href="" target="_blank">Jia Li*
+              </a></span>
+          </center>
+        </td>
+        <td align="center" width="100px">
+          <center>
+            <span style="font-size:24px">
+              <a href="" target="_blank">Qiting Ye
+              </a></span>
+          </center>
+        </td>
+        <td align="center" width="100px">
+          <center>
+            <span style="font-size:24px">
+              <a href="" target="_blank">Zhao Luo
+              </a></span>
+          </center>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <table align="center" width="650px">
+    <tbody>
+      <tr>
+        <td align="center" width="400px">
+          <center>
+            <span style="font-size:18px"><sup></sup>Intelligent Multimedia Security Group, IIE CAS</span><br><br>
+          </center>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <center>
+    <div class="container">
+      <div class="row">
+        <center>
+          <img src="./Dense Predictive Coding_files/cvpr17mafa-arch.png" alt="alt text"
+            style="width: 100%; object-fit: cover; max-width:80%;">
+        </center>
+      </div>
+    </div>
+  </center>
+
+
+  <hr>
+  <center>
+    <h1>Abstract</h1>
+  </center>
+  <div align="justify">
+    Detecting faces with occlusions is a challenging task due
+    to two main reasons: 1) the absence of large datasets of
+    masked faces, and 2) the absence of facial cues from the
+    masked regions. To address these two issues, this paper
+    first introduces a dataset, denoted as MAFA, with 30, 811
+    Internet images and 35, 806 masked faces. Faces in the
+    dataset have various orientations and occlusion degrees,
+    while at least one part of each face is occluded by mask.
+    Based on this dataset, we further propose LLE-CNNs for
+    masked face detection, which consist of three major modules. The Proposal module first combines two pre-trained
+    CNNs to extract candidate facial regions from the input image and represent them with high dimensional descriptors.
+    After that, the Embedding module is incorporated to turn
+    such descriptors into a similarity-based descriptor by using
+    locally linear embedding (LLE) algorithm and the dictionaries trained on a large pool of synthesized normal faces,
+    masked faces and non-faces. In this manner, many missing
+    facial cues can be largely recovered and the influences of
+    noisy cues introduced by diversified masks can be greatly
+    alleviated. Finally, the Verification module is incorporated
+    to identify candidate facial regions and refine their positions
+    by jointly performing the classification and regression tasks
+    within a unified CNN. Experimental results on the MAFA
+    dataset show that the proposed approach remarkably outperforms 6 state-of-the-arts by at least 15.6%.
+  </div>
+  <br>
+
+
+  <hr>
+  <center>
+    <h1>Publications</h1>
+  </center>
+
+  <script type="text/javascript">
+    function show_hide(eid) {
+      var x = document.getElementById(eid);
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+
+  <table align="center" width="700px">
+    <tbody>
+      <tr>
+        <td>
+          <a href="http://openaccess.thecvf.com/content_cvpr_2017/papers/Ge_Detecting_Masked_Faces_CVPR_2017_paper.pdf"><img
+              class="layered-paper-big" style="height:175px"
+              src="./Dense Predictive Coding_files/cvpr17mafa_page1.png"></a>
+        </td>
+
+        <td width="500px">
+          <span style="font-size:18px">
+            <div class="title">
+              <b>Detecting Masked Faces in the Wild with LLE-CNNs.</b>
+            </div>
+
+            <div class="authors">
+              Shiming Ge,
+              Jia Li,
+              Qiting Ye,
+              Zhao Luo
+            </div>
+
+            <div class="conf">
+              [Poster] CVPR, 2017
+            </div>
+
+            <div class="links">
+              <a href="javascript:;" onclick="show_hide(&#39;BibHan20&#39;)"> Bibtex </a>
+              | <a
+                href="http://openaccess.thecvf.com/content_cvpr_2017/papers/Ge_Detecting_Masked_Faces_CVPR_2017_paper.pdf">
+                PDF </a>
+              <!-- | <a href="https://imsg.ac.cn/research/mafa"> All </a> -->
+            </div>
+
+            <div style="display: none;" class="BibtexExpand" id="BibHan20">
+              <div style="width:500px;overflow:visible;">
+                <pre class="bibtex" style="font-size:12px">@inproceedings{ge2017detecting,
+  title={Detecting Masked Faces in the Wild with LLE-CNNs},
+  author={Ge, Shiming and Li, Jia and Ye, Qiting and Luo, Zhao},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={2682--2690},
+  year={2017},
+}
+                    </pre>
+              </div>
+            </div>
+          </span>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+  <br><br>
+
+
+  <br>
+  <hr>
+  <center>
+    <h1>Acknowledgements</h1>
+  </center>
+  This work was partially supported by grants from National Key Research and Development Plan (2016YFC0801005), and
+  National Natural Science Foundation of China (61672072 & 61402463).
+
+  <br><br>
+  <br><br>
+
+
+  <hr>
+  <hr>
+
+  <br><br>
+  <br><br>
+
+  <center><span style="font-size:36px">
+      Occluded Face Recognition in the Wild by Identity-Diversity Inpainting </span></center>
+  <br>
+
+  <table align="center" width="600px">
+    <tbody>
+      <tr>
+        <td align="center" width="100px">
+          <center>
+            <span style="font-size:24px">
+              <a href="https://imsg.ac.cn/people/geshiming.html" target="_blank">Shiming Ge
+              </a></span>
+          </center>
+        </td>
+        <td align="center" width="100px">
+          <center>
+            <span style="font-size:24px">
+              <a href="https://imsg.ac.cn/people/lichenyu.html" target="_blank">Chenyu Li
+              </a></span>
+          </center>
+        </td>
+        <td align="center" width="100px">
+          <center>
+            <span style="font-size:24px">
+              <a href="" target="_blank">Shengwei Zhao
+              </a></span>
+          </center>
+        </td>
+        <td align="center" width="100px">
+          <center>
+            <span style="font-size:24px">
+              <a href="" target="_blank">Dan Zeng
+              </a></span>
+          </center>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <table align="center" width="650px">
+    <tbody>
+      <tr>
+        <td align="center" width="400px">
+          <center>
+            <span style="font-size:18px"><sup></sup>Intelligent Multimedia Security Group, IIE CAS</span><br><br>
+          </center>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <center>
+    <div class="container">
+      <div class="row">
+        <center>
+          <img src="./Dense Predictive Coding_files/tcsvt20_arch.png" alt="alt text"
+            style="width: 100%; object-fit: cover; max-width:80%;">
+        </center>
+      </div>
+    </div>
+  </center>
+
+
+  <hr>
+  <center>
+    <h1>Abstract</h1>
+  </center>
+  <div align="justify">
+    Face recognition has achieved advanced development
+    by using convolutional neural network (CNN) based recognizers.
+    Existing recognizers typically demonstrate powerful
+    capacity in recognizing un-occluded faces, but often suffer from
+    accuracy degradation when directly identifying occluded faces.
+    This is mainly due to insufficient visual and identity cues caused
+    by occlusions. On the other hand, generative adversarial network
+    (GAN) is particularly suitable when it needs to reconstruct visually
+    plausible occlusions by face inpainting. Motivated by these
+    observations, this paper proposes identity-diversity inpainting to
+    facilitate occluded face recognition. The core idea is integrating
+    GAN with an optimized pre-trained CNN recognizer which
+    serves as the third player to compete with the generator by
+    distinguishing diversity within the same identity class. To this end,
+    a collect of identity-centered features is applied in the recognizer
+    as supervision to enable the inpainted faces clustering towards
+    their identity centers. In this way, our approach can benefit
+    from GAN for reconstruction and CNN for representation, and
+    simultaneously addresses two challenging tasks, face inpainting
+    and face recognition. Experimental results compared with 4 stateof-
+    the-arts prove the efficacy of the proposed approach.
+  </div>
+  <br>
+
+
+  <hr>
+  <center>
+    <h1>Publications</h1>
+  </center>
+
+  <script type="text/javascript">
+    function show_hide(eid) {
+      var x = document.getElementById(eid);
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+
+  <table align="center" width="700px">
+    <tbody>
+      <tr>
+        <td>
+          <a href="https://imsg.ac.cn/research/mafa"><img class="layered-paper-big" style="height:175px"
+              src="./Dense Predictive Coding_files/tcsvt20-page1.png"></a>
+        </td>
+
+        <td width="500px">
+          <span style="font-size:18px">
+            <div class="title">
+              <b>Occluded Face Recognition in the Wild by Identity-Diversity Inpainting.</b>
+            </div>
+
+            <div class="authors">
+              Shiming Ge,
+              Chenyu Li,
+              Shengwei Zhao,
+              Dan Zeng
+            </div>
+
+            <div class="conf">
+              [Early Access on IEEE] TCSVT, 2020
+            </div>
+
+            <div class="links">
+              <a href="javascript:;" onclick="show_hide(&#39;BibHan20&#39;)"> Bibtex </a>
+              | <a href="http://ieeexplore.ieee.org/document/8963643"> PDF </a>
+              <!-- | <a href="https://imsg.ac.cn/research/mafa"> All </a> -->
+            </div>
+
+            <div style="display: none;" class="BibtexExpand" id="BibHan20">
+              <div style="width:500px;overflow:visible;">
+                <pre class="bibtex" style="font-size:12px">@article{ge2020IDGAN,
+author = {Ge, Shiming and Li, Chenyu and Zhao, Shengwei and Zeng, Dan},
+year = {2020},
+title = {Occluded Face Recognition in the Wild by Identity-Diversity Inpainting},
+journal = {IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)},
+}
+                    </pre>
+              </div>
+            </div>
+
+          </span>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+  <br><br>
+
+  <hr>
+  <center>
+    <h1>Previous Work</h1>
+  </center>
+
+  <script type="text/javascript">
+    function show_hide(eid) {
+      var x = document.getElementById(eid);
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+
+  <table align="center" width="700px">
+    <tbody>
+      <tr>
+        <td>
+          <a href="https://link.springer.com/chapter/10.1007/978-3-030-04946-1_41"><img class="layered-paper-big"
+              style="height:175px" src="./Dense Predictive Coding_files/isair18_page1.png"></a>
+        </td>
+
+        <td width="500px">
+          <span style="font-size:18px">
+            <div class="title">
+              <b>Occluded Face Recognition by Identity-Preserving Inpainting.</b>
+            </div>
+
+            <div class="authors">
+              Chenyu Li,
+              Shiming Ge*,
+              Yingying Hua,
+              Haolin Liu,
+              Xin Jin
+            </div>
+
+            <div class="conf">
+              ISAIR, 2018
+            </div>
+
+            <div class="links">
+              <a href="javascript:;" onclick="show_hide(&#39;BibHan20&#39;)"> Bibtex </a>
+              | <a href="https://link.springer.com/chapter/10.1007/978-3-030-04946-1_41"> PDF </a>
+              <!-- | <a href="https://imsg.ac.cn/research/mafa"> All </a> -->
+            </div>
+
+            <div style="display: none;" class="BibtexExpand" id="BibHan20">
+              <div style="width:500px;overflow:visible;">
+                <pre class="bibtex" style="font-size:12px">@inproceedings{li2018occluded,
+  title={Occluded Face Recognition by Identity-Preserving Inpainting},
+  author={Li, Chenyu and Ge, Shiming and Hua, Yingying and Liu, Haolin and Jin, Xin},
+  booktitle={International Symposium on Artificial Intelligence and Robotics},
+  pages={427--437},
+  year={2018},
+  organization={Springer}
+}
+                    </pre>
+              </div>
+            </div>
+          </span>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+  <br><br>
+
+  <br>
+  <hr>
+  <center>
+    <h1>Acknowledgements</h1>
+  </center>
+  This work was partially supported by grants from the National Natural Science Foundation of China (61772513). Shiming
+  Ge is also supported by the Open Projects Program of National Laboratory of Pattern Recognition, and the Youth
+  Innovation Promotion Association, Chinese Academy of Sciences.
+
+  <br><br>
+  <br><br>
+
+
+  <hr>
+  <hr>
+
+  <br><br>
+  <br><br>
+
+  <center><span style="font-size:36px">
+      Look Through Masks: Towards Masked Face Recognition with De-Occlusion Distillation </span></center>
+  <br>
+
+  <table align="center" width="600px">
+    <tbody>
+      <tr>
+        <td align="center" width="100px">
+          <center>
+            <span style="font-size:24px">
+              <a href="https://imsg.ac.cn/people/lichenyu.html" target="_blank">Chenyu Li
+              </a></span>
+          </center>
+        </td>
+        <td align="center" width="100px">
+          <center>
+            <span style="font-size:24px">
+              <a href="https://imsg.ac.cn/people/geshiming.html" target="_blank">Shiming Ge
+              </a></span>
+          </center>
+        </td>
+        <td align="center" width="100px">
+          <center>
+            <span style="font-size:24px">
+              <a href="https://imsg.ac.cn/people/zhangdaichi.html" target="_blank">DaiChi Zhang
+              </a></span>
+          </center>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <table align="center" width="650px">
+    <tbody>
+      <tr>
+        <td align="center" width="400px">
+          <center>
+            <span style="font-size:18px"><sup></sup>Intelligent Multimedia Security Group, IIE CAS</span><br><br>
+          </center>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <center>
+    <div class="container">
+      <div class="row">
+        <center>
+          <img src="./Dense Predictive Coding_files/mm20masked_overview.png" alt="alt text"
+            style="width: 100%; object-fit: cover; max-width:80%;">
+        </center>
+      </div>
+    </div>
+  </center>
+
+
+  <hr>
+  <center>
+    <h1>Abstract</h1>
+  </center>
+  <div align="justify">
+    Many real-world applications today like video surveillance and
+    urban governance need to address the recognition of masked faces,
+    where content replacement by diverse masks often brings in incomplete
+    appearance, ambiguous representation, and leads to a sharp
+    drop in accuracy. Inspired by recent progress on amodal perception,
+    we propose to migrate the mechanism of amodal completion for
+    the masked face recognition task. We propose an end-to-end deocclusion
+    distillation framework, which consists of two modules.
+    The de-occlusion module applies a generative adversarial network
+    to perform face completion, which recovers the content under the
+    mask and eliminating appearance ambiguity. The distillation module
+    takes a pre-trained general face recognition model as the teacher
+    and transfers its knowledge to train a student for completed faces
+    using massive online synthesized face pairs. Especially, the teacher
+    knowledge is represented with structural relations among instances
+    in various orders, which serves as a posterior regularization to enable
+    the adaptation. In this way, the knowledge can be fully distilled
+    and transferred to identify masked faces. Experiments on synthetic
+    and realistic datasets show the efficacy of the proposed approach.
+  </div>
+  <br>
+
+
+  <hr>
+  <center>
+    <h1>Publications</h1>
+  </center>
+
+  <script type="text/javascript">
+    function show_hide(eid) {
+      var x = document.getElementById(eid);
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+
+  <table align="center" width="700px">
+    <tbody>
+      <tr>
+        <td>
+          <a href="https://imsg.ac.cn/research/mafa"><img class="layered-paper-big" style="height:175px"
+              src="./Dense Predictive Coding_files/mm20masked_page1.png"></a>
+        </td>
+
+        <td width="500px">
+          <span style="font-size:18px">
+            <div class="title">
+              <b>Look Through Masks: Towards Masked Face Recognition with De-Occlusion Distillation.</b>
+            </div>
+
+            <div class="authors">
+              Chenyu Li,
+              Shiming Ge,
+              Daichi Zhang,
+              Jia Li
+            </div>
+
+            <div class="conf">
+              [Poster] ACMMM, 2020
+            </div>
+
+            <div class="links">
+              <a href="javascript:;" onclick="show_hide(&#39;BibHan20&#39;)"> Bibtex </a>
+              | <a href=""> PDF </a>
+              <!-- | <a href="https://imsg.ac.cn/research/mafa"> All </a> -->
+            </div>
+
+            <div style="display: none;" class="BibtexExpand" id="BibHan20">
+              <div style="width:500px;overflow:visible;">
+                <pre class="bibtex" style="font-size:12px">@InProceedings{Li20,
+author       = "Li, Chenyu and Ge, Shiming and Zhang, Daichi and Li, Jia",
+title        = "Look Through Masks: Towards Masked Face Recognition with De-Occlusion Distillation",
+booktitle    = "ACM International Conference on Multimedia(MM' 20)",
+year         = "2020",
+}
+                    </pre>
+              </div>
+            </div>
+
+          </span>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+  <br><br>
+
+
+
+  <br>
+  <hr>
+  <center>
+    <h1>Acknowledgements</h1>
+  </center>
+  This research is supported in part by grants from the National Key Research and Development Program of China
+  (2020AAA0140001), the National Natural Science Foundation of China (61772513 & 61922006), Beijing Natural Science
+  Foundation (L192040) and Beijing Municipal Science and Technology Commission (Z191100007119002). Shiming Ge is also
+  supported by the Youth Innovation Promotion Association, Chinese Academy of Sciences.
+
+
+
+  <br><br>
+  <br><br>
+
+  <p style="text-align:center;font-size:14px;">
+    Webpage template modified from <a href="https://richzhang.github.io/splitbrainauto/">Richard Zhang</a>.
+  </p>
+
+
+
+
+
+</body>
+
+</html>
