@@ -1,5 +1,5 @@
 <!-- <script src="http://www.google.com/jsapi" type="text/javascript"></script> -->
-<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+<!-- <script type="text/javascript">google.load("jquery", "1.3.2");</script> -->
 
 <style type="text/css">
     body {
@@ -82,57 +82,41 @@
 
 <html>
 
-<table align=center width=800px>
-    <tr>
-        <td width=600px>
-            <center>
-                <img class="rounded" src="../img/research/deeptracking_indtro.png" height="350px"></img>
-                <br>
-            </center>
-        </td>
-    </tr>
-</table>
-
-<table align=center width=900px>
-    <center>
-        <h1>介绍</h1>
-    </center>
-    <p>
-        随着人工智能的发展，物体跟踪技术已经成为计算机视觉中一个重要的研究方向。它在智能安防、交通监控、人机交互、行为识别、军事、医学等领域有着了广泛的应用。物体跟踪任务的难点有复杂场景中存在的光照变化、严重遮挡、尺度变化、非刚性形变、运动模糊、背景干扰等因素引起的目标外观的变化，这使得设计一个在各种复杂场景的情况下能够准确跟踪的算法仍然是一项挑战性的难题。随着深度学习的引入，深度物体跟踪算法由于其强大的特征表示能力在跟踪精度和鲁棒性方面均取得了巨大的突破，现已成为当前主流的物体跟踪方法。</p>
-</table>
 
 <head>
-    <title>IMSG - Low-Resolution Face Recognition</title>
+    <title>IMSG - Deep Visual Tracking</title>
     <!-- <meta property="og:image" content="./asset/splash.png" /> -->
-    <meta property="og:title" content="Low-Resolution Face Recognition" />
+    <meta property="og:title" content="Deep Visual Tracking" />
 </head>
 
 <body>
     <br>
     <center>
-        <span style="font-size:42px">Accurate UAV Tracking with Distance-Injected Overlap Maximization</span><br>
-
+        <span style="font-size:26px"><strong>Accurate UAV Tracking with Distance-Injected Overlap
+                Maximization</strong></span><br>
+        <br><br>
         <table align=center width=1000px>
             <tr>
                 <td align=center width=1000px>
-                    <span style="font-size:22px"><a href="#">Chunhui Zhang</a></span> &emsp;
-                    <span style="font-size:22px"><a href="../people/geshiming.html" target="_blank">Shiming Ge</a></span> &emsp;
-                    <span style="font-size:22px"><a href="#">Kangkai Zhang</a></span> &emsp;
-                    <span style="font-size:22px"><a href="#">Dan Zeng</a></span> &emsp;
+                    <span style="font-size:20px"><a href="#">Chunhui Zhang</a></span> &emsp;
+                    <span style="font-size:20px"><a href="../people/geshiming.html" target="_blank">Shiming
+                            Ge</a></span> &emsp;
+                    <span style="font-size:20px"><a href="#">Kangkai Zhang</a></span> &emsp;
+                    <span style="font-size:20px"><a href="#">Dan Zeng</a></span> &emsp;
                 </td>
             </tr>
         </table>
 
         <br>
         <br>
-	    
+
         <table align=center width=900px>
             <tr>
                 <td align=center width=300px>
-                    <span style="font-size:22px"><a href=''> Paper [
-                        ACM MM 2020]</a></span> &emsp;&emsp;
-                    <!-- <span style="font-size:22px"><a href='http://www.robots.ox.ac.uk/~vgg/blog/self-labelling-via-simultaneous-clustering-and-representation-learning.html'> Blogpost</a></span> &emsp;&emsp;
-		<span style="font-size:22px"><a href='https://github.com/yukimasano/self-label'> Code [PyTorch]</a></span> -->
+                    <span style="font-size:20px"><a href=''> Paper [
+                            ACM MM 2020]</a></span> &emsp;&emsp;
+                    <!-- <span style="font-size:20px"><a href='http://www.robots.ox.ac.uk/~vgg/blog/self-labelling-via-simultaneous-clustering-and-representation-learning.html'> Blogpost</a></span> &emsp;&emsp;
+		<span style="font-size:20px"><a href='https://github.com/yukimasano/self-label'> Code [PyTorch]</a></span> -->
                 </td>
             </tr>
         </table>
@@ -155,16 +139,28 @@
 
     <table align=center width=900px>
         <center>
-            <h1>Abstract</h1>
+            <h3><strong>Abstract</strong></h3>
         </center>
         <p>
-            UAV tracking is usually challenged by the dual-dynamic disturbances that arise from not only diverse moving target but also motion camera, leading to a more serious model drift issue than traditional visual tracking. In this work, we propose to alleviate this issue with distance-injected overlap maximization. Our idea is improving the accuracy of target localization by deriving a conceptually simple target localization loss and a global feature recalibration scheme in a mutual reinforced way. In particular, the target localization loss is designed by simply incorporating the normalized distance of target offset and generic semantic IoU loss, resulting in the distance-injected semantic IoU loss, and its minimal solution can alleviate the drift problem caused by camera motion. Moreover, the deep feature extractor is reconstructed and alternated with a feature recalibration network, which can leverage the global information to recalibrate significant features and suppress negligible features. Following by multi-scale feature concat, the proposed tracker can improve the discriminative capability of feature representation for UAV targets on the fly. Extensive experimental results on four benchmarks, i.e. UAV123, UAVDT, DTB70, and VisDrone, demonstrate the superiority of the proposed tracker against existing state-of-the-arts on UAV tracking.</p>
+            UAV tracking is usually challenged by the dual-dynamic disturbances that arise from not only diverse moving
+            target but also motion camera, leading to a more serious model drift issue than traditional visual tracking.
+            In this work, we propose to alleviate this issue with distance-injected overlap maximization. Our idea is
+            improving the accuracy of target localization by deriving a conceptually simple target localization loss and
+            a global feature recalibration scheme in a mutual reinforced way. In particular, the target localization
+            loss is designed by simply incorporating the normalized distance of target offset and generic semantic IoU
+            loss, resulting in the distance-injected semantic IoU loss, and its minimal solution can alleviate the drift
+            problem caused by camera motion. Moreover, the deep feature extractor is reconstructed and alternated with a
+            feature recalibration network, which can leverage the global information to recalibrate significant features
+            and suppress negligible features. Following by multi-scale feature concat, the proposed tracker can improve
+            the discriminative capability of feature representation for UAV targets on the fly. Extensive experimental
+            results on four benchmarks, i.e. UAV123, UAVDT, DTB70, and VisDrone, demonstrate the superiority of the
+            proposed tracker against existing state-of-the-arts on UAV tracking.</p>
     </table>
     <hr>
 
     <table align=center width=900px>
         <center>
-            <h1>BibTex</h1>
+            <h3><strong>BibTex</strong></h3>
         </center>
         <pre>
             <span class="inner-pre" style="font-size: 14px">
@@ -184,16 +180,18 @@
 
     <br>
     <center>
-        <span style="font-size:42px">Cascaded Correlation Refinement for Robust Deep Tracking</span><br>
+        <span style="font-size:26px"><strong>Cascaded Correlation Refinement for Robust Deep
+                Tracking</strong></span><br>
 
         <table align=center width=1000px>
             <tr>
                 <td align=center width=1000px>
-                    <span style="font-size:22px"><a href="../people/geshiming.html" target="_blank">Shiming Ge</a></span> &emsp;
-                    <span style="font-size:22px"><a href="#">Chunhui Zhang</a></span> &emsp;
-                    <span style="font-size:22px"><a href="#">Shikun Li</a></span> &emsp;
-                    <span style="font-size:22px"><a href="#">Dan Zeng</a></span> &emsp;
-                    <span style="font-size:22px"><a href="#">Dacheng Tao</a></span> &emsp;
+                    <span style="font-size:20px"><a href="../people/geshiming.html" target="_blank">Shiming
+                            Ge</a></span> &emsp;
+                    <span style="font-size:20px"><a href="#">Chunhui Zhang</a></span> &emsp;
+                    <span style="font-size:20px"><a href="#">Shikun Li</a></span> &emsp;
+                    <span style="font-size:20px"><a href="#">Dan Zeng</a></span> &emsp;
+                    <span style="font-size:20px"><a href="#">Dacheng Tao</a></span> &emsp;
                 </td>
             </tr>
         </table>
@@ -205,10 +203,10 @@
         <table align=center width=900px>
             <tr>
                 <td align=center width=300px>
-                    <span style="font-size:22px"><a href='https://ieeexplore.ieee.org/document/9069312'> Paper [IEEE
+                    <span style="font-size:20px"><a href='https://ieeexplore.ieee.org/document/9069312'> Paper [IEEE
                             Trans]</a></span> &emsp;&emsp;
-                    <!-- <span style="font-size:22px"><a href='http://www.robots.ox.ac.uk/~vgg/blog/self-labelling-via-simultaneous-clustering-and-representation-learning.html'> Blogpost</a></span> &emsp;&emsp;
-		<span style="font-size:22px"><a href='https://github.com/yukimasano/self-label'> Code [PyTorch]</a></span> -->
+                    <!-- <span style="font-size:20px"><a href='http://www.robots.ox.ac.uk/~vgg/blog/self-labelling-via-simultaneous-clustering-and-representation-learning.html'> Blogpost</a></span> &emsp;&emsp;
+		<span style="font-size:20px"><a href='https://github.com/yukimasano/self-label'> Code [PyTorch]</a></span> -->
                 </td>
             </tr>
         </table>
@@ -231,16 +229,25 @@
 
     <table align=center width=900px>
         <center>
-            <h1>Abstract</h1>
+            <h3><strong>Abstract</strong></h3>
         </center>
         <p>
-            Recent deep trackers have shown superior performance in visual tracking. In this article, we propose a cascaded correlation refinement approach to facilitate the robustness of deep tracking. The core idea is to address accurate target localization and reliable model update in a collaborative way. To this end, our approach cascades multiple stages of correlation refinement to progressively refine target localization. Thus, the localized object could be used to learn an accurate on-the-fly model for improving the reliability of model update. Meanwhile, we introduce an explicit measure to identify the tracking failure and then leverage a simple yet effective look-back scheme to adaptively incorporate the initial model and on-the-fly model to update the tracking model. As a result, the tracking model can be used to localize the target more accurately. Extensive experiments on OTB2013, OTB2015, VOT2016, VOT2018, UAV123, and GOT10k demonstrate that the proposed tracker achieves the best robustness against the state of the arts.</p>
+            Recent deep trackers have shown superior performance in visual tracking. In this article, we propose a
+            cascaded correlation refinement approach to facilitate the robustness of deep tracking. The core idea is to
+            address accurate target localization and reliable model update in a collaborative way. To this end, our
+            approach cascades multiple stages of correlation refinement to progressively refine target localization.
+            Thus, the localized object could be used to learn an accurate on-the-fly model for improving the reliability
+            of model update. Meanwhile, we introduce an explicit measure to identify the tracking failure and then
+            leverage a simple yet effective look-back scheme to adaptively incorporate the initial model and on-the-fly
+            model to update the tracking model. As a result, the tracking model can be used to localize the target more
+            accurately. Extensive experiments on OTB2013, OTB2015, VOT2016, VOT2018, UAV123, and GOT10k demonstrate that
+            the proposed tracker achieves the best robustness against the state of the arts.</p>
     </table>
     <hr>
 
     <table align=center width=900px>
         <center>
-            <h1>BibTex</h1>
+            <h3><strong>BibTex</strong></h3>
         </center>
         <pre>
             <span class="inner-pre" style="font-size: 14px">
@@ -261,16 +268,18 @@
 
     <br>
     <center>
-        <span style="font-size:42px">Distilling Channels for Efficient Deep Tracking</span><br>
+        <span style="font-size:26px"><strong>Distilling Channels for Efficient Deep Tracking</strong></span><br>
 
+        <br><br>
         <table align=center width=1000px>
             <tr>
                 <td align=center width=1000px>
-                    <span style="font-size:22px"><a href="../people/geshiming.html" target="_blank">Shiming Ge</a></span> &emsp;
-                    <span style="font-size:22px"><a href="#">Zhao Luo</a></span> &emsp;
-                    <span style="font-size:22px"><a href="#">Chunhui Zhang</a></span> &emsp;
-                    <span style="font-size:22px"><a href="#">Yingying Hua</a></span> &emsp;
-                    <span style="font-size:22px"><a href="#">Dacheng Tao</a></span> &emsp;
+                    <span style="font-size:20px"><a href="../people/geshiming.html" target="_blank">Shiming
+                            Ge</a></span> &emsp;
+                    <span style="font-size:20px"><a href="#">Zhao Luo</a></span> &emsp;
+                    <span style="font-size:20px"><a href="#">Chunhui Zhang</a></span> &emsp;
+                    <span style="font-size:20px"><a href="#">Yingying Hua</a></span> &emsp;
+                    <span style="font-size:20px"><a href="#">Dacheng Tao</a></span> &emsp;
                 </td>
             </tr>
         </table>
@@ -282,10 +291,10 @@
         <table align=center width=900px>
             <tr>
                 <td align=center width=300px>
-                    <span style="font-size:22px"><a href='https://ieeexplore.ieee.org/document/8891903'> Paper [IEEE
+                    <span style="font-size:20px"><a href='https://ieeexplore.ieee.org/document/8891903'> Paper [IEEE
                             Trans]</a></span> &emsp;&emsp;
-                    <!-- <span style="font-size:22px"><a href='http://www.robots.ox.ac.uk/~vgg/blog/self-labelling-via-simultaneous-clustering-and-representation-learning.html'> Blogpost</a></span> &emsp;&emsp;
-		<span style="font-size:22px"><a href='https://github.com/yukimasano/self-label'> Code [PyTorch]</a></span> -->
+                    <!-- <span style="font-size:20px"><a href='http://www.robots.ox.ac.uk/~vgg/blog/self-labelling-via-simultaneous-clustering-and-representation-learning.html'> Blogpost</a></span> &emsp;&emsp;
+		<span style="font-size:20px"><a href='https://github.com/yukimasano/self-label'> Code [PyTorch]</a></span> -->
                 </td>
             </tr>
         </table>
@@ -308,16 +317,30 @@
 
     <table align=center width=900px>
         <center>
-            <h1>Abstract</h1>
+            <h3><strong>Abstract</strong></h3>
         </center>
         <p>
-            Deep trackers have proven success in visual tracking. Typically, these trackers employ optimally pre-trained deep networks to represent all diverse objects with multi-channel features from some fixed layers. The deep networks employed are usually trained to extract rich knowledge from massive data used in object classification and so they are capable to represent generic objects very well. However, these networks are too complex to represent a specific moving object, leading to poor generalization as well as high computational and memory costs. This paper presents a novel and general framework termed channel distillation to facilitate deep trackers. To validate the effectiveness of channel distillation, we take discriminative correlation filter (DCF) and ECO for example. We demonstrate that an integrated formulation can turn feature compression, response map generation, and model update into a unified energy minimization problem to adaptively select informative feature channels that improve the efficacy of tracking moving objects on the fly. Channel distillation can accurately extract good channels, alleviating the influence of noisy channels and generally reducing the number of channels, as well as adaptively generalizing to different channels and networks. The resulting deep tracker is accurate, fast, and has low memory requirements. Extensive experimental evaluations on popular benchmarks clearly demonstrate the effectiveness and generalizability of our framework.</p>
+            Deep trackers have proven success in visual tracking. Typically, these trackers employ optimally pre-trained
+            deep networks to represent all diverse objects with multi-channel features from some fixed layers. The deep
+            networks employed are usually trained to extract rich knowledge from massive data used in object
+            classification and so they are capable to represent generic objects very well. However, these networks are
+            too complex to represent a specific moving object, leading to poor generalization as well as high
+            computational and memory costs. This paper presents a novel and general framework termed channel
+            distillation to facilitate deep trackers. To validate the effectiveness of channel distillation, we take
+            discriminative correlation filter (DCF) and ECO for example. We demonstrate that an integrated formulation
+            can turn feature compression, response map generation, and model update into a unified energy minimization
+            problem to adaptively select informative feature channels that improve the efficacy of tracking moving
+            objects on the fly. Channel distillation can accurately extract good channels, alleviating the influence of
+            noisy channels and generally reducing the number of channels, as well as adaptively generalizing to
+            different channels and networks. The resulting deep tracker is accurate, fast, and has low memory
+            requirements. Extensive experimental evaluations on popular benchmarks clearly demonstrate the effectiveness
+            and generalizability of our framework.</p>
     </table>
     <hr>
 
     <table align=center width=900px>
         <center>
-            <h1>BibTex</h1>
+            <h3><strong>BibTex</strong></h3>
         </center>
         <pre>
             <span class="inner-pre" style="font-size: 14px">
@@ -337,15 +360,18 @@
 
     <br>
     <center>
-        <span style="font-size:42px">Robust Deep Tracking with Two-step Augmentation Discriminative Correlation Filters</span><br>
+        <span style="font-size:26px"><strong>Robust Deep Tracking with Two-step Augmentation Discriminative Correlation
+                Filters</strong></span><br>
+        <br><br>
 
         <table align=center width=1000px>
             <tr>
                 <td align=center width=1000px>
-                    <span style="font-size:22px"><a href="#">Chunhui Zhang</a></span> &emsp;
-                    <span style="font-size:22px"><a href="../people/geshiming.html" target="_blank">Shiming Ge</a></span> &emsp;
-                    <span style="font-size:22px"><a href="#">Yingying Hua</a></span> &emsp;
-                    <span style="font-size:22px"><a href="#">Dan Zeng</a></span> &emsp;
+                    <span style="font-size:20px"><a href="#">Chunhui Zhang</a></span> &emsp;
+                    <span style="font-size:20px"><a href="../people/geshiming.html" target="_blank">Shiming
+                            Ge</a></span> &emsp;
+                    <span style="font-size:20px"><a href="#">Yingying Hua</a></span> &emsp;
+                    <span style="font-size:20px"><a href="#">Dan Zeng</a></span> &emsp;
                 </td>
             </tr>
         </table>
@@ -355,16 +381,16 @@
         <br>
 
         <table align=center width=900px>
-        <tr>
-            <td align=center width=300px>
-                <span style="font-size:22px"><a href='https://ieeexplore.ieee.org/document/8785041'>Paper [IEEE
-                    Trans]</a></span> &emsp;&emsp;
-                <!-- <span style="font-size:22px"><a href='http://www.robots.ox.ac.uk/~vgg/blog/self-labelling-via-simultaneous-clustering-and-representation-learning.html'> Blogpost</a></span> &emsp;&emsp;
-		<span style="font-size:22px"><a href='https://github.com/yukimasano/self-label'> Code [PyTorch]</a></span> -->
+            <tr>
+                <td align=center width=300px>
+                    <span style="font-size:20px"><a href='https://ieeexplore.ieee.org/document/8785041'>Paper [IEEE
+                            Trans]</a></span> &emsp;&emsp;
+                    <!-- <span style="font-size:20px"><a href='http://www.robots.ox.ac.uk/~vgg/blog/self-labelling-via-simultaneous-clustering-and-representation-learning.html'> Blogpost</a></span> &emsp;&emsp;
+		<span style="font-size:20px"><a href='https://github.com/yukimasano/self-label'> Code [PyTorch]</a></span> -->
 
-            </td>
-        </tr>
-    </table>
+                </td>
+            </tr>
+        </table>
     </center>
     <br>
 
@@ -384,17 +410,26 @@
 
     <table align=center width=900px>
         <center>
-            <h1>Abstract</h1>
+            <h3><strong>Abstract</strong></h3>
         </center>
         <p>
-            Recently, deep trackers have proven success in visual tracking due to their powerful feature representation. Among them, discriminative correlation filter (DCF) paradigm is widely used. However, these trackers are still difficult to learn an adaptive appearance model of the object due to the limited data available. To address that, this paper proposes a two-step augmentation discriminative correlation filters (TADCF) approach to improve robustness. Firstly, we propose an online frame augmentation scheme to obtain rich and robust deep features which can effectively alleviate background distractors, leading to better generalization and adaptation of the learned model. Secondly, an object augmentation mechanism is implemented by exploiting rotation continuity restriction, which simultaneously models target appearance changes from rotation and scale variations. Extensive experiments on four benchmarks illustrate that the proposed approach performs favorably against state-of-the-art trackers.
+            Recently, deep trackers have proven success in visual tracking due to their powerful feature representation.
+            Among them, discriminative correlation filter (DCF) paradigm is widely used. However, these trackers are
+            still difficult to learn an adaptive appearance model of the object due to the limited data available. To
+            address that, this paper proposes a two-step augmentation discriminative correlation filters (TADCF)
+            approach to improve robustness. Firstly, we propose an online frame augmentation scheme to obtain rich and
+            robust deep features which can effectively alleviate background distractors, leading to better
+            generalization and adaptation of the learned model. Secondly, an object augmentation mechanism is
+            implemented by exploiting rotation continuity restriction, which simultaneously models target appearance
+            changes from rotation and scale variations. Extensive experiments on four benchmarks illustrate that the
+            proposed approach performs favorably against state-of-the-art trackers.
         </p>
     </table>
     <hr>
 
     <table align=center width=900px>
         <center>
-            <h1>BibTex</h1>
+            <h3><strong>BibTex</strong></h3>
         </center>
         <pre>
             <span class="inner-pre" style="font-size: 14px">
