@@ -9,17 +9,20 @@
 
 ### TO-DO
 
-1. [Information](<https://imsg.ac.cn/info.html>)页面有待完成
-2. 相关学生信息待完善
+1. [Information](<https://imsg.ac.cn/info.html>)页面增加会议的DDL及期刊主页
 3. 学生个人主页
-4. 增加论文的PDF资源下载
+4. Research的[**Controllable Representation Learning**](http://192.168.1.2:81/research/conlearning.html)部分
+4. 链接Research中的项目为Publication的Project
+5. 主页图片修改为轮播图
 
 
 
 注：
 
-[Publication](<https://imsg.ac.cn/publication.html>)页面期刊格式如下：
+1. [Publication](<https://imsg.ac.cn/publication.html>)页面期刊格式如下：
 
-IEEE Transactions on Image Processing, 2020, 29(x): 2610-2621.
+   IEEE Transactions on Image Processing, 2020, 29(x): 2610-2621.
 
-顺序：1. 作者; 2. 标题; 3. 期刊/会议 （方便后续复制粘贴）
+   顺序：1. 作者; 2. 标题; 3. 期刊/会议 （方便后续复制粘贴）
+
+2. 文字注意两端对齐
