@@ -16,7 +16,7 @@
 3. 学生个人主页
 4. Research的[**Controllable Representation Learning**](http://192.168.1.2:81/research/conlearning.html)部分
 4. 链接Research中的项目为Publication的Project
-5. 主页图片修改为轮播图（结合Research页面）
+6. 通讯作者需加*号
 
 
 
@@ -34,4 +34,4 @@
 
 4. 尽量避免使用中文数字（一、二、三），替换为阿拉伯数字（1、2、3）
 
-5. 
+5. 轮播图长宽比尽量接近（1425:500）
