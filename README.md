@@ -15,12 +15,11 @@
 1. [Information](<https://imsg.ac.cn/info.html>)页面增加会议的DDL及期刊主页
 3. 学生个人主页
 4. Research的[**Controllable Representation Learning**](http://192.168.1.2:81/research/conlearning.html)部分
-4. 链接Research中的项目为Publication的Project
 6. 通讯作者需加*号
 
 
 
-注：
+### 注
 
 1. [Publication](<https://imsg.ac.cn/publication.html>)页面期刊格式如下：
 
