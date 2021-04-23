@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="css/stanford.css">
   <link rel="stylesheet" href="css/fotter.css">
 
+  <script src="js/jquery.min.js"></script>
+
   <script>
     function display(id_) {
       var id_div = document.getElementById(id_)
@@ -19,6 +21,32 @@
         id_div.style.display = "none";
       }
     }
+
+    $(document).ready(function () {
+      var button_patents = document.getElementById("button_patents");
+      var button_paper = document.getElementById("button_paper");
+
+      $("#button_paper").click(function () {
+        if (button_paper.style.backgroundColor != 'Transparent') {
+          $("#paper_list").toggle();
+          $("#patents_list").toggle();
+          button_patents.style.backgroundColor = 'Transparent';
+          button_patents.style.color = '#1c3ed3';
+          button_paper.style.backgroundColor = '#1c3ed3';
+          button_paper.style.color = '#fff';
+        }
+      });
+      $("#button_patents").click(function () {
+        if (button_patents.style.backgroundColor != 'Transparent') {
+          $("#patents_list").toggle();
+          $("#paper_list").toggle();
+          button_patents.style.backgroundColor = '#1c3ed3';
+          button_patents.style.color = '#fff';
+          button_paper.style.backgroundColor = 'Transparent';
+          button_paper.style.color = '#1c3ed3';
+        }
+      });
+    });
   </script>
   <style type="text/css">
     li {
@@ -28,6 +56,72 @@
     td {
       vertical-align: middle;
       text-align: left;
+    }
+
+    #button_select {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+      grid-auto-rows: auto;
+    }
+
+    #button_paper {
+      background-color: #1c3ed3;
+      color: #fff;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      outline: none;
+      grid-column: 1 / 7;
+      grid-row: 1;
+    }
+
+    #button_patents {
+      background-color: Transparent;
+      color: #1c3ed3;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      outline: none;
+      grid-column: 7 / 7;
+      grid-row: 2 / 1;
+    }
+
+    #button_2021 {
+      grid-column: 1 / 1;
+      grid-row: 2;
+    }
+
+    #button_2020 {
+      grid-column: 2 / 2;
+      grid-row: 2;
+    }
+
+    #button_2019 {
+      grid-column: 3 / 3;
+      grid-row: 2;
+    }
+
+    #button_2018 {
+      grid-column: 4 / 4;
+      grid-row: 2;
+    }
+
+    #button_2017 {
+      grid-column: 5 / 5;
+      grid-row: 2;
+    }
+
+    #button_old {
+      grid-column: 6 / 6;
+      grid-row: 2;
+    }
+
+
+    #patents_list {
+      display: none;
     }
 
     .bibtex {
@@ -145,7 +239,7 @@
               </a>
             </li>
 
-            <li class="menu-item-publication   active">
+            <li class="menu-item-publication active">
               <a href="./publication.html">
                 <span>Publication</span>
               </a>
@@ -174,43 +268,56 @@
     </div>
 
     <div class="container mt-2">
+      <div id="button_select">
+        <button type="button" id="button_paper" class="header container main-menu menu-item-publication">Papers</button>
+        <button type="button" id="button_patents" class="header container main-menu menu-item-publication">Patents and
+          Software Publications</button>
+        <!-- <button type="button" id="button_2021">2021</button>
+        <button type="button" id="button_2020">2020</button>
+        <button type="button" id="button_2019">2019</button>
+        <button type="button" id="button_2018">2018</button>
+        <button type="button" id="button_2017">2017</button>
+        <button type="button" id="button_old">old</button> -->
 
-      <h3>2021</h3>
-      
-      <div class="paper">
-        <img height="110px" width="210px" src="">
-        <div class="pauthors">Yingying Hua, Shimng Ge*, Daichi Zhang.</div>
-        <div class="ptitle">Interpret the Predictions of Deep Networks via Re-label Distillation.
-        </div>
-        <div class="pvenue">In IEEE International Conference on Multimedia and Expo (ICME), 2021</div>
-        <div class="plink">
-          <a href=""  target="_blank">[PDF]</a>
-          <!-- <a href="https://ieeexplore.ieee.org/document/9069312/" target="_blank" target="_blank">[DOI]</a> -->
-          <!-- <a onclick="display('ge2020cascaded')" style="color: #1c3ed3">
+
+      </div>
+      <div id="paper_list">
+        <h3>2021</h3>
+        <div class="paper">
+          <img height="110px" width="210px" src="">
+          <div class="pauthors">Yingying Hua, Shimng Ge*, Daichi Zhang.</div>
+          <div class="ptitle">Interpret the Predictions of Deep Networks via Re-label Distillation.
+          </div>
+          <div class="pvenue">In IEEE International Conference on Multimedia and Expo (ICME), 2021</div>
+          <div class="plink">
+            <a href="" target="_blank">[PDF]</a>
+            <!-- <a href="https://ieeexplore.ieee.org/document/9069312/" target="_blank" target="_blank">[DOI]</a> -->
+            <!-- <a onclick="display('ge2020cascaded')" style="color: #1c3ed3">
             [Bib] </a> -->
-          <div style="display: none;" class="BibtexExpand" id="ge2020cascaded">
-            <pre class="bibtex">
+            <div style="display: none;" class="BibtexExpand" id="ge2020cascaded">
+              <pre class="bibtex">
 
               </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/340697094.webp">
-        <div class="pauthors">Shiming Ge*, Chunhui Zhang, Shikun Li, Dan Zeng*, and Dacheng Tao.</div>
-        <div class="ptitle">Cascaded Correlation Refinement for Robust Deep Tracking.
-        </div>
-        <div class="pvenue">IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2021, 32(3):1276-1288.</div>
-        <div class="plink">
-          <a href="./pdfs/2020-TNNLS-Cascaded Correlation Refinement for Robust Deep Tracking.pdf"
-            target="_blank">[PDF]</a>
-          <a href="./research/deeptracking.html#ge2020cascaded" target="_blank">[Project]</a>
-          <a href="https://ieeexplore.ieee.org/document/9069312/" target="_blank" target="_blank">[DOI]</a>
-          <a onclick="display('ge2020cascaded')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="ge2020cascaded">
-            <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/340697094.webp">
+          <div class="pauthors">Shiming Ge*, Chunhui Zhang, Shikun Li, Dan Zeng*, and Dacheng Tao.</div>
+          <div class="ptitle">Cascaded Correlation Refinement for Robust Deep Tracking.
+          </div>
+          <div class="pvenue">IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2021, 32(3):1276-1288.
+          </div>
+          <div class="plink">
+            <a href="./pdfs/2020-TNNLS-Cascaded Correlation Refinement for Robust Deep Tracking.pdf"
+              target="_blank">[PDF]</a>
+            <a href="./research/deeptracking.html#ge2020cascaded" target="_blank">[Project]</a>
+            <a href="https://ieeexplore.ieee.org/document/9069312/" target="_blank" target="_blank">[DOI]</a>
+            <a onclick="display('ge2020cascaded')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="ge2020cascaded">
+              <pre class="bibtex">
 @ARTICLE{9069312,
   author={S. {Ge} and C. {Zhang} and S. {Li} and D. {Zeng} and D. {Tao}},
   journal={IEEE Transactions on Neural Networks and Learning Systems}, 
@@ -222,27 +329,27 @@
   doi={10.1109/TNNLS.2020.2984256}
 }
               </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <h3>2020</h3>
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/1-s2.0-S003132032030371X-gr1.webp">
-        <div class="pauthors">Jieru Jia, Qiuqi Ruan, Yi Jin*, Gaoyun An, and Shiming Ge.</div>
-        <div class="ptitle">View-specifific Subspace Learning and Re-ranking for Semi-supervised Person
-          Re-identifification.
-        </div>
-        <div class="pvenue">Pattern Recognition (PR), 2020, 108: 107568.</div>
-        <div class="plink">
-          <a href="./pdfs/2020-PR-View-specific Subspace Learning and Re-ranking for Semi-supervised Person Re-identification.pdf"
-            target="_blank">[PDF]</a>
-          <a href="https://www.sciencedirect.com/science/article/pii/S003132032030371X" target="_blank"
-            target="_blank">[DOI]</a>
-          <a onclick="display('JIA2020107568')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="JIA2020107568">
-            <pre class="bibtex">
+        <h3>2020</h3>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/1-s2.0-S003132032030371X-gr1.webp">
+          <div class="pauthors">Jieru Jia, Qiuqi Ruan, Yi Jin*, Gaoyun An, and Shiming Ge.</div>
+          <div class="ptitle">View-specifific Subspace Learning and Re-ranking for Semi-supervised Person
+            Re-identifification.
+          </div>
+          <div class="pvenue">Pattern Recognition (PR), 2020, 108: 107568.</div>
+          <div class="plink">
+            <a href="./pdfs/2020-PR-View-specific Subspace Learning and Re-ranking for Semi-supervised Person Re-identification.pdf"
+              target="_blank">[PDF]</a>
+            <a href="https://www.sciencedirect.com/science/article/pii/S003132032030371X" target="_blank"
+              target="_blank">[DOI]</a>
+            <a onclick="display('JIA2020107568')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="JIA2020107568">
+              <pre class="bibtex">
 @article{JIA2020107568,
   title = "View-specific subspace learning and re-ranking for semi-supervised person re-identification",
   journal = "Pattern Recognition",
@@ -256,24 +363,24 @@
   keywords = "Person re-identification, Metric learning, Semi-supervised learning, Re-ranking",
 }
            </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/20200302.webp">
-        <div class="pauthors">化盈盈,张岱墀,葛仕明*.</div>
-        <div class="ptitle">深度学习模型可解释性的研究进展.
-        </div>
-        <div class="pvenue">信息安全学报, 2020, 5(3):1-12.</div>
-        <div class="plink">
-          <a href="./pdfs/2020-信安学报-深度学习模型可解释性的研究进展.pdf" target="_blank">[PDF]</a>
-          <a href="http://jcs.iie.ac.cn/xxaqxb/ch/reader/view_abstract.aspx?file_no=20200302&flag=1" target="_blank"
-            target="_blank">[DOI]</a>
-          <a onclick="display('化盈盈2020深度学习模型可解释性的研究进展')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="化盈盈2020深度学习模型可解释性的研究进展">
-            <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/20200302.webp">
+          <div class="pauthors">化盈盈,张岱墀,葛仕明*.</div>
+          <div class="ptitle">深度学习模型可解释性的研究进展.
+          </div>
+          <div class="pvenue">信息安全学报, 2020, 5(3):1-12.</div>
+          <div class="plink">
+            <a href="./pdfs/2020-信安学报-深度学习模型可解释性的研究进展.pdf" target="_blank">[PDF]</a>
+            <a href="http://jcs.iie.ac.cn/xxaqxb/ch/reader/view_abstract.aspx?file_no=20200302&flag=1" target="_blank"
+              target="_blank">[DOI]</a>
+            <a onclick="display('化盈盈2020深度学习模型可解释性的研究进展')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="化盈盈2020深度学习模型可解释性的研究进展">
+              <pre class="bibtex">
 @article{化盈盈2020深度学习模型可解释性的研究进展,
   title={深度学习模型可解释性的研究进展},
   author={化盈盈 and 张岱墀 and 葛仕明},
@@ -284,25 +391,25 @@
   year={2020}
 }
              </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/381.webp">
-        <div class="pauthors">Chenyu Li, Shiming Ge*, Daichi Zhang, and Jia Li.</div>
-        <div class="ptitle">Look Through Masks: Towards Masked Face Recognition with De-Occlusion Distillation.
-        </div>
-        <div class="pvenue">In ACM International Conference on Multimedia (MM), 2020, 3016–3024.</div>
-        <div class="plink">
-          <a href="./pdfs/2020-ACMMM-Look Through Masks_Towards Masked Face Recognition with De-Occlusion Distillation.pdf"
-            target="_blank">[PDF]</a>
-          <a href="./research/maskedface.html#Li20" target="_blank">[Project]</a>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/381.webp">
+          <div class="pauthors">Chenyu Li, Shiming Ge*, Daichi Zhang, and Jia Li.</div>
+          <div class="ptitle">Look Through Masks: Towards Masked Face Recognition with De-Occlusion Distillation.
+          </div>
+          <div class="pvenue">In ACM International Conference on Multimedia (MM), 2020, 3016–3024.</div>
+          <div class="plink">
+            <a href="./pdfs/2020-ACMMM-Look Through Masks_Towards Masked Face Recognition with De-Occlusion Distillation.pdf"
+              target="_blank">[PDF]</a>
+            <a href="./research/maskedface.html#Li20" target="_blank">[Project]</a>
 
-          <a onclick="display('Li20')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="Li20">
-            <pre class="bibtex">
+            <a onclick="display('Li20')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="Li20">
+              <pre class="bibtex">
 @inproceedings{Li20,
   author = {Li, Chenyu and Ge, Shiming and Zhang, Daichi and Li, Jia},
   title = {Look Through Masks: Towards Masked Face Recognition with De-Occlusion Distillation},
@@ -311,27 +418,27 @@
   pages = {3016–3024}
 }
              </pre>
+            </div>
           </div>
         </div>
-      </div>
 
 
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/378.webp">
-        <div class="pauthors">Chunhui Zhang, Shiming Ge*, Kangkai Zhang, and Dan Zeng.</div>
-        <div class="ptitle">Accurate UAV Tracking with Distance-Injected Overlap Maximization.
-        </div>
-        <div class="pvenue">In ACM International Conference on Multimedia (MM), 2020, 565–573.</div>
-        <div class="plink">
-          <a href="./pdfs/2020-ACM MM-Accurate UAV Tracking with Distance-Injected Overlap Maximization.pdf"
-            target="_blank">[PDF]</a>
-          <a href="./research/deeptracking.html#1" target="_blank">[Project]</a>
-           <a href="https://doi.org/10.1145/3394171.3413959" target="_blank">[DOI]</a>
-          <a onclick="display('Zhang20')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="Zhang20">
-            <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/378.webp">
+          <div class="pauthors">Chunhui Zhang, Shiming Ge*, Kangkai Zhang, and Dan Zeng.</div>
+          <div class="ptitle">Accurate UAV Tracking with Distance-Injected Overlap Maximization.
+          </div>
+          <div class="pvenue">In ACM International Conference on Multimedia (MM), 2020, 565–573.</div>
+          <div class="plink">
+            <a href="./pdfs/2020-ACM MM-Accurate UAV Tracking with Distance-Injected Overlap Maximization.pdf"
+              target="_blank">[PDF]</a>
+            <a href="./research/deeptracking.html#1" target="_blank">[Project]</a>
+            <a href="https://doi.org/10.1145/3394171.3413959" target="_blank">[DOI]</a>
+            <a onclick="display('Zhang20')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="Zhang20">
+              <pre class="bibtex">
 @inproceedings{Zhang20,
 author = {Zhang, Chunhui and Ge, Shiming and Zhang, Kangkai and Zeng, Dan},
 title = {Accurate UAV Tracking with Distance-Injected Overlap Maximization},
@@ -342,24 +449,24 @@ pages = {565–573},
 series = {MM '20}
 }
              </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/801.webp">
-        <div class="pauthors">Dan Zeng, Han Liu, Hui Lin, Shiming Ge*.</div>
-        <div class="ptitle">Talking Face Generation with Expression-Tailored Generative Adversarial Network.
-        </div>
-        <div class="pvenue">In ACM International Conference on Multimedia (MM), 2020, 1716–1724.</div>
-        <div class="plink">
-          <a href="https://dl.acm.org/doi/pdf/10.1145/3394171.3413844" target="_blank">[PDF]</a>
-           <a href="https://doi.org/10.1145/3394171.3413844" target="_blank">[DOI]</a>
-          <a onclick="display('Zeng20')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="Zeng20">
-            <pre class="bibtex">
+
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/801.webp">
+          <div class="pauthors">Dan Zeng, Han Liu, Hui Lin, Shiming Ge*.</div>
+          <div class="ptitle">Talking Face Generation with Expression-Tailored Generative Adversarial Network.
+          </div>
+          <div class="pvenue">In ACM International Conference on Multimedia (MM), 2020, 1716–1724.</div>
+          <div class="plink">
+            <a href="https://dl.acm.org/doi/pdf/10.1145/3394171.3413844" target="_blank">[PDF]</a>
+            <a href="https://doi.org/10.1145/3394171.3413844" target="_blank">[DOI]</a>
+            <a onclick="display('Zeng20')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="Zeng20">
+              <pre class="bibtex">
 @inproceedings{Zeng20,
 author = {Zeng, Dan and Liu, Han and Lin, Hui and Ge, Shiming},
 title = {Talking Face Generation with Expression-Tailored Generative Adversarial Network},
@@ -370,26 +477,27 @@ pages = {1716–1724},
 series = {MM '20}
 }
              </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/8963643.webp">
-        <div class="pauthors">Shiming Ge*, Chenyu Li, Shengwei Zhao, and Dan Zeng*.</div>
-        <div class="ptitle">Occluded Face Recognition in the Wild by Identity-Diversity Inpainting.
-        </div>
-        <div class="pvenue">IEEE Transactions on Circuits and Systems for Video Technology (TCSVT), 2020, 30(10):3387-3397.</div>
-        <div class="plink">
-          <a href="./pdfs/2020-TCSVT-Occluded Face Recognition in the Wild by Identity-Diversity Inpainting.pdf"
-            target="_blank">[PDF]</a>
-          <a href="./research/maskedface.html#ge2020occluded" target="_blank">[Project]</a>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/8963643.webp">
+          <div class="pauthors">Shiming Ge*, Chenyu Li, Shengwei Zhao, and Dan Zeng*.</div>
+          <div class="ptitle">Occluded Face Recognition in the Wild by Identity-Diversity Inpainting.
+          </div>
+          <div class="pvenue">IEEE Transactions on Circuits and Systems for Video Technology (TCSVT), 2020,
+            30(10):3387-3397.</div>
+          <div class="plink">
+            <a href="./pdfs/2020-TCSVT-Occluded Face Recognition in the Wild by Identity-Diversity Inpainting.pdf"
+              target="_blank">[PDF]</a>
+            <a href="./research/maskedface.html#ge2020occluded" target="_blank">[Project]</a>
 
-          <a href="http://ieeexplore.ieee.org/document/8963643" target="_blank" target="_blank">[DOI]</a>
-          <a onclick="display('ge2020occluded')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="ge2020occluded">
-            <pre class="bibtex">
+            <a href="http://ieeexplore.ieee.org/document/8963643" target="_blank" target="_blank">[DOI]</a>
+            <a onclick="display('ge2020occluded')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="ge2020occluded">
+              <pre class="bibtex">
 @article{ge2020IDGAN,
 author = {Ge, Shiming and Li, Chenyu and Zhao, Shengwei and Zeng, Dan},
 year = {2020},
@@ -400,25 +508,25 @@ number={10},
 pages={3387-3397}
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/2-Figure1-1.webp">
-        <div class="pauthors">Jia Li, Yifan Zhao, Weihua Ye, Kaiwen Yu, Shiming Ge*.</div>
-        <div class="ptitle">Attentive Deep Stitching and Quality Assessment for 360° Omnidirectional Images.
-        </div>
-        <div class="pvenue">IEEE Journal of Selected Topics in Signal Processing, 2020, 14(1): 209-221.</div>
-        <div class="plink">
-          <a href="./pdfs/2020-JSTSP-Attentive Deep Stitching and Quality Assessment for 360o Omnidirectional Images.pdf"
-            target="_blank">[PDF]</a>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/2-Figure1-1.webp">
+          <div class="pauthors">Jia Li, Yifan Zhao, Weihua Ye, Kaiwen Yu, Shiming Ge*.</div>
+          <div class="ptitle">Attentive Deep Stitching and Quality Assessment for 360° Omnidirectional Images.
+          </div>
+          <div class="pvenue">IEEE Journal of Selected Topics in Signal Processing, 2020, 14(1): 209-221.</div>
+          <div class="plink">
+            <a href="./pdfs/2020-JSTSP-Attentive Deep Stitching and Quality Assessment for 360o Omnidirectional Images.pdf"
+              target="_blank">[PDF]</a>
 
-          <a href="https://ieeexplore.ieee.org/document/8903278" target="_blank" target="_blank">[DOI]</a>
-          <a onclick="display('li2020attentive')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="li2020attentive">
-            <pre class="bibtex">
+            <a href="https://ieeexplore.ieee.org/document/8903278" target="_blank" target="_blank">[DOI]</a>
+            <a onclick="display('li2020attentive')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="li2020attentive">
+              <pre class="bibtex">
 @article{li2020attentive,
   title="Attentive Deep Stitching and Quality Assessment for 360 $^{\circ }$ Omnidirectional Images",
   author="Jia {Li} and Yifan {Zhao} and Weihua {Ye} and Kaiwen {Yu} and Shiming {Ge}",
@@ -430,28 +538,28 @@ pages={3387-3397}
   year="2020"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/31613767.webp">
-        <div class="pauthors">Jia Li, Kui Fu, Shengwei Zhao, Shiming Ge*.</div>
-        <div class="ptitle">Spatiotemporal Knowledge Distillation for Efficient Estimation of Aerial Video Saliency.
-        </div>
-        <div class="pvenue">IEEE Transactions on Image Processing (TIP), 2020, 29: 1902-1914.</div>
-        <!-- <div class="pvenue">IEEE Trans. Image Process. 29: 1902-1914 (2020).</div> -->
-        <div class="plink">
-          <a href="./pdfs/2020-TIP-Spatiotemporal Knowledge Distillation for Efficient Estimation of Aerial Video Saliency.pdf"
-            <a
-            href="./pdfs/2020-TIP-Spatiotemporal Knowledge Distillation for Efficient Estimation of Aerial Video Saliency.pdf"
-            target="_blank">[PDF]</a>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/31613767.webp">
+          <div class="pauthors">Jia Li, Kui Fu, Shengwei Zhao, Shiming Ge*.</div>
+          <div class="ptitle">Spatiotemporal Knowledge Distillation for Efficient Estimation of Aerial Video Saliency.
+          </div>
+          <div class="pvenue">IEEE Transactions on Image Processing (TIP), 2020, 29: 1902-1914.</div>
+          <!-- <div class="pvenue">IEEE Trans. Image Process. 29: 1902-1914 (2020).</div> -->
+          <div class="plink">
+            <a href="./pdfs/2020-TIP-Spatiotemporal Knowledge Distillation for Efficient Estimation of Aerial Video Saliency.pdf"
+              <a
+              href="./pdfs/2020-TIP-Spatiotemporal Knowledge Distillation for Efficient Estimation of Aerial Video Saliency.pdf"
+              target="_blank">[PDF]</a>
 
-          <a href="https://ieeexplore.ieee.org/document/8868103/" target="_blank">[DOI]</a>
-          <a onclick="display('li2020spatiotemporal')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="li2020spatiotemporal">
-            <pre class="bibtex">
+            <a href="https://ieeexplore.ieee.org/document/8868103/" target="_blank">[DOI]</a>
+            <a onclick="display('li2020spatiotemporal')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="li2020spatiotemporal">
+              <pre class="bibtex">
 @article{li2020spatiotemporal,
   title="Spatiotemporal Knowledge Distillation for Efficient Estimation of Aerial Video Saliency",
   author="Jia {Li} and Kui {Fu} and Shengwei {Zhao} and Shiming {Ge}",
@@ -462,27 +570,27 @@ pages={3387-3397}
   year="2020"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/8891903.webp">
-        <div class="pauthors">Shiming Ge*, Zhao Luo, Chunhui Zhang, Yingying Hua, Dacheng Tao.</div>
-        <div class="ptitle">Distilling Channels for Efficient Deep Tracking.
-        </div>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/8891903.webp">
+          <div class="pauthors">Shiming Ge*, Zhao Luo, Chunhui Zhang, Yingying Hua, Dacheng Tao.</div>
+          <div class="ptitle">Distilling Channels for Efficient Deep Tracking.
+          </div>
 
-        <div class="pvenue">IEEE Transactions on Image Processing (TIP), 2020, 29:2610-2621.</div>
-        <div class="plink">
+          <div class="pvenue">IEEE Transactions on Image Processing (TIP), 2020, 29:2610-2621.</div>
+          <div class="plink">
 
-          <a href="./pdfs/2020-TIP-CD-Distilling Channels for Efficient Deep Tracking.pdf" target="_blank">[PDF]</a>
-          <a href="./research/deeptracking.html#ge2020distilling" target="_blank">[Project]</a>
+            <a href="./pdfs/2020-TIP-CD-Distilling Channels for Efficient Deep Tracking.pdf" target="_blank">[PDF]</a>
+            <a href="./research/deeptracking.html#ge2020distilling" target="_blank">[Project]</a>
 
-          <a href="https://ieeexplore.ieee.org/document/8891903" target="_blank">[DOI]</a>
-          <a onclick="display('ge2020distilling')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="ge2020distilling">
-            <pre class="bibtex">
+            <a href="https://ieeexplore.ieee.org/document/8891903" target="_blank">[DOI]</a>
+            <a onclick="display('ge2020distilling')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="ge2020distilling">
+              <pre class="bibtex">
 @article{ge2020distilling,
   title="Distilling Channels for Efficient Deep Tracking",
   author="Shiming {Ge} and Zhao {Luo} and Chunhui {Zhang} and Yingying {Hua} and Dacheng {Tao}",
@@ -493,27 +601,27 @@ pages={3387-3397}
   year="2020"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/9075365.webp">
-        <div class="pauthors">Guanshuo Wang, Yufeng Yuan, Jiwei Li, Shiming Ge*, Xi Zhou.</div>
-        <div class="ptitle">Receptive Multi-Granularity Representation for Person Re-Identification.
-        </div>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/9075365.webp">
+          <div class="pauthors">Guanshuo Wang, Yufeng Yuan, Jiwei Li, Shiming Ge*, Xi Zhou.</div>
+          <div class="ptitle">Receptive Multi-Granularity Representation for Person Re-Identification.
+          </div>
 
-        <div class="pvenue">IEEE Transactions on Image Processing (TIP), 2020, 29:6096-6109.</div>
-        <div class="plink">
-          <a href="./pdfs/2020-TIP-Receptive Multi-granularity Representation for Person Re-Identification.pdf"
-            target="_blank">[PDF]</a>
-          <a href="./research/conlearning.html#wang2020receptive" target="_blank">[Project]</a>
+          <div class="pvenue">IEEE Transactions on Image Processing (TIP), 2020, 29:6096-6109.</div>
+          <div class="plink">
+            <a href="./pdfs/2020-TIP-Receptive Multi-granularity Representation for Person Re-Identification.pdf"
+              target="_blank">[PDF]</a>
+            <a href="./research/conlearning.html#wang2020receptive" target="_blank">[Project]</a>
 
-          <a href="https://ieeexplore.ieee.org/document/9075365" target="_blank">[DOI]</a>
-          <a onclick="display('wang2020receptive')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="wang2020receptive">
-            <pre class="bibtex">
+            <a href="https://ieeexplore.ieee.org/document/9075365" target="_blank">[DOI]</a>
+            <a onclick="display('wang2020receptive')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="wang2020receptive">
+              <pre class="bibtex">
 @article{wang2020receptive,
   title="Receptive Multi-Granularity Representation for Person Re-Identification",
   author="Guanshuo {Wang} and Yufeng {Yuan} and Jiwei {Li} and Shiming {Ge} and Xi {Zhou}",
@@ -524,26 +632,26 @@ pages={3387-3397}
   year="2020"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/9098036.webp">
-        <div class="pauthors">Shiming Ge, Shengwei Zhao, Chenyu Li, Yu Zhang, Jia Li*.</div>
-        <div class="ptitle">Efficient Low-Resolution Face Recognition via Bridge Distillation.
-        </div>
-        <div class="pvenue">IEEE Transactions on Image Processing (TIP), 2020, 29: 6898-6908.</div>
-        <div class="plink">
-          <a href="./pdfs/2020-TIP-Efficient Low-Resolution Face Recognition via Bridge Distillation.pdf"
-            target="_blank">[PDF]</a>
-          <a href="./research/lowresface.html#ge2020efficient" target="_blank">[Project]</a>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/9098036.webp">
+          <div class="pauthors">Shiming Ge, Shengwei Zhao, Chenyu Li, Yu Zhang, Jia Li*.</div>
+          <div class="ptitle">Efficient Low-Resolution Face Recognition via Bridge Distillation.
+          </div>
+          <div class="pvenue">IEEE Transactions on Image Processing (TIP), 2020, 29: 6898-6908.</div>
+          <div class="plink">
+            <a href="./pdfs/2020-TIP-Efficient Low-Resolution Face Recognition via Bridge Distillation.pdf"
+              target="_blank">[PDF]</a>
+            <a href="./research/lowresface.html#ge2020efficient" target="_blank">[Project]</a>
 
-          <a href="https://ieeexplore.ieee.org/document/9098036" target="_blank">[DOI]</a>
-          <a onclick="display('ge2020efficient')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="ge2020efficient">
-            <pre class="bibtex">
+            <a href="https://ieeexplore.ieee.org/document/9098036" target="_blank">[DOI]</a>
+            <a onclick="display('ge2020efficient')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="ge2020efficient">
+              <pre class="bibtex">
 @article{ge2020bd,
   author={Shiming  Ge and Shengwei Zhao and Chenyu Li and Yu Zhang and Jia Li},
   title={Efficient Low-Resolution Face Recognition via Bridge Distillation}, 
@@ -554,28 +662,29 @@ pages={3387-3397}
   pages={6898-6908}
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/5898.webp">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/5898.webp">
 
-        <div class="pauthors">Shikun Li, Shiming Ge*, Yingying Hua, Chunhui Zhang, Hao Wen, Tengfei Liu, Weiqiang Wang.
-        </div>
-        <div class="ptitle">Coupled-View Deep Classifier Learning from Multiple Noisy Annotators.
-        </div>
+          <div class="pauthors">Shikun Li, Shiming Ge*, Yingying Hua, Chunhui Zhang, Hao Wen, Tengfei Liu, Weiqiang
+            Wang.
+          </div>
+          <div class="ptitle">Coupled-View Deep Classifier Learning from Multiple Noisy Annotators.
+          </div>
 
-        <div class="pvenue">In AAAI Conference on Artificial Intelligence (AAAI), 2020, 4667-4674.</div>
-        <div class="plink">
-          <a href="./pdfs/2020-AAAI-Coupled-view Deep Classifier Learning from Multiple Noisy Annotators.pdf"
-            target="_blank">[PDF]</a>
-          <a href="./research/conlearning.html#li2020coupled" target="_blank">[Project]</a>
-          <a href="https://aaai.org/ojs/index.php/AAAI/article/view/05898" target="_blank">[DOI]</a>
-          <a onclick="display('li2020coupled')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="li2020coupled">
-            <pre class="bibtex">
+          <div class="pvenue">In AAAI Conference on Artificial Intelligence (AAAI), 2020, 4667-4674.</div>
+          <div class="plink">
+            <a href="./pdfs/2020-AAAI-Coupled-view Deep Classifier Learning from Multiple Noisy Annotators.pdf"
+              target="_blank">[PDF]</a>
+            <a href="./research/conlearning.html#li2020coupled" target="_blank">[Project]</a>
+            <a href="https://aaai.org/ojs/index.php/AAAI/article/view/05898" target="_blank">[DOI]</a>
+            <a onclick="display('li2020coupled')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="li2020coupled">
+              <pre class="bibtex">
 @inproceedings{li2020coupled,
   title="Coupled-view Deep Classifier Learning from Multiple Noisy Annotators",
   author="Shikun {Li} and Shiming {Ge} and Yingying {Hua} and Chunhui {Zhang} and Hao {Wen} and Tengfei {Liu} and Weiqiang {Wang}",
@@ -585,25 +694,25 @@ pages={3387-3397}
   year="2020"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/6710.webp">
-        <div class="pauthors">Kui Fu, Peipei Shi, Yafei Song, Shiming Ge, Xiangju Lu*, Jia Li*.</div>
-        <div class="ptitle">Ultrafast Video Attention Prediction with Coupled Knowledge Distillation.
-        </div>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/6710.webp">
+          <div class="pauthors">Kui Fu, Peipei Shi, Yafei Song, Shiming Ge, Xiangju Lu*, Jia Li*.</div>
+          <div class="ptitle">Ultrafast Video Attention Prediction with Coupled Knowledge Distillation.
+          </div>
 
-        <div class="pvenue">In AAAI Conference on Artificial Intelligence (AAAI), 2020, 10802-10809.</div>
-        <div class="plink">
-          <a href="./pdfs/2020-AAAI-Ultrafast Video Attention Prediction with Coupled Knowledge Distillation.pdf"
-            target="_blank">[PDF]</a>
-          <a href="https://aaai.org/ojs/index.php/AAAI/article/view/06710" target="_blank">[DOI]</a>
-          <a onclick="display('fu2020ultrafast')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="fu2020ultrafast">
-            <pre class="bibtex">
+          <div class="pvenue">In AAAI Conference on Artificial Intelligence (AAAI), 2020, 10802-10809.</div>
+          <div class="plink">
+            <a href="./pdfs/2020-AAAI-Ultrafast Video Attention Prediction with Coupled Knowledge Distillation.pdf"
+              target="_blank">[PDF]</a>
+            <a href="https://aaai.org/ojs/index.php/AAAI/article/view/06710" target="_blank">[DOI]</a>
+            <a onclick="display('fu2020ultrafast')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="fu2020ultrafast">
+              <pre class="bibtex">
 @inproceedings{fu2020ultrafast,
   title="Ultrafast Video Attention Prediction with Coupled Knowledge Distillation",
   author="Kui {Fu} and peipei {shi} and Yafei {Song} and Shiming {Ge} and Xiangju {Lu} and Jia {Li}",
@@ -613,27 +722,27 @@ pages={3387-3397}
   year="2020"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/6711.webp">
-        <div class="pauthors">Jialin Gao, Zhixiang Shi, Guanshuo Wang, Jiani Li, Yufeng Yuan, Shiming Ge*, Xi Zhou.
-        </div>
-        <div class="ptitle">Accurate Temporal Action Proposal Generation with Relation-Aware Pyramid Network.
-        </div>
-        <div class="pvenue">In AAAI Conference on Artificial Intelligence (AAAI), 2020, 10810-10817.</div>
-        <div class="plink">
-          <a href="./pdfs/2020-AAAI-Accurate Temporal Action Proposal Generation with Relation-Aware Pyramid Network.pdf"
-            <a
-            href="./pdfs/2020-AAAI-Accurate Temporal Action Proposal Generation with Relation-Aware Pyramid Network.pdf"
-            target="_blank">[PDF]</a>
-          <a href="https://aaai.org/ojs/index.php/AAAI/article/view/06711" target="_blank">[DOI]</a>
-          <a onclick="display('gao2020accurate')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="gao2020accurate">
-            <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/6711.webp">
+          <div class="pauthors">Jialin Gao, Zhixiang Shi, Guanshuo Wang, Jiani Li, Yufeng Yuan, Shiming Ge*, Xi Zhou.
+          </div>
+          <div class="ptitle">Accurate Temporal Action Proposal Generation with Relation-Aware Pyramid Network.
+          </div>
+          <div class="pvenue">In AAAI Conference on Artificial Intelligence (AAAI), 2020, 10810-10817.</div>
+          <div class="plink">
+            <a href="./pdfs/2020-AAAI-Accurate Temporal Action Proposal Generation with Relation-Aware Pyramid Network.pdf"
+              <a
+              href="./pdfs/2020-AAAI-Accurate Temporal Action Proposal Generation with Relation-Aware Pyramid Network.pdf"
+              target="_blank">[PDF]</a>
+            <a href="https://aaai.org/ojs/index.php/AAAI/article/view/06711" target="_blank">[DOI]</a>
+            <a onclick="display('gao2020accurate')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="gao2020accurate">
+              <pre class="bibtex">
 @inproceedings{gao2020accurate,
   title="Accurate Temporal Action Proposal Generation with Relation-Aware Pyramid Network",
   author="Jialin {Gao} and zhixiang {shi} and Guanshuo {Wang} and jiani {li} and Yufeng {Yuan} and Shiming {Ge} and Xi {Zhou}",
@@ -643,30 +752,30 @@ pages={3387-3397}
   year="2020"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/6715.webp">
-        <div class="pauthors">Shiming Ge, Kangkai Zhang, Haolin Liu, Yingying Hua, Shengwei Zhao, Xin Jin*, Hao Wen.
-          <div class="ptitle">Look One and More: Distilling Hybrid Order Relational Knowledge for Cross-Resolution
-            Image Recognition.
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/6715.webp">
+          <div class="pauthors">Shiming Ge, Kangkai Zhang, Haolin Liu, Yingying Hua, Shengwei Zhao, Xin Jin*, Hao Wen.
+            <div class="ptitle">Look One and More: Distilling Hybrid Order Relational Knowledge for Cross-Resolution
+              Image Recognition.
+            </div>
+
           </div>
+          <div class="pvenue">In AAAI Conference on Artificial Intelligence (AAAI) , 2020, 10845-10852.</div>
+          <div class="plink">
+            <a href="./pdfs/2020-AAAI-Distilling Hybrid Order Relational Knowledge for Cross-Resolution Image Recognition.pdf"
+              target="_blank">[PDF]</a>
 
-        </div>
-        <div class="pvenue">In AAAI Conference on Artificial Intelligence (AAAI) , 2020, 10845-10852.</div>
-        <div class="plink">
-          <a href="./pdfs/2020-AAAI-Distilling Hybrid Order Relational Knowledge for Cross-Resolution Image Recognition.pdf"
-            target="_blank">[PDF]</a>
+            <a href="./research/lowresface.html#ge2020look" target="_blank">[Project]</a>
 
-          <a href="./research/lowresface.html#ge2020look" target="_blank">[Project]</a>
-
-          <a href="https://aaai.org/ojs/index.php/AAAI/article/view/06715" target="_blank">[DOI]</a>
-          <a onclick="display('ge2020look')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="ge2020look">
-            <pre class="bibtex">
+            <a href="https://aaai.org/ojs/index.php/AAAI/article/view/06715" target="_blank">[DOI]</a>
+            <a onclick="display('ge2020look')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="ge2020look">
+              <pre class="bibtex">
 @inproceedings{ge2020look,
   title="Look One and More: Distilling Hybrid Order Relational Knowledge for Cross-Resolution Image Recognition",
   author="Shiming {Ge} and Kangkai {Zhang} and Haolin {Liu} and Yingying {Hua} and Shengwei {Zhao} and Xin {Jin} and Hao {Wen}",
@@ -676,26 +785,26 @@ pages={3387-3397}
   year="2020"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/huang2020domain.webp">
-        <div class="pauthors">Yangru Huang , Peixi Peng , Yi Jin*, Yidong Li, Junliang Xing, and Shiming Ge.
-          <div class="ptitle">Domain Adaptive Attention Learning for Unsupervised Person Re-Identifification.
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/huang2020domain.webp">
+          <div class="pauthors">Yangru Huang , Peixi Peng , Yi Jin*, Yidong Li, Junliang Xing, and Shiming Ge.
+            <div class="ptitle">Domain Adaptive Attention Learning for Unsupervised Person Re-Identifification.
+            </div>
+
           </div>
-
-        </div>
-        <div class="pvenue">In In AAAI Conference on Artificial Intelligence (AAAI) , 2020, 11069-11076.</div>
-        <div class="plink">
-          <a href="./pdfs/2020-AAAI-Domain Adaptive Attention Learning for Unsupervised Person Re-Identification.pdf"
-            target="_blank">[PDF]</a>
-          <a href="https://aaai.org/ojs/index.php/AAAI/article/view/6762" target="_blank">[DOI]</a>
-          <a onclick="display('huang2020domain')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="huang2020domain">
-            <pre class="bibtex">
+          <div class="pvenue">In In AAAI Conference on Artificial Intelligence (AAAI) , 2020, 11069-11076.</div>
+          <div class="plink">
+            <a href="./pdfs/2020-AAAI-Domain Adaptive Attention Learning for Unsupervised Person Re-Identification.pdf"
+              target="_blank">[PDF]</a>
+            <a href="https://aaai.org/ojs/index.php/AAAI/article/view/6762" target="_blank">[DOI]</a>
+            <a onclick="display('huang2020domain')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="huang2020domain">
+              <pre class="bibtex">
 @inproceedings{huang2020domain,
   title={Domain Adaptive Attention Learning for Unsupervised Person Re-Identification.},
   author={Huang, Yangru and Peng, Peixi and Jin, Yi and Li, Yidong and Xing, Junliang and Ge, Shiming},
@@ -704,25 +813,26 @@ pages={3387-3397}
   year={2020}
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <h3>2019</h3>
-      <div class="paper">
-        <img height="110px" width="210px" src="#">
-        <div class="pauthors">Qiang Li, Xianzhen He, Wenguang Wang, Shiming Ge.</div>
-        <div class="ptitle">AeMFace: Additive E-Margin Loss for Deep Face Recognition
-        </div>
-        <div class="pvenue">In IEEE International Conference on Signal, Information and Data Processing (ICSIDP), 2019,
-          1-6.</div>
-        <div class="plink">
+        <h3>2019</h3>
+        <div class="paper">
+          <img height="110px" width="210px" src="#">
+          <div class="pauthors">Qiang Li, Xianzhen He, Wenguang Wang, Shiming Ge.</div>
+          <div class="ptitle">AeMFace: Additive E-Margin Loss for Deep Face Recognition
+          </div>
+          <div class="pvenue">In IEEE International Conference on Signal, Information and Data Processing (ICSIDP),
+            2019,
+            1-6.</div>
+          <div class="plink">
 
-          <a href="https://ieeexplore.ieee.org/document/9173230" target="_blank">[DOI]</a>
-          <a onclick="display('9173230')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="9173230">
-            <pre class="bibtex">
+            <a href="https://ieeexplore.ieee.org/document/9173230" target="_blank">[DOI]</a>
+            <a onclick="display('9173230')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="9173230">
+              <pre class="bibtex">
 @INPROCEEDINGS{9173230,
   author={Q. {Li} and X. {He} and W. {Wang} and S. {Ge}},
   booktitle={2019 IEEE International Conference on Signal, Information and Data Processing (ICSIDP)}, 
@@ -732,25 +842,25 @@ pages={3387-3397}
   number={},
   pages={1-6},}
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/8304247.webp">
-        <div class="pauthors">Weihua Ou, Jianping Gou, Quan Zhou, Shiming Ge, Fei Long.</div>
-        <div class="ptitle">Discriminative Multiview Nonnegative Matrix Factorization for Classification.
-        </div>
-        <div class="pvenue">In IEEE Access, 2019, 7: 60947-60956.</div>
-        <div class="plink">
-          <a href="./pdfs/2019-IEEEAccess-Discriminative Multiview Nonnegative Matrix Factorization for Classification.pdf"
-            target="_blank">[PDF]</a>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/8304247.webp">
+          <div class="pauthors">Weihua Ou, Jianping Gou, Quan Zhou, Shiming Ge, Fei Long.</div>
+          <div class="ptitle">Discriminative Multiview Nonnegative Matrix Factorization for Classification.
+          </div>
+          <div class="pvenue">In IEEE Access, 2019, 7: 60947-60956.</div>
+          <div class="plink">
+            <a href="./pdfs/2019-IEEEAccess-Discriminative Multiview Nonnegative Matrix Factorization for Classification.pdf"
+              target="_blank">[PDF]</a>
 
-          <a href="https://ieeexplore.ieee.org/document/8710325" target="_blank">[DOI]</a>
-          <a onclick="display('8710325')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="8710325">
-            <pre class="bibtex">
+            <a href="https://ieeexplore.ieee.org/document/8710325" target="_blank">[DOI]</a>
+            <a onclick="display('8710325')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="8710325">
+              <pre class="bibtex">
 @article{8710325,
   author={W. {Ou} and J. {Gou} and Q. {Zhou} and S. {Ge} and F. {Long}},
   journal={IEEE Access}, 
@@ -761,26 +871,26 @@ pages={3387-3397}
   pages={60947-60956}
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/8754681.webp">
-        <div class="pauthors">Boyang Chen, Xuan Feng, Ronghua Wu, Qiang Guo, Xi Wang, Shiming Ge.</div>
-        <div class="ptitle">Adaptive Wavelet Filter With Edge Compensation for Remote Sensing Image Denoising.
-        </div>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/8754681.webp">
+          <div class="pauthors">Boyang Chen, Xuan Feng, Ronghua Wu, Qiang Guo, Xi Wang, Shiming Ge.</div>
+          <div class="ptitle">Adaptive Wavelet Filter With Edge Compensation for Remote Sensing Image Denoising.
+          </div>
 
-        <div class="pvenue">In IEEE Access, 2019, 7(99): 91966-91979.</div>
-        <div class="plink">
-          <a href="./pdfs/2019-IEEEAccess-Adaptive Wavelet Filter With Edge Compensation for Remote Sensing Image Denoising.pdf"
-            target="_blank" ">[PDF]</a>
+          <div class="pvenue">In IEEE Access, 2019, 7(99): 91966-91979.</div>
+          <div class="plink">
+            <a href="./pdfs/2019-IEEEAccess-Adaptive Wavelet Filter With Edge Compensation for Remote Sensing Image Denoising.pdf"
+              target="_blank" ">[PDF]</a>
 
           <a href=" https://ieeexplore.ieee.org/document/8754681" target="_blank">[DOI]</a>
-          <a onclick="display('2019Adaptive')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="2019Adaptive">
-            <pre class="bibtex">
+            <a onclick="display('2019Adaptive')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="2019Adaptive">
+              <pre class="bibtex">
 @article{2019Adaptive,
   title={Adaptive Wavelet Filter with Edge Compensation for Remote Sensing Image Denoising},
   author={ Chen, Boyang  and  Feng, Xuan  and  Wu, Ronghua  and  Guo, Qiang  and  Ge, Shiming },
@@ -791,25 +901,25 @@ pages={3387-3397}
   year={2019},
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/1610.02256.webp">
-        <div class="pauthors">Xin Jin, Le Wu, Xiaodong Li, Xiaokun Zhang, Jingying Chi, Siwei Peng, Shiming Ge, Geng
-          Zhao, Shuying Li.</div>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/1610.02256.webp">
+          <div class="pauthors">Xin Jin, Le Wu, Xiaodong Li, Xiaokun Zhang, Jingying Chi, Siwei Peng, Shiming Ge, Geng
+            Zhao, Shuying Li.</div>
 
-        <div class="ptitle">ILGNet: Inception Modules with Connected Local and Global Features for Efficient Image
-          Aesthetic Quality Classification using Domain Adaptation.
-        </div>
-        <div class="pvenue">IET Computer Vision, 2019, 13(2): 206-212.</div>
-        <div class="plink">
-          <a href="https://ieeexplore.ieee.org/document/8648872" target="_blank">[DOI]</a>
-          <a onclick="display('jin2019ilgnet')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="jin2019ilgnet">
-            <pre class="bibtex">
+          <div class="ptitle">ILGNet: Inception Modules with Connected Local and Global Features for Efficient Image
+            Aesthetic Quality Classification using Domain Adaptation.
+          </div>
+          <div class="pvenue">IET Computer Vision, 2019, 13(2): 206-212.</div>
+          <div class="plink">
+            <a href="https://ieeexplore.ieee.org/document/8648872" target="_blank">[DOI]</a>
+            <a onclick="display('jin2019ilgnet')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="jin2019ilgnet">
+              <pre class="bibtex">
 @article{jin2019ilgnet,
   title="ILGNet: Inception Modules with Connected Local and Global Features for Efficient Image Aesthetic Quality Classification using Domain Adaptation",
   author="Xin {Jin} and Le {Wu} and Xiaodong {Li} and Xiaokun {Zhang} and Jingying {Chi} and Siwei {Peng} and Shiming {Ge} and Geng {Zhao} and Shuying {Li}",
@@ -821,25 +931,25 @@ pages={3387-3397}
   year="2019"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/1-s2.0-S0020025519300611-gr1.webp">
-        <div class="pauthors">Dan Zeng, Han Liu, Fan Zhao, Shiming Ge*, Wei Shen, Zhijiang Zhang.</div>
-        <div class="ptitle">Proposal Pyramid Networks for Fast Face Detection.
-        </div>
-        <div class="pvenue">Information Sciences, 2019, 495: 136-149.</div>
-        <div class="plink">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/1-s2.0-S0020025519300611-gr1.webp">
+          <div class="pauthors">Dan Zeng, Han Liu, Fan Zhao, Shiming Ge*, Wei Shen, Zhijiang Zhang.</div>
+          <div class="ptitle">Proposal Pyramid Networks for Fast Face Detection.
+          </div>
+          <div class="pvenue">Information Sciences, 2019, 495: 136-149.</div>
+          <div class="plink">
 
-          <a href="./pdfs/2019-INS-Proposal pyramid networks for fast face detection.pdf" target="_blank">[PDF]</a>
+            <a href="./pdfs/2019-INS-Proposal pyramid networks for fast face detection.pdf" target="_blank">[PDF]</a>
 
-          <a href="https://www.sciencedirect.com/science/article/pii/S0020025519300611" target="_blank">[DOI]</a>
-          <a onclick="display('zeng2019proposal')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="zeng2019proposal">
-            <pre class="bibtex">
+            <a href="https://www.sciencedirect.com/science/article/pii/S0020025519300611" target="_blank">[DOI]</a>
+            <a onclick="display('zeng2019proposal')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="zeng2019proposal">
+              <pre class="bibtex">
 @article{zeng2019proposal,
   title="Proposal Pyramid Networks for Fast Face Detection",
   author="Dan {Zeng} and Han {Liu} and Fan {Zhao} and Shiming {Ge} and Wei {Shen} and Zhijiang {Zhang}",
@@ -850,25 +960,25 @@ pages={3387-3397}
   year="2019"
 }   
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/1-s2.0-S0167865518302125-gr1.webp">
-        <div class="pauthors">Dan Zeng, Fan Zhao, Shiming Ge*, Wei Shen.</div>
-        <div class="ptitle">Fast Cascade Face Detection with Pyramid Network.
-        </div>
-        <div class="pvenue">Pattern Recognition Letters (PRL), 2019, 119: 180-186.</div>
-        <div class="plink">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/1-s2.0-S0167865518302125-gr1.webp">
+          <div class="pauthors">Dan Zeng, Fan Zhao, Shiming Ge*, Wei Shen.</div>
+          <div class="ptitle">Fast Cascade Face Detection with Pyramid Network.
+          </div>
+          <div class="pvenue">Pattern Recognition Letters (PRL), 2019, 119: 180-186.</div>
+          <div class="plink">
 
-          <a href="./pdfs/2019-PRL-Fast cascade face detection with pyramid network.pdf" target="_blank">[PDF]</a>
+            <a href="./pdfs/2019-PRL-Fast cascade face detection with pyramid network.pdf" target="_blank">[PDF]</a>
 
-          <a href="https://www.sciencedirect.com/science/article/pii/S0167865518302125" target="_blank">[DOI]</a>
-          <a onclick="display('zeng2019fast')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="zeng2019fast">
-            <pre class="bibtex">
+            <a href="https://www.sciencedirect.com/science/article/pii/S0167865518302125" target="_blank">[DOI]</a>
+            <a onclick="display('zeng2019fast')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="zeng2019fast">
+              <pre class="bibtex">
 @article{zeng2019fast,
   title="Fast Cascade Face Detection with Pyramid Network",
   author="Dan {Zeng} and Fan {Zhao} and Shiming {Ge} and Wei {Shen}",
@@ -879,22 +989,22 @@ pages={3387-3397}
   year="2019"
 }     
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/500_2019_3834_Fig1_HTML.webp">
-        <div class="pauthors">Xin Jin, Yujie Li, Shiming Ge*, Chenggen Song, Le Wu, Xinghui Zhou.</div>
-        <div class="ptitle">Secure Face Retrieval for Group Mobile Users.
-        </div>
-        <div class="pvenue">Soft Computing, 2019, 23(23): 12813-12820.</div>
-        <div class="plink">
-          <a href="https://link.springer.com/article/10.1007/s00500-019-03834-6" target="_blank">[DOI]</a>
-          <a onclick="display('jin2019secure')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="jin2019secure">
-            <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/500_2019_3834_Fig1_HTML.webp">
+          <div class="pauthors">Xin Jin, Yujie Li, Shiming Ge*, Chenggen Song, Le Wu, Xinghui Zhou.</div>
+          <div class="ptitle">Secure Face Retrieval for Group Mobile Users.
+          </div>
+          <div class="pvenue">Soft Computing, 2019, 23(23): 12813-12820.</div>
+          <div class="plink">
+            <a href="https://link.springer.com/article/10.1007/s00500-019-03834-6" target="_blank">[DOI]</a>
+            <a onclick="display('jin2019secure')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="jin2019secure">
+              <pre class="bibtex">
 @article{jin2019secure,
   title="Secure Face Retrieval for Group Mobile Users",
   author="Xin {Jin} and Yujie {Li} and Shiming {Ge} and Chenggen {Song} and Le {Wu} and Xinghui {Zhou}",
@@ -906,27 +1016,27 @@ pages={3387-3397}
   year="2019"
 }           
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/1811.09998.webp">
-        <div class="pauthors">Shiming Ge, Shengwei Zhao, Chenyu Li, Jia Li*.</div>
-        <div class="ptitle">Low-Resolution Face Recognition in the Wild via Selective Knowledge Distillation.
-        </div>
-        <div class="pvenue">IEEE Transactions on Image Processing (TIP), 2019, 28(4): 2051-2062.</div>
-        <div class="plink">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/1811.09998.webp">
+          <div class="pauthors">Shiming Ge, Shengwei Zhao, Chenyu Li, Jia Li*.</div>
+          <div class="ptitle">Low-Resolution Face Recognition in the Wild via Selective Knowledge Distillation.
+          </div>
+          <div class="pvenue">IEEE Transactions on Image Processing (TIP), 2019, 28(4): 2051-2062.</div>
+          <div class="plink">
 
-          <a href="./pdfs/2019-TIP-Low-Resolution Face Recognition in the Wild via Selective Knowledge Distillation.pdf"
-            target="_blank">[PDF]</a>
-          <a href="./research/lowresface.html#ge2019low" target="_blank">[Project]</a>
+            <a href="./pdfs/2019-TIP-Low-Resolution Face Recognition in the Wild via Selective Knowledge Distillation.pdf"
+              target="_blank">[PDF]</a>
+            <a href="./research/lowresface.html#ge2019low" target="_blank">[Project]</a>
 
-          <a href="https://ieeexplore.ieee.org/document/8554301/" target="_blank">[DOI]</a>
-          <a onclick="display('ge2019low')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="ge2019low">
-            <pre class="bibtex">
+            <a href="https://ieeexplore.ieee.org/document/8554301/" target="_blank">[DOI]</a>
+            <a onclick="display('ge2019low')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="ge2019low">
+              <pre class="bibtex">
 @article{ge2019low,
   title="Low-Resolution Face Recognition in the Wild via Selective Knowledge Distillation",
   author="Shiming {Ge} and Shengwei {Zhao} and Chenyu {Li} and Jia {Li}",
@@ -938,24 +1048,25 @@ pages={3387-3397}
   year="2019"
 }              
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/8919361.webp">
-        <div class="pauthors">Shengwei Zhao, Xindi Gao, Shikun Li, Shiming Ge.</div>
-        <div class="ptitle">Low-Resolution Face Recognition in the Wild with Mixed-Domain Distillation.
-        </div>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/8919361.webp">
+          <div class="pauthors">Shengwei Zhao, Xindi Gao, Shikun Li, Shiming Ge.</div>
+          <div class="ptitle">Low-Resolution Face Recognition in the Wild with Mixed-Domain Distillation.
+          </div>
 
-        <div class="pvenue">In IEEE Fifth International Conference on Multimedia Big Data (BigMM), 2019, 148-154.</div>
-        <div class="plink">
-          <a href="./research/lowresface.html#zhao2019low" target="_blank">[Project]</a>
-          <a href="https://ieeexplore.ieee.org/document/8919361/" target="_blank">[DOI]</a>
-          <a onclick="display('zhao2019low')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="zhao2019low">
-            <pre class="bibtex">
+          <div class="pvenue">In IEEE Fifth International Conference on Multimedia Big Data (BigMM), 2019, 148-154.
+          </div>
+          <div class="plink">
+            <a href="./research/lowresface.html#zhao2019low" target="_blank">[Project]</a>
+            <a href="https://ieeexplore.ieee.org/document/8919361/" target="_blank">[DOI]</a>
+            <a onclick="display('zhao2019low')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="zhao2019low">
+              <pre class="bibtex">
 @inproceedings{zhao2019low,
   title="Low-Resolution Face Recognition in the Wild with Mixed-Domain Distillation",
   author="Shengwei {Zhao} and Xindi {Gao} and Shikun {Li} and Shiming {Ge}",
@@ -965,26 +1076,26 @@ pages={3387-3397}
   year="2019"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/955200b774.gif">
-        <div class="pauthors">Chunhui Zhang, Shiming Ge*, Yingying Hua, Dan Zeng*.</div>
-        <div class="ptitle">Robust Deep Tracking with Two-step Augmentation Discriminative Correlation Filters.
-        </div>
-        <div class="pvenue">In IEEE International Conference on Multimedia and Expo (ICME), 2019, 1774-1779.</div>
-        <div class="plink">
-          <a href="./pdfs/2019-ICME-Robust Deep Tracking with Two-step Augmentation Discriminative Correlation Filters.pdf"
-            target="_blank">[PDF]</a>
-          <a href="./research/deeptracking.html#zhang2019robust" target="_blank">[Project]</a>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/955200b774.gif">
+          <div class="pauthors">Chunhui Zhang, Shiming Ge*, Yingying Hua, Dan Zeng*.</div>
+          <div class="ptitle">Robust Deep Tracking with Two-step Augmentation Discriminative Correlation Filters.
+          </div>
+          <div class="pvenue">In IEEE International Conference on Multimedia and Expo (ICME), 2019, 1774-1779.</div>
+          <div class="plink">
+            <a href="./pdfs/2019-ICME-Robust Deep Tracking with Two-step Augmentation Discriminative Correlation Filters.pdf"
+              target="_blank">[PDF]</a>
+            <a href="./research/deeptracking.html#zhang2019robust" target="_blank">[Project]</a>
 
-          <a href="https://ieeexplore.ieee.org/document/8785041" target="_blank">[DOI]</a>
-          <a onclick="display('zhang2019robust')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="zhang2019robust">
-            <pre class="bibtex">
+            <a href="https://ieeexplore.ieee.org/document/8785041" target="_blank">[DOI]</a>
+            <a onclick="display('zhang2019robust')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="zhang2019robust">
+              <pre class="bibtex">
 @inproceedings{zhang2019robust,
   title="Robust Deep Tracking with Two-step Augmentation Discriminative Correlation Filters",
   author="Chunhui {Zhang} and Shiming {Ge} and Yingying {Hua} and Dan {Zeng}",
@@ -994,27 +1105,27 @@ pages={3387-3397}
   year="2019"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/3343031.3351082.webp">
-        <div class="pauthors">Shiming Ge, Shengwei Zhao, Xindi Gao, Jia Li*.</div>
-        <div class="ptitle">Fewer-Shots and Lower-Resolutions: Towards Ultrafast Face Recognition in the Wild.
-        </div>
-        <div class="pvenue">In ACM International Conference on Multimedia (MM), 2019, 229-237.</div>
-        <div class="plink">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/3343031.3351082.webp">
+          <div class="pauthors">Shiming Ge, Shengwei Zhao, Xindi Gao, Jia Li*.</div>
+          <div class="ptitle">Fewer-Shots and Lower-Resolutions: Towards Ultrafast Face Recognition in the Wild.
+          </div>
+          <div class="pvenue">In ACM International Conference on Multimedia (MM), 2019, 229-237.</div>
+          <div class="plink">
 
-          <a href="./pdfs/2019-MM-Fewer-Shots and Lower-Resolutions--Towards Ultrafast Face Recognition in the Wild.pdf"
-            target="_blank">[PDF]</a>
-          <a href="./research/conlearning.html#ge2019fewer" target="_blank">[Project]</a>
+            <a href="./pdfs/2019-MM-Fewer-Shots and Lower-Resolutions--Towards Ultrafast Face Recognition in the Wild.pdf"
+              target="_blank">[PDF]</a>
+            <a href="./research/conlearning.html#ge2019fewer" target="_blank">[Project]</a>
 
-          <a href="https://dl.acm.org/doi/10.1145/3343031.3351082" target="_blank">[DOI]</a>
-          <a onclick="display('ge2019fewer')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="ge2019fewer">
-            <pre class="bibtex">
+            <a href="https://dl.acm.org/doi/10.1145/3343031.3351082" target="_blank">[DOI]</a>
+            <a onclick="display('ge2019fewer')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="ge2019fewer">
+              <pre class="bibtex">
 @inproceedings{ge2019fewer,
   title="Fewer-Shots and Lower-Resolutions: Towards Ultrafast Face Recognition in the Wild",
   author="Shiming {Ge} and Shengwei {Zhao} and Xindi {Gao} and Jia {Li}",
@@ -1024,28 +1135,28 @@ pages={3387-3397}
   year="2019"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/1907.04983.webp">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/1907.04983.webp">
 
-        <div class="pauthors">Xin Jin, Le Wu, Geng Zhao, Xiaodong Li, Xiaokun Zhang, Shiming Ge*, Dongqing Zou, Bin
-          Zhou,
-          Xinghui Zhou.</div>
-        <div class="ptitle">Aesthetic Attributes Assessment of Images.
-        </div>
-        <div class="pvenue">In ACM International Conference on Multimedia (MM), 2019, 311-319.</div>
-        <div class="plink">
+          <div class="pauthors">Xin Jin, Le Wu, Geng Zhao, Xiaodong Li, Xiaokun Zhang, Shiming Ge*, Dongqing Zou, Bin
+            Zhou,
+            Xinghui Zhou.</div>
+          <div class="ptitle">Aesthetic Attributes Assessment of Images.
+          </div>
+          <div class="pvenue">In ACM International Conference on Multimedia (MM), 2019, 311-319.</div>
+          <div class="plink">
 
-          <a href="./pdfs/2019-MM-Aesthetic Attributes Assessment of Images.pdf" target="_blank">[PDF]</a>
+            <a href="./pdfs/2019-MM-Aesthetic Attributes Assessment of Images.pdf" target="_blank">[PDF]</a>
 
-          <a href="https://arxiv.org/abs/1907.04983" target="_blank">[DOI]</a>
-          <a onclick="display('jin2019aesthetic')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="jin2019aesthetic">
-            <pre class="bibtex">
+            <a href="https://arxiv.org/abs/1907.04983" target="_blank">[DOI]</a>
+            <a onclick="display('jin2019aesthetic')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="jin2019aesthetic">
+              <pre class="bibtex">
 @inproceedings{jin2019aesthetic,
   title="Aesthetic Attributes Assessment of Images",
   author="Xin {Jin} and Le {Wu} and Geng {Zhao} and Xiaodong {Li} and Xiaokun {Zhang} and Shiming {Ge} and Dongqing {Zou} and Bin {Zhou} and Xinghui {Zhou}",
@@ -1055,26 +1166,26 @@ pages={3387-3397}
   year="2019"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/3351012.webp">
-        <div class="pauthors">Yingying Hua, Shiming Ge*, Xindi Gao, Xin Jin, Dan Zeng.</div>
-        <div class="ptitle">Defending Against Adversarial Examples via Soft Decision Trees Embedding.
-        </div>
-        <div class="pvenue">In ACM International Conference on Multimedia (MM), 2019, 2106-2114.</div>
-        <div class="plink">
-          <a href="./pdfs/2019-MM-Defending Against Adversarial Examples via Soft Decision Trees Embedding.pdf"
-            target="_blank">[PDF]</a>
-          <a href="./research/conlearning.html#hua2019defending" target="_blank">[Project]</a>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/3351012.webp">
+          <div class="pauthors">Yingying Hua, Shiming Ge*, Xindi Gao, Xin Jin, Dan Zeng.</div>
+          <div class="ptitle">Defending Against Adversarial Examples via Soft Decision Trees Embedding.
+          </div>
+          <div class="pvenue">In ACM International Conference on Multimedia (MM), 2019, 2106-2114.</div>
+          <div class="plink">
+            <a href="./pdfs/2019-MM-Defending Against Adversarial Examples via Soft Decision Trees Embedding.pdf"
+              target="_blank">[PDF]</a>
+            <a href="./research/conlearning.html#hua2019defending" target="_blank">[Project]</a>
 
-          <a href="https://dl.acm.org/doi/10.1145/3343031.3351012" target="_blank">[DOI]</a>
-          <a onclick="display('hua2019defending')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="hua2019defending">
-            <pre class="bibtex">
+            <a href="https://dl.acm.org/doi/10.1145/3343031.3351012" target="_blank">[DOI]</a>
+            <a onclick="display('hua2019defending')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="hua2019defending">
+              <pre class="bibtex">
 @inproceedings{hua2019defending,
   title="Defending Against Adversarial Examples via Soft Decision Trees Embedding",
   author="Yingying {Hua} and Shiming {Ge} and Xindi {Gao} and Xin {Jin} and Dan {Zeng}",
@@ -1084,27 +1195,27 @@ pages={3387-3397}
   year="2019"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/2F978-3-030-04946-1_41.webp">
-        <div class="pauthors">Chenyu Li, Shiming Ge*, Yingying Hua, Haolin Liu, Xin Jin.</div>
-        <div class="ptitle">Occluded Face Recognition by Identity-Preserving Inpainting.
-        </div>
-        <div class="pvenue">Cognitive Internet of Things, 2019, 427-437.</div>
-        <div class="plink">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/2F978-3-030-04946-1_41.webp">
+          <div class="pauthors">Chenyu Li, Shiming Ge*, Yingying Hua, Haolin Liu, Xin Jin.</div>
+          <div class="ptitle">Occluded Face Recognition by Identity-Preserving Inpainting.
+          </div>
+          <div class="pvenue">Cognitive Internet of Things, 2019, 427-437.</div>
+          <div class="plink">
 
 
-          <a href="./pdfs/2018-ISAIR-Occluded Face Recognition by Identity-Preserving Inpainting.pdf"
-            target="_blank">[PDF]</a>
+            <a href="./pdfs/2018-ISAIR-Occluded Face Recognition by Identity-Preserving Inpainting.pdf"
+              target="_blank">[PDF]</a>
 
-          <a href="https://link.springer.com/chapter/10.1007%2F978-3-030-04946-1_41" target="_blank">[DOI]</a>
-          <a onclick="display('li2019occluded')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="li2019occluded">
-            <pre class="bibtex">
+            <a href="https://link.springer.com/chapter/10.1007%2F978-3-030-04946-1_41" target="_blank">[DOI]</a>
+            <a onclick="display('li2019occluded')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="li2019occluded">
+              <pre class="bibtex">
 @inproceedings{li2018occluded,
   title={Occluded Face Recognition by Identity-Preserving Inpainting},
   author={Li, Chenyu and Ge, Shiming and Hua, Yingying and Liu, Haolin and Jin, Xin},
@@ -1115,23 +1226,23 @@ pages={3387-3397}
   organization={Springer}
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/1912.11521.webp">
-        <div class="pauthors">Jialin Gao, Tong He, Xi Zhou, Shiming Ge.</div>
-        <div class="ptitle">Focusing and Diffusion: Bidirectional Attentive Graph Convolutional Networks for
-          Skeleton-based Action Recognition.
-        </div>
-        <div class="pvenue">Computer Research Repository (CoRR), 2019, 11521.</div>
-        <div class="plink">
-          <a href="https://arxiv.org/abs/1912.11521" target="_blank">[DOI]</a>
-          <a onclick="display('gao2019focusing')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="gao2019focusing">
-            <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/1912.11521.webp">
+          <div class="pauthors">Jialin Gao, Tong He, Xi Zhou, Shiming Ge.</div>
+          <div class="ptitle">Focusing and Diffusion: Bidirectional Attentive Graph Convolutional Networks for
+            Skeleton-based Action Recognition.
+          </div>
+          <div class="pvenue">Computer Research Repository (CoRR), 2019, 11521.</div>
+          <div class="plink">
+            <a href="https://arxiv.org/abs/1912.11521" target="_blank">[DOI]</a>
+            <a onclick="display('gao2019focusing')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="gao2019focusing">
+              <pre class="bibtex">
 @article{gao2019focusing,
   title="Focusing and Diffusion: Bidirectional Attentive Graph Convolutional Networks for Skeleton-based Action Recognition.",
   author="Jialin {Gao} and Tong {He} and Xi {Zhou} and Shiming {Ge}",
@@ -1140,26 +1251,26 @@ pages={3387-3397}
   year="2019"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <h3>2018</h3>
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/12559_2017_9506_Fig1_HTML.webp">
-        <div class="pauthors">Dan Zeng*, Fan Zhao, Wei Shen, Shiming Ge.</div>
-        <div class="ptitle">Compressing and Accelerating Neural Network for Facial Point Localization.
-        </div>
-        <div class="pvenue">Cognitive Computing, 2018, 10(2): 359-367.</div>
-        <div class="plink">
-          <a href="./pdfs/2017-CC-Compressing and Accelerating Neural Network for Facial Point Localization.pdf"
-            target="_blank">[PDF]</a>
+        <h3>2018</h3>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/12559_2017_9506_Fig1_HTML.webp">
+          <div class="pauthors">Dan Zeng*, Fan Zhao, Wei Shen, Shiming Ge.</div>
+          <div class="ptitle">Compressing and Accelerating Neural Network for Facial Point Localization.
+          </div>
+          <div class="pvenue">Cognitive Computing, 2018, 10(2): 359-367.</div>
+          <div class="plink">
+            <a href="./pdfs/2017-CC-Compressing and Accelerating Neural Network for Facial Point Localization.pdf"
+              target="_blank">[PDF]</a>
 
-          <a href="https://link.springer.com/article/10.1007/s12559-017-9506-0" target="_blank">[DOI]</a>
-          <a onclick="display('zeng2018compressing')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="zeng2018compressing">
-            <pre class="bibtex">
+            <a href="https://link.springer.com/article/10.1007/s12559-017-9506-0" target="_blank">[DOI]</a>
+            <a onclick="display('zeng2018compressing')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="zeng2018compressing">
+              <pre class="bibtex">
 @article{zeng2018compressing,
   title="Compressing and Accelerating Neural Network for Facial Point Localization",
   author="Dan {Zeng} and Fan {Zhao} and Wei {Shen} and Shiming {Ge}",
@@ -1171,27 +1282,27 @@ pages={3387-3397}
   year="2018"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/s41095-017-0102-8.webp">
-        <div class="pauthors">Shiming Ge*, Xin Jin, Qiting Ye, Zhao Luo, Qiang Li.</div>
-        <div class="ptitle">Image Editing by Object-Aware Optimal Boundary Searching and Mixed-Domain Composition.
-        </div>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/s41095-017-0102-8.webp">
+          <div class="pauthors">Shiming Ge*, Xin Jin, Qiting Ye, Zhao Luo, Qiang Li.</div>
+          <div class="ptitle">Image Editing by Object-Aware Optimal Boundary Searching and Mixed-Domain Composition.
+          </div>
 
-        <div class="pvenue">Computational Visual Media, 2018, 4(1): 71-82.</div>
-        <div class="plink">
+          <div class="pvenue">Computational Visual Media, 2018, 4(1): 71-82.</div>
+          <div class="plink">
 
-          <a href="./pdfs/2018-CVMJ-Image editing by object-aware optimal boundary searching and mixed-domain composition.pdf"
-            target="_blank">[PDF]</a>
+            <a href="./pdfs/2018-CVMJ-Image editing by object-aware optimal boundary searching and mixed-domain composition.pdf"
+              target="_blank">[PDF]</a>
 
-          <a href="https://link.springer.com/article/10.1007/s41095-017-0102-8" target="_blank">[DOI]</a>
-          <a onclick="display('ge2018image')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="ge2018image">
-            <pre class="bibtex">
+            <a href="https://link.springer.com/article/10.1007/s41095-017-0102-8" target="_blank">[DOI]</a>
+            <a onclick="display('ge2018image')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="ge2018image">
+              <pre class="bibtex">
 @article{ge2018image,
   title="Image Editing by Object-Aware Optimal Boundary Searching and Mixed-Domain Composition",
   author="Shiming {Ge} and Xin {Jin} and Qiting {Ye} and Zhao {Luo} and Qiang {Li}",
@@ -1203,23 +1314,23 @@ pages={3387-3397}
   year="2018"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/11042_2017_4347_Fig1_HTML.webp">
-        <div class="pauthors">Shikui Wei*, Yao Zhao, Tao Yang, Zhili Zhou, Shiming Ge.</div>
-        <div class="ptitle">Enhancing Heterogeneous Similarity Estimation via Neighborhood Reversibility.
-        </div>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/11042_2017_4347_Fig1_HTML.webp">
+          <div class="pauthors">Shikui Wei*, Yao Zhao, Tao Yang, Zhili Zhou, Shiming Ge.</div>
+          <div class="ptitle">Enhancing Heterogeneous Similarity Estimation via Neighborhood Reversibility.
+          </div>
 
-        <div class="pvenue">Multimedia Tools and Applications, 2018, 77(1): 1437-1452.</div>
-        <div class="plink">
-          <a href="https://link.springer.com/article/10.1007/s11042-017-4347-0" target="_blank">[DOI]</a>
-          <a onclick="display('wei2018enhancing')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="wei2018enhancing">
-            <pre class="bibtex">
+          <div class="pvenue">Multimedia Tools and Applications, 2018, 77(1): 1437-1452.</div>
+          <div class="plink">
+            <a href="https://link.springer.com/article/10.1007/s11042-017-4347-0" target="_blank">[DOI]</a>
+            <a onclick="display('wei2018enhancing')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="wei2018enhancing">
+              <pre class="bibtex">
 @article{wei2018enhancing,
   title="Enhancing Heterogeneous Similarity Estimation via Neighborhood Reversibility",
   author="Shikui {Wei} and Yao {Zhao} and Tao {Yang} and Zhili {Zhou} and Shiming {Ge}",
@@ -1231,23 +1342,23 @@ pages={3387-3397}
   year="2018"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/11042_2017_5159_Fig2_HTML.webp">
-        <div class="pauthors">Xin Jin, Sui Yin, Ningning Liu, Xiaodong Li, Geng Zhao, Shiming Ge*.</div>
-        <div class="ptitle">Color Image Encryption in Non-RGB Color Spaces.
-        </div>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/11042_2017_5159_Fig2_HTML.webp">
+          <div class="pauthors">Xin Jin, Sui Yin, Ningning Liu, Xiaodong Li, Geng Zhao, Shiming Ge*.</div>
+          <div class="ptitle">Color Image Encryption in Non-RGB Color Spaces.
+          </div>
 
-        <div class="pvenue">Multimedia Tools and Applications, 2018, 77(12): 15851-15873.</div>
-        <div class="plink">
-          <a href="https://link.springer.com/article/10.1007/s11042-017-5159-y" target="_blank">[DOI]</a>
-          <a onclick="display('jin2018color')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="jin2018color">
-            <pre class="bibtex">
+          <div class="pvenue">Multimedia Tools and Applications, 2018, 77(12): 15851-15873.</div>
+          <div class="plink">
+            <a href="https://link.springer.com/article/10.1007/s11042-017-5159-y" target="_blank">[DOI]</a>
+            <a onclick="display('jin2018color')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="jin2018color">
+              <pre class="bibtex">
 @article{jin2018color,
   title="Color Image Encryption in Non-RGB Color Spaces",
   author="Xin {Jin} and Sui {Yin} and Ningning {Liu} and Xiaodong {Li} and Geng {Zhao} and Shiming {Ge}",
@@ -1259,27 +1370,27 @@ pages={3387-3397}
   year="2018"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/1708.07089.webp">
-        <div class="pauthors">Xin Jin, Le Wu, Xiaodong Li, Siyu Chen, Siwei Peng, Jingying Chi, Shiming Ge*, Chenggen
-          Song, Geng Zhao.</div>
-        <div class="ptitle">Predicting Aesthetic Score Distribution Through Cumulative Jensen-Shannon Divergence.
-        </div>
-        <div class="pvenue">In AAAI Conference on Artificial Intelligence (AAAI), 2018, 77-84.</div>
-        <div class="plink">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/1708.07089.webp">
+          <div class="pauthors">Xin Jin, Le Wu, Xiaodong Li, Siyu Chen, Siwei Peng, Jingying Chi, Shiming Ge*, Chenggen
+            Song, Geng Zhao.</div>
+          <div class="ptitle">Predicting Aesthetic Score Distribution Through Cumulative Jensen-Shannon Divergence.
+          </div>
+          <div class="pvenue">In AAAI Conference on Artificial Intelligence (AAAI), 2018, 77-84.</div>
+          <div class="plink">
 
-          <a href="./pdfs/2018-AAAI-Predicting Aesthetic Score Distribution through Cumulative Jensen-Shannon Divergence.pdf"
-            target="_blank">[PDF]</a>
+            <a href="./pdfs/2018-AAAI-Predicting Aesthetic Score Distribution through Cumulative Jensen-Shannon Divergence.pdf"
+              target="_blank">[PDF]</a>
 
-          <a href="https://arxiv.org/abs/1708.07089" target="_blank">[DOI]</a>
-          <a onclick="display('jin2018predicting')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="jin2018predicting">
-            <pre class="bibtex">
+            <a href="https://arxiv.org/abs/1708.07089" target="_blank">[DOI]</a>
+            <a onclick="display('jin2018predicting')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="jin2018predicting">
+              <pre class="bibtex">
 @inproceedings{jin2018predicting,
   title="Predicting Aesthetic Score Distribution through Cumulative Jensen-Shannon Divergence",
   author="Xin {Jin} and Le {Wu} and Xiaodong {Li} and Siyu {Chen} and Siwei {Peng} and Jingying {Chi} and Shiming {Ge} and Chenggen {Song} and Geng {Zhao}",
@@ -1289,26 +1400,26 @@ pages={3387-3397}
   year="2018"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/3240876.3240902.webp">
-        <div class="pauthors">Haolin Liu, Chenyu Li, Shiming Ge*, Shengwei Zhao, Xin Jin.</div>
-        <div class="ptitle">Generative Image Inpainting with Neural Features.
-        </div>
-        <div class="pvenue">In International Conference on Internet Multimedia Computing and Service (ICIMCS), 2018,
-          23(5): 1-5.</div>
-        <div class="plink">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/3240876.3240902.webp">
+          <div class="pauthors">Haolin Liu, Chenyu Li, Shiming Ge*, Shengwei Zhao, Xin Jin.</div>
+          <div class="ptitle">Generative Image Inpainting with Neural Features.
+          </div>
+          <div class="pvenue">In International Conference on Internet Multimedia Computing and Service (ICIMCS), 2018,
+            23(5): 1-5.</div>
+          <div class="plink">
 
-          <a href="./pdfs/2019-ICIMCS-Generative Image Inpainting With Neural Features.pdf" target="_blank">[PDF]</a>
+            <a href="./pdfs/2019-ICIMCS-Generative Image Inpainting With Neural Features.pdf" target="_blank">[PDF]</a>
 
-          <a href="https://dl.acm.org/doi/abs/10.1145/3240876.3240902" target="_blank">[DOI]</a>
-          <a onclick="display('liu2018generative')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="liu2018generative">
-            <pre class="bibtex">
+            <a href="https://dl.acm.org/doi/abs/10.1145/3240876.3240902" target="_blank">[DOI]</a>
+            <a onclick="display('liu2018generative')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="liu2018generative">
+              <pre class="bibtex">
 @inproceedings{10.1145/3240876.3240902,
   author = {Liu, Haolin and Li, Chenyu and Ge, Shiming and Zhao, Shengwei and Jin, Xin},
   title = {Generative Image Inpainting with Neural Features},
@@ -1326,22 +1437,22 @@ pages={3387-3397}
   series = {ICIMCS '18}
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/473692.gif">
-        <div class="pauthors">Zhao Luo, Shiming Ge*, Yingying Hua, Haolin Liu, Xin Jin.</div>
-        <div class="ptitle">Extracting Features of Interest from Small Deep Networks for Efficient Visual Tracking.
-        </div>
-        <div class="pvenue">Pacific Rim Conference on Multimedia (PCM), 2018, 11164: 414-425.</div>
-        <div class="plink">
-          <a href="https://link.springer.com/chapter/10.1007/978-3-030-00776-8_38" target="_blank">[DOI]</a>
-          <a onclick="display('luo2018extracting')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="luo2018extracting">
-            <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/473692.gif">
+          <div class="pauthors">Zhao Luo, Shiming Ge*, Yingying Hua, Haolin Liu, Xin Jin.</div>
+          <div class="ptitle">Extracting Features of Interest from Small Deep Networks for Efficient Visual Tracking.
+          </div>
+          <div class="pvenue">Pacific Rim Conference on Multimedia (PCM), 2018, 11164: 414-425.</div>
+          <div class="plink">
+            <a href="https://link.springer.com/chapter/10.1007/978-3-030-00776-8_38" target="_blank">[DOI]</a>
+            <a onclick="display('luo2018extracting')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="luo2018extracting">
+              <pre class="bibtex">
 @inproceedings{luo2018extracting,
   title="Extracting Features of Interest from Small Deep Networks for Efficient Visual Tracking",
   author="Zhao {Luo} and Shiming {Ge} and Yingying {Hua} and Haolin {Liu} and Xin {Jin}",
@@ -1351,22 +1462,22 @@ pages={3387-3397}
   year="2018"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/475743_1_En_4_Fig1_HTML.webp">
-        <div class="pauthors">Xin Jin, Le Wu, Xinghui Zhou, Geng Zhao, Xiaokun Zhang, Xiaodong Li, Shiming Ge*.</div>
-        <div class="ptitle">Predicting Aesthetic Radar Map Using a Hierarchical Multi-task Network.
-        </div>
-        <div class="pvenue">Pattern Recognition and Computer Vision (PRCV), 2018, 11257: 41-50.</div>
-        <div class="plink">
-          <a href="https://link.springer.com/chapter/10.1007/978-3-030-03335-4_4" target="_blank">[DOI]</a>
-          <a onclick="display('jin2018predicting')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="jin2018predicting">
-            <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/475743_1_En_4_Fig1_HTML.webp">
+          <div class="pauthors">Xin Jin, Le Wu, Xinghui Zhou, Geng Zhao, Xiaokun Zhang, Xiaodong Li, Shiming Ge*.</div>
+          <div class="ptitle">Predicting Aesthetic Radar Map Using a Hierarchical Multi-task Network.
+          </div>
+          <div class="pvenue">Pattern Recognition and Computer Vision (PRCV), 2018, 11257: 41-50.</div>
+          <div class="plink">
+            <a href="https://link.springer.com/chapter/10.1007/978-3-030-03335-4_4" target="_blank">[DOI]</a>
+            <a onclick="display('jin2018predicting')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="jin2018predicting">
+              <pre class="bibtex">
 @inproceedings{jin2018predicting,
   title="Predicting Aesthetic Radar Map Using a Hierarchical Multi-task Network",
   author="Xin {Jin} and Le {Wu} and Xinghui {Zhou} and Geng {Zhao} and Xiaokun {Zhang} and Xiaodong {Li} and Shiming {Ge}",
@@ -1376,23 +1487,23 @@ pages={3387-3397}
   year="2018"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/3167132.3167186.webp">
-        <div class="pauthors">Xiaoyu Wang, Osamu Hasegawa, Shiming Ge.</div>
-        <div class="ptitle">Error Analysis and Topology Modifications of a Self-Organizing Incremental Neural
-          Network.
-        </div>
-        <div class="pvenue">In ACM Symposium On Applied Computing (SAC), 2018, 487-494.</div>
-        <div class="plink">
-          <a href="https://dl.acm.org/doi/abs/10.1145/3167132.3167186" target="_blank">[DOI]</a>
-          <a onclick="display('jin20173d')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="jin20173d">
-            <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/3167132.3167186.webp">
+          <div class="pauthors">Xiaoyu Wang, Osamu Hasegawa, Shiming Ge.</div>
+          <div class="ptitle">Error Analysis and Topology Modifications of a Self-Organizing Incremental Neural
+            Network.
+          </div>
+          <div class="pvenue">In ACM Symposium On Applied Computing (SAC), 2018, 487-494.</div>
+          <div class="plink">
+            <a href="https://dl.acm.org/doi/abs/10.1145/3167132.3167186" target="_blank">[DOI]</a>
+            <a onclick="display('jin20173d')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="jin20173d">
+              <pre class="bibtex">
 @inproceedings{inproceedings,
   author = {Wang, Xiaoyu and Hasegawa, Osamu and Ge, Shiming},
   year = {2018},
@@ -1405,25 +1516,27 @@ pages={3387-3397}
   doi = {10.1145/3167132.3167186}
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <h3>2017</h3>
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/s11432-017-9266-1.webp">
-        <div class="pauthors">Xin Jin, Shuyun Zhu, Chaoen Xiao, Hongbo Sun, Xiaodong Li*, Geng Zhao, Shiming Ge*.</div>
-        <div class="ptitle">3D Textured Model Encryption via 3D Lu Chaotic Mapping.
-        </div>
-        <div class="pvenue">Science China Information Sciences, 2017, 60(12): 122107:1-122107:9.</div>
-        <div class="plink">
+        <h3>2017</h3>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/s11432-017-9266-1.webp">
+          <div class="pauthors">Xin Jin, Shuyun Zhu, Chaoen Xiao, Hongbo Sun, Xiaodong Li*, Geng Zhao, Shiming Ge*.
+          </div>
+          <div class="ptitle">3D Textured Model Encryption via 3D Lu Chaotic Mapping.
+          </div>
+          <div class="pvenue">Science China Information Sciences, 2017, 60(12): 122107:1-122107:9.</div>
+          <div class="plink">
 
-          <a href="./pdfs/2017-SCI-3D textured model encryption via 3D Lu chaotic mapping.pdf" target="_blank">[PDF]</a>
-          <a href="https://link.springer.com/article/10.1007/s11432-017-9266-1" target="_blank">[DOI]</a>
-          <a onclick="display('jin20173d')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="jin20173d">
-            <pre class="bibtex">
+            <a href="./pdfs/2017-SCI-3D textured model encryption via 3D Lu chaotic mapping.pdf"
+              target="_blank">[PDF]</a>
+            <a href="https://link.springer.com/article/10.1007/s11432-017-9266-1" target="_blank">[DOI]</a>
+            <a onclick="display('jin20173d')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="jin20173d">
+              <pre class="bibtex">
 @article{jin20173d,
   title="3D Textured Model Encryption via 3D Lu Chaotic Mapping",
   author="Xin {Jin} and Shuyun {Zhu} and Chaoen {Xiao} and Hongbo {Sun} and Xiaodong {Li} and Geng {Zhao} and Shiming {Ge}",
@@ -1435,26 +1548,26 @@ pages={3387-3397}
   year="2017"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/remotesensing-09-00587-g001-550.webp">
-        <div class="pauthors">Dan Zeng, Rui Fang, Shiming Ge*, Shuying Li, Zhijiang Zhang.</div>
-        <div class="ptitle">Geometry-Based Global Alignment for GSMS Remote Sensing Images.
-        </div>
-        <div class="pvenue">Remote Sensing, 2017, 9(6): 587.</div>
-        <div class="plink">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/remotesensing-09-00587-g001-550.webp">
+          <div class="pauthors">Dan Zeng, Rui Fang, Shiming Ge*, Shuying Li, Zhijiang Zhang.</div>
+          <div class="ptitle">Geometry-Based Global Alignment for GSMS Remote Sensing Images.
+          </div>
+          <div class="pvenue">Remote Sensing, 2017, 9(6): 587.</div>
+          <div class="plink">
 
-          <a href="./pdfs/2017-RS-Geometry-based Global Alignment for GSMS Remote Sensing Images.pdf"
-            target="_blank">[PDF]</a>
+            <a href="./pdfs/2017-RS-Geometry-based Global Alignment for GSMS Remote Sensing Images.pdf"
+              target="_blank">[PDF]</a>
 
-          <a href="https://www.mdpi.com/2072-4292/9/06/587" target="_blank">[DOI]</a>
-          <a onclick="display('zeng2017geometry')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="zeng2017geometry">
-            <pre class="bibtex">
+            <a href="https://www.mdpi.com/2072-4292/9/06/587" target="_blank">[DOI]</a>
+            <a onclick="display('zeng2017geometry')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="zeng2017geometry">
+              <pre class="bibtex">
 @article{zeng2017geometry,
   title="Geometry-Based Global Alignment for GSMS Remote Sensing Images",
   author="Dan {Zeng} and Rui {Fang} and Shiming {Ge} and Shuying {Li} and Zhijiang {Zhang}",
@@ -1466,24 +1579,24 @@ pages={3387-3397}
   year="2017"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/7966741.webp">
-        <div class="pauthors">Shiming Ge, Qiting Ye, Zhao Luo, Shengwei Zhao.</div>
-        <div class="ptitle">Try Everything: Detecting Occluded Faces by Cascading Outrageous Proposal Generation and
-          Deep Convolutional Neural Network.
-        </div>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/7966741.webp">
+          <div class="pauthors">Shiming Ge, Qiting Ye, Zhao Luo, Shengwei Zhao.</div>
+          <div class="ptitle">Try Everything: Detecting Occluded Faces by Cascading Outrageous Proposal Generation and
+            Deep Convolutional Neural Network.
+          </div>
 
-        <div class="pvenue">In IEEE Fifth International Conference on Multimedia Big Data (BigMM), 2017, 193-196</div>
-        <div class="plink">
-          <a href="https://ieeexplore.ieee.org/document/7966741/" target="_blank">[DOI]</a>
-          <a onclick="display('ge2017try')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="ge2017try">
-            <pre class="bibtex">
+          <div class="pvenue">In IEEE Fifth International Conference on Multimedia Big Data (BigMM), 2017, 193-196</div>
+          <div class="plink">
+            <a href="https://ieeexplore.ieee.org/document/7966741/" target="_blank">[DOI]</a>
+            <a onclick="display('ge2017try')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="ge2017try">
+              <pre class="bibtex">
 @inproceedings{ge2017try,
   title="Try Everything: Detecting Occluded Faces by Cascading Outrageous Proposal Generation and Deep Convolutional Neural Network",
   author="Shiming {Ge} and Qiting {Ye} and Zhao {Luo} and Shengwei {Zhao}",
@@ -1493,22 +1606,22 @@ pages={3387-3397}
   year="2017"
 } 
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/7966755.webp">
-        <div class="pauthors">Zhao Luo, Qiting Ye, Shengwei Zhao, Shiming Ge.</div>
-        <div class="ptitle">An Ultra-Fast and Energy-Efficient Object Tracker.
-        </div>
-        <div class="pvenue">In IEEE Fifth International Conference on Multimedia Big Data (BigMM), 2017, 248-249</div>
-        <div class="plink">
-          <a href="https://ieeexplore.ieee.org/document7966755/" target="_blank">[DOI]</a>
-          <a onclick="display('2017GeLoGo')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="2017GeLoGo">
-            <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/7966755.webp">
+          <div class="pauthors">Zhao Luo, Qiting Ye, Shengwei Zhao, Shiming Ge.</div>
+          <div class="ptitle">An Ultra-Fast and Energy-Efficient Object Tracker.
+          </div>
+          <div class="pvenue">In IEEE Fifth International Conference on Multimedia Big Data (BigMM), 2017, 248-249</div>
+          <div class="plink">
+            <a href="https://ieeexplore.ieee.org/document7966755/" target="_blank">[DOI]</a>
+            <a onclick="display('2017GeLoGo')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="2017GeLoGo">
+              <pre class="bibtex">
 @inproceedings{2017An,
   title={An Ultra-Fast and Energy-Efficient Object Tracker},
   author={ Luo, Zhao  and  Ye, Qiting  and  Zhao, Shengwei  and  Ge, Shiming },
@@ -1517,24 +1630,24 @@ pages={3387-3397}
   pages={248-249}
 } 
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/12OmNy68EAq.webp">
-        <div class="pauthors">Qiting Ye, Zhao Luo, Xiaobing Xiao, Shiming Ge.</div>
-        <div class="ptitle">GeLoGo: Detecting TV Logos from Web-Scale Videos.
-        </div>
-        <div class="pvenue">In IEEE Fifth International Conference on Multimedia Big Data (BigMM), 2017, 1: 250-251
-        </div>
-        <div class="plink">
-          <a href="https://www.computer.org/csdl/proceedings-article/bigmm/2017/07966756/12OmNy68EAq"
-            target="_blank">[DOI]</a>
-          <a onclick="display('2017GeLoGo')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="2017GeLoGo">
-            <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/12OmNy68EAq.webp">
+          <div class="pauthors">Qiting Ye, Zhao Luo, Xiaobing Xiao, Shiming Ge.</div>
+          <div class="ptitle">GeLoGo: Detecting TV Logos from Web-Scale Videos.
+          </div>
+          <div class="pvenue">In IEEE Fifth International Conference on Multimedia Big Data (BigMM), 2017, 1: 250-251
+          </div>
+          <div class="plink">
+            <a href="https://www.computer.org/csdl/proceedings-article/bigmm/2017/07966756/12OmNy68EAq"
+              target="_blank">[DOI]</a>
+            <a onclick="display('2017GeLoGo')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="2017GeLoGo">
+              <pre class="bibtex">
 @inproceedings{2017GeLoGo,
   title={GeLoGo: Detecting TV Logos from Web-Scale Videos},
   author={ Ye, Qiting  and  Luo, Zhao  and  Xiao, Xiaobing  and  Ge, Shiming },
@@ -1543,25 +1656,25 @@ pages={3387-3397}
   pages = {250-251},
 }  
               </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/7305-2_16.webp">
-        <div class="pauthors">Zhao Luo, Xiaobing Xiao, Shiming Ge*, Qiting Ye, Shengwei Zhao, Xin Jin.</div>
-        <div class="ptitle">ScratchNet: Detecting the Scratches on Cellphone Screen.
-        </div>
-        <div class="pvenue">In Chinese Conference on Computer Vision (CCCV), 2017, 773: 178-186</div>
-        <div class="plink">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/7305-2_16.webp">
+          <div class="pauthors">Zhao Luo, Xiaobing Xiao, Shiming Ge*, Qiting Ye, Shengwei Zhao, Xin Jin.</div>
+          <div class="ptitle">ScratchNet: Detecting the Scratches on Cellphone Screen.
+          </div>
+          <div class="pvenue">In Chinese Conference on Computer Vision (CCCV), 2017, 773: 178-186</div>
+          <div class="plink">
 
-          <a href="./pdfs/2017-CCCV-ScratchNet Detecting the Scratches on Cellphone Screen.pdf"
-            target="_blank">[PDF]</a>
-          <a href="https://link.springer.com/chapter/10.1007/978-981-10-7305-2_16" target="_blank">[DOI]</a>
-          <a onclick="display('luo2017scratchnet')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="luo2017scratchnet">
-            <pre class="bibtex">
+            <a href="./pdfs/2017-CCCV-ScratchNet Detecting the Scratches on Cellphone Screen.pdf"
+              target="_blank">[PDF]</a>
+            <a href="https://link.springer.com/chapter/10.1007/978-981-10-7305-2_16" target="_blank">[DOI]</a>
+            <a onclick="display('luo2017scratchnet')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="luo2017scratchnet">
+              <pre class="bibtex">
 @article{luo2017scratchnet,
   title="ScratchNet: Detecting the Scratches on Cellphone Screen",
   author="Zhao {Luo} and Xiaobing {Xiao} and Shiming {Ge} and Qiting {Ye} and Shengwei {Zhao} and Xin {Jin}",
@@ -1571,28 +1684,28 @@ pages={3387-3397}
   year="2017"
 }    
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/cvpr_2017.webp">
-        <div class="pauthors">Shiming Ge, Jia Li*, Qiting Ye, Zhao Luo.</div>
-        <div class="ptitle">Detecting Masked Faces in the Wild with LLE-CNNs.
-        </div>
-        <div class="pvenue">In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017, 426-434</div>
-        <div class="plink">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/cvpr_2017.webp">
+          <div class="pauthors">Shiming Ge, Jia Li*, Qiting Ye, Zhao Luo.</div>
+          <div class="ptitle">Detecting Masked Faces in the Wild with LLE-CNNs.
+          </div>
+          <div class="pvenue">In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017, 426-434</div>
+          <div class="plink">
 
-          <a href="./pdfs/2017-CVPR-Detecting Masked Faces in the Wild with LLE-CNNs.pdf" target="_blank">[PDF]</a>
-          <a href="./research/maskedface.html#ge2017detecting" target="_blank">[Project]</a>
+            <a href="./pdfs/2017-CVPR-Detecting Masked Faces in the Wild with LLE-CNNs.pdf" target="_blank">[PDF]</a>
+            <a href="./research/maskedface.html#ge2017detecting" target="_blank">[Project]</a>
 
-          <a href="http://openaccess.thecvf.com/content_cvpr_2017/html/Ge_Detecting_Masked_Faces_CVPR_2017_paper.html"
-            target="_blank
+            <a href="http://openaccess.thecvf.com/content_cvpr_2017/html/Ge_Detecting_Masked_Faces_CVPR_2017_paper.html"
+              target="_blank
           ">[DOI]</a>
-          <a onclick="display('ge2017detecting')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="ge2017detecting">
-            <pre class="bibtex">
+            <a onclick="display('ge2017detecting')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="ge2017detecting">
+              <pre class="bibtex">
 @inproceedings{ge2017detecting,
   title="Detecting Masked Faces in the Wild with LLE-CNNs",
   author="Shiming {Ge} and Jia {Li} and Qiting {Ye} and Zhao {Luo}",
@@ -1602,31 +1715,31 @@ pages={3387-3397}
   year="2017"
 }     
             </pre>
+            </div>
+            <a href="https://drive.google.com/open?id=1nbtM1n0--iZ3VVbNGhocxbnBGhMau_OG">[MAFA Datasets(Google
+              Drive)]</a>
+            <a href="https://pan.baidu.com/s/15NsUpSIFeHfoGKHAjQBISQ">[MAFA Train Datasets(Baidu Pan)]</a>
+            <a href="https://pan.baidu.com/s/1EUrwfnUZ5RcQflJss-zBwg">[MAFA Test Datasets(Baidu Pan)]</a>
+
+            <a href="https://pan.baidu.com/s/1t-Tx5lpjgrljErjmZWMOWw">[Face annotations(Training)]</a>
+
+            <a href="https://pan.baidu.com/s/1CNG4ApFAtNrUqjjFZ4_QnA">[Face annotations(Test)]</a>
           </div>
-          <a href="https://drive.google.com/open?id=1nbtM1n0--iZ3VVbNGhocxbnBGhMau_OG">[MAFA Datasets(Google
-            Drive)]</a>
-          <a href="https://pan.baidu.com/s/15NsUpSIFeHfoGKHAjQBISQ">[MAFA Train Datasets(Baidu Pan)]</a>
-          <a href="https://pan.baidu.com/s/1EUrwfnUZ5RcQflJss-zBwg">[MAFA Test Datasets(Baidu Pan)]</a>
-
-          <a href="https://pan.baidu.com/s/1t-Tx5lpjgrljErjmZWMOWw">[Face annotations(Training)]</a>
-
-          <a href="https://pan.baidu.com/s/1CNG4ApFAtNrUqjjFZ4_QnA">[Face annotations(Test)]</a>
-        </div>
-      </div>
-
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/S1877050917306191.webp">
-        <div class="pauthors">Xiaoyu Zhang, Shupeng Wang, Chao Li, Shiming Ge, Yong Wang, Binbin Li.</div>
-        <div class="ptitle">Discriminative Learning from Selective Recommendation and Its Application in AdaBoost.
         </div>
 
-        <div class="pvenue">In International Conference on Conceptual Structures (ICCS), 2017, 108: 394-403</div>
-        <div class="plink">
-          <a href="https://www.sciencedirect.com/science/article/pii/S1877050917306191" target="_blank">[DOI]</a>
-          <a onclick="display('zhang2017discriminative')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="zhang2017discriminative">
-            <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/S1877050917306191.webp">
+          <div class="pauthors">Xiaoyu Zhang, Shupeng Wang, Chao Li, Shiming Ge, Yong Wang, Binbin Li.</div>
+          <div class="ptitle">Discriminative Learning from Selective Recommendation and Its Application in AdaBoost.
+          </div>
+
+          <div class="pvenue">In International Conference on Conceptual Structures (ICCS), 2017, 108: 394-403</div>
+          <div class="plink">
+            <a href="https://www.sciencedirect.com/science/article/pii/S1877050917306191" target="_blank">[DOI]</a>
+            <a onclick="display('zhang2017discriminative')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="zhang2017discriminative">
+              <pre class="bibtex">
 @article{zhang2017discriminative,
   title="Discriminative Learning from Selective Recommendation and Its Application in AdaBoost",
   author="Xiao-Yu {Zhang} and Shupeng {Wang} and Chao {Li} and Shiming {Ge} and Yong {Wang} and Binbin {Li}",
@@ -1637,27 +1750,27 @@ pages={3387-3397}
   year="2017"
 }        
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/8019465.webp">
-        <div class="pauthors">Shiming Ge*, Zhao Luo, Shengwei Zhao, Xin Jin, Xiaoyu Zhang*.</div>
-        <div class="ptitle">Compressing Deep Neural Networks for Efficient Visual Inference.
-        </div>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/8019465.webp">
+          <div class="pauthors">Shiming Ge*, Zhao Luo, Shengwei Zhao, Xin Jin, Xiaoyu Zhang*.</div>
+          <div class="ptitle">Compressing Deep Neural Networks for Efficient Visual Inference.
+          </div>
 
-        <div class="pvenue">In IEEE International Conference on Multimedia and Expo (ICME), 2017, 667-672</div>
-        <div class="plink">
+          <div class="pvenue">In IEEE International Conference on Multimedia and Expo (ICME), 2017, 667-672</div>
+          <div class="plink">
 
-          <a href="./pdfs/2017-ICME-Compressing Deep Neural Networks for Efficient Visual Inference.pdf"
-            target="_blank">[PDF]</a>
+            <a href="./pdfs/2017-ICME-Compressing Deep Neural Networks for Efficient Visual Inference.pdf"
+              target="_blank">[PDF]</a>
 
-          <a href="https://ieeexplore.ieee.org/document/8019465/" target="_blank">[DOI]</a>
-          <a onclick="display('ge2017compressing')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="ge2017compressing">
-            <pre class="bibtex">
+            <a href="https://ieeexplore.ieee.org/document/8019465/" target="_blank">[DOI]</a>
+            <a onclick="display('ge2017compressing')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="ge2017compressing">
+              <pre class="bibtex">
 @inproceedings{ge2017compressing,
   title="Compressing Deep Neural Networks for Efficient Visual Inference",
   author="Shiming {Ge} and Zhao {Luo} and Shengwei {Zhao} and Xin {Jin} and Xiao-Yu {Zhang}",
@@ -1667,28 +1780,29 @@ pages={3387-3397}
   year="2017"
 }           
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/8019497.webp">
-        <div class="pauthors">Xin Jin, Peng Yuan, Xiaodong Li, Chenggen Song, Shiming Ge*, Geng Zhao, Yingya Chen.</div>
-        <div class="ptitle">Efficient Privacy Preserving Viola-Jones Type Object Detection via Random Base Image
-          Representation.
-        </div>
-        <div class="pvenue">In IEEE International Conference on Multimedia and Expo (ICME), 2017, 673-678</div>
-        <div class="plink">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/8019497.webp">
+          <div class="pauthors">Xin Jin, Peng Yuan, Xiaodong Li, Chenggen Song, Shiming Ge*, Geng Zhao, Yingya Chen.
+          </div>
+          <div class="ptitle">Efficient Privacy Preserving Viola-Jones Type Object Detection via Random Base Image
+            Representation.
+          </div>
+          <div class="pvenue">In IEEE International Conference on Multimedia and Expo (ICME), 2017, 673-678</div>
+          <div class="plink">
 
 
-          <a href="./pdfs/2017-ICME-Efficient Privacy Preserving Viola-Jones Type Object Detection via Random Base Image Representation.pdf"
-            target="_blank">[PDF]</a>
+            <a href="./pdfs/2017-ICME-Efficient Privacy Preserving Viola-Jones Type Object Detection via Random Base Image Representation.pdf"
+              target="_blank">[PDF]</a>
 
-          <a href="https://ieeexplore.ieee.org/document/8019497/" target="_blank">[DOI]</a>
-          <a onclick="display('jin2017efficient')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="jin2017efficient">
-            <pre class="bibtex">
+            <a href="https://ieeexplore.ieee.org/document/8019497/" target="_blank">[DOI]</a>
+            <a onclick="display('jin2017efficient')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="jin2017efficient">
+              <pre class="bibtex">
 @inproceedings{jin2017efficient,
   title="Efficient Privacy Preserving Viola-Jones Type Object Detection via Random Base Image Representation",
   author="Xin {Jin} and Peng {Yuan} and Xiaodong {Li} and Chenggen {Song} and Shiming {Ge} and Geng {Zhao} and Yingya {Chen}",
@@ -1698,25 +1812,25 @@ pages={3387-3397}
   year="2017"
 }              
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/8116530.webp">
-        <div class="pauthors">Shiming Ge, Zhao Luo, Qiting Ye, Xiaoyu Zhang.</div>
-        <div class="ptitle">Poster Abstract: MicroBrain: Compressing Deep Neural Networks for Energy-Efficient
-          Visual Inference Service.
-        </div>
-        <div class="pvenue">In IEEE International Conference on Computer Communications (INFOCOM) Workshops, 2017,
-          1000-1001.
-        </div>
-        <div class="plink">
-          <a href="https://ieeexplore.ieee.org/document/8116530/" target="_blank">[DOI]</a>
-          <a onclick="display('2017Poster')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="2017Poster">
-            <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/8116530.webp">
+          <div class="pauthors">Shiming Ge, Zhao Luo, Qiting Ye, Xiaoyu Zhang.</div>
+          <div class="ptitle">Poster Abstract: MicroBrain: Compressing Deep Neural Networks for Energy-Efficient
+            Visual Inference Service.
+          </div>
+          <div class="pvenue">In IEEE International Conference on Computer Communications (INFOCOM) Workshops, 2017,
+            1000-1001.
+          </div>
+          <div class="plink">
+            <a href="https://ieeexplore.ieee.org/document/8116530/" target="_blank">[DOI]</a>
+            <a onclick="display('2017Poster')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="2017Poster">
+              <pre class="bibtex">
 @inproceedings{2017Poster,
   title={Poster Abstract: MicroBrain: Compressing Deep Neural Networks for Energy-Efficient
     Visual Inference Service},
@@ -1725,23 +1839,23 @@ pages={3387-3397}
   year={2017},
 }
               </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <h3>Before</h3>
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/1-s2.0-S0925231215012898-gr1.webp">
-        <div class="pauthors">Shiming Ge, Rui Yang, Yuqing He, Kaixuan Xie, Hongsong Zhu, Shuixian Chen.</div>
-        <div class="ptitle">Learning Multi-Channel Correlation Filter Bank for Eye Localization.
-        </div>
-        <div class="pvenue">Neurocomputing, 2016, 173: 418-424.</div>
-        <div class="plink">
-          <a href="https://www.sciencedirect.com/science/article/pii/S0925231215012898" target="_blank">[DOI]</a>
-          <a onclick="display('ge2016learning')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="ge2016learning">
-            <pre class="bibtex">
+        <h3>Before</h3>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/1-s2.0-S0925231215012898-gr1.webp">
+          <div class="pauthors">Shiming Ge, Rui Yang, Yuqing He, Kaixuan Xie, Hongsong Zhu, Shuixian Chen.</div>
+          <div class="ptitle">Learning Multi-Channel Correlation Filter Bank for Eye Localization.
+          </div>
+          <div class="pvenue">Neurocomputing, 2016, 173: 418-424.</div>
+          <div class="plink">
+            <a href="https://www.sciencedirect.com/science/article/pii/S0925231215012898" target="_blank">[DOI]</a>
+            <a onclick="display('ge2016learning')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="ge2016learning">
+              <pre class="bibtex">
 @article{ge2016learning,
   title="Learning Multi-Channel Correlation Filter Bank for Eye Localization",
   author="Shiming {Ge} and Rui {Yang} and Yuqing {He} and Kaixuan {Xie} and Hongsong {Zhu} and Shuixian {Chen}",
@@ -1752,22 +1866,22 @@ pages={3387-3397}
   year="2016"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/1-s2.0-S0165168415003357-gr1.webp">
-        <div class="pauthors">Shiming Ge, Kaixuan Xie, Shuying Li, Rui Yang.</div>
-        <div class="ptitle">Global Image Completion with Joint Sparse Patch Selection and Optimal Seam Synthesis.
-        </div>
-        <div class="pvenue">Signal Processing, 2016, 124: 147-155.</div>
-        <div class="plink">
-          <a href="https://www.sciencedirect.com/science/article/pii/S0165168415003357" target="_blank">[DOI]</a>
-          <a onclick="display('ge2016global')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="ge2016global">
-            <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/1-s2.0-S0165168415003357-gr1.webp">
+          <div class="pauthors">Shiming Ge, Kaixuan Xie, Shuying Li, Rui Yang.</div>
+          <div class="ptitle">Global Image Completion with Joint Sparse Patch Selection and Optimal Seam Synthesis.
+          </div>
+          <div class="pvenue">Signal Processing, 2016, 124: 147-155.</div>
+          <div class="plink">
+            <a href="https://www.sciencedirect.com/science/article/pii/S0165168415003357" target="_blank">[DOI]</a>
+            <a onclick="display('ge2016global')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="ge2016global">
+              <pre class="bibtex">
 @article{ge2016global,
   title="Global Image Completion with Joint Sparse Patch Selection and Optimal Seam Synthesis",
   author="Shiming {Ge} and Kaixuan {Xie} and Shuying {Li} and Rui {Yang}",
@@ -1779,24 +1893,24 @@ pages={3387-3397}
   year="2016"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/48890-5_20.webp">
-        <div class="pauthors">Kaixuan Xie, Shiming Ge*, Qiting Ye, Zhao Luo.</div>
-        <div class="ptitle">Traffic Sign Recognition Based on Attribute-Refinement Cascaded Convolutional Neural
-          Networks.
-        </div>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/48890-5_20.webp">
+          <div class="pauthors">Kaixuan Xie, Shiming Ge*, Qiting Ye, Zhao Luo.</div>
+          <div class="ptitle">Traffic Sign Recognition Based on Attribute-Refinement Cascaded Convolutional Neural
+            Networks.
+          </div>
 
-        <div class="pvenue">Pacific Rim Conference on Multimedia (PCM), 2016, 9916: 201-210.</div>
-        <div class="plink">
-          <a href="https://link.springer.com/chapter/10.1007%2F978-3-319-48890-5_20" target="_blank">[DOI]</a>
-          <a onclick="display('xie2016traffic')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="xie2016traffic">
-            <pre class="bibtex">
+          <div class="pvenue">Pacific Rim Conference on Multimedia (PCM), 2016, 9916: 201-210.</div>
+          <div class="plink">
+            <a href="https://link.springer.com/chapter/10.1007%2F978-3-319-48890-5_20" target="_blank">[DOI]</a>
+            <a onclick="display('xie2016traffic')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="xie2016traffic">
+              <pre class="bibtex">
 @inproceedings{xie2016traffic,
   title="Traffic Sign Recognition Based on Attribute-Refinement Cascaded Convolutional Neural Networks",
   author="Kaixuan {Xie} and Shiming {Ge} and Qiting {Ye} and Zhao {Luo}",
@@ -1806,22 +1920,22 @@ pages={3387-3397}
   year="2016"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/300253566_Negative.webp">
-        <div class="pauthors">Kaixuan Xie, Shiming Ge*, Rui Yang, Xiang Lu, Limin Sun.</div>
-        <div class="ptitle">Negative-Supervised Cascaded Deep Learning for Traffic Sign Classification.
-        </div>
-        <div class="pvenue">In Chinese Conference on Computer Vision (CCCV), 2015, 546: 249-257.</div>
-        <div class="plink">
-          <a href="https://link.springer.com/chapter/10.1007/978-3-662-48558-3_25" target="_blank">[DOI]</a>
-          <a onclick="display('xie2015negative')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="xie2015negative">
-            <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/300253566_Negative.webp">
+          <div class="pauthors">Kaixuan Xie, Shiming Ge*, Rui Yang, Xiang Lu, Limin Sun.</div>
+          <div class="ptitle">Negative-Supervised Cascaded Deep Learning for Traffic Sign Classification.
+          </div>
+          <div class="pvenue">In Chinese Conference on Computer Vision (CCCV), 2015, 546: 249-257.</div>
+          <div class="plink">
+            <a href="https://link.springer.com/chapter/10.1007/978-3-662-48558-3_25" target="_blank">[DOI]</a>
+            <a onclick="display('xie2015negative')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="xie2015negative">
+              <pre class="bibtex">
 @article{xie2015negative,
   title="Negative-Supervised Cascaded Deep Learning for Traffic Sign Classification",
   author="Kaixuan {Xie} and Shiming {Ge} and Rui {Yang} and Xiang {Lu} and Limin {Sun}",
@@ -1831,24 +1945,24 @@ pages={3387-3397}
   year="2015"
 }
             </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/300416518_Target.webp">
-        <div class="pauthors">Shuixian Chen, Xiang Lu, Limin Sun, Shiming Ge.</div>
-        <div class="ptitle">Target Domain Adaptation for Face Detection in a Smart Camera Network with Peer-to-Peer
-          Communications.
-        </div>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/300416518_Target.webp">
+          <div class="pauthors">Shuixian Chen, Xiang Lu, Limin Sun, Shiming Ge.</div>
+          <div class="ptitle">Target Domain Adaptation for Face Detection in a Smart Camera Network with Peer-to-Peer
+            Communications.
+          </div>
 
-        <div class="pvenue">Global Communications Conference (GLOBECOM), 2015, 1-6.</div>
-        <div class="plink">
-          <a href="https://ieeexplore.ieee.org/document/7417866" target="_blank">[DOI]</a>
-          <a onclick="display('chen2014target')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="chen2014target">
-            <pre class="bibtex">
+          <div class="pvenue">Global Communications Conference (GLOBECOM), 2015, 1-6.</div>
+          <div class="plink">
+            <a href="https://ieeexplore.ieee.org/document/7417866" target="_blank">[DOI]</a>
+            <a onclick="display('chen2014target')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="chen2014target">
+              <pre class="bibtex">
 @inproceedings{chen2014target,
   title="Target Domain Adaptation for Face Detection in a Smart Camera Network with Peer-to-Peer Communications",
   author="Shuixian {Chen} and Xiang {Lu} and Limin {Sun} and Shiming {Ge}",
@@ -1858,23 +1972,23 @@ pages={3387-3397}
   year="2014"
 }
              </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/285613640_Centroid.webp">
-        <div class="pauthors">Boyang Chen, Shiming Ge, Kaixuan Xie.</div>
-        <div class="ptitle">Centroid Location Algorithm in Three Dimensions Based on Big Data.
-        </div>
-        <div class="pvenue">In International Conference on Internet Multimedia Computing and Service (ICIMCS), 2015,
-          1-6.</div>
-        <div class="plink">
-          <a href="https://dl.acm.org/doi/10.1145/2808492.2808532" target="_blank">[DOI]
-            <a onclick="display('chen2015centroid')" style="color: #1c3ed3">
-              [Bib] </a>
-            <div style="display: none;" class="BibtexExpand" id="chen2015centroid">
-              <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/285613640_Centroid.webp">
+          <div class="pauthors">Boyang Chen, Shiming Ge, Kaixuan Xie.</div>
+          <div class="ptitle">Centroid Location Algorithm in Three Dimensions Based on Big Data.
+          </div>
+          <div class="pvenue">In International Conference on Internet Multimedia Computing and Service (ICIMCS), 2015,
+            1-6.</div>
+          <div class="plink">
+            <a href="https://dl.acm.org/doi/10.1145/2808492.2808532" target="_blank">[DOI]
+              <a onclick="display('chen2015centroid')" style="color: #1c3ed3">
+                [Bib] </a>
+              <div style="display: none;" class="BibtexExpand" id="chen2015centroid">
+                <pre class="bibtex">
 @inproceedings{10.1145/2808492.2808532,
   author = {Chen, Boyang and Ge, Shiming and Xie, Kaixuan},
   title = {Centroid Location Algorithm in Three Dimensions Based on Big Data},
@@ -1892,23 +2006,24 @@ pages={3387-3397}
   series = {ICIMCS '15}
 }
              </pre>
-            </div>
-          </a></div>
-      </div>
-
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/308848756_Abnormal.webp">
-        <div class="pauthors">Hui Wen, Shiming Ge, Shuixian Chen, Hongtao Wang, Limin Sun.</div>
-        <div class="ptitle">Abnormal Event Detection via Adaptive Cascade Dictionary Learning.
+              </div>
+            </a>
+          </div>
         </div>
 
-        <div class="pvenue">In IEEE International Conference on Image Processing (ICIP), 2015, 847-851.</div>
-        <div class="plink">
-          <a href="https://ieeexplore.ieee.org/document/7350919/" target="_blank">[DOI]
-            <a onclick="display('wen2015abnormal')" style="color: #1c3ed3">
-              [Bib] </a>
-            <div style="display: none;" class="BibtexExpand" id="wen2015abnormal">
-              <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/308848756_Abnormal.webp">
+          <div class="pauthors">Hui Wen, Shiming Ge, Shuixian Chen, Hongtao Wang, Limin Sun.</div>
+          <div class="ptitle">Abnormal Event Detection via Adaptive Cascade Dictionary Learning.
+          </div>
+
+          <div class="pvenue">In IEEE International Conference on Image Processing (ICIP), 2015, 847-851.</div>
+          <div class="plink">
+            <a href="https://ieeexplore.ieee.org/document/7350919/" target="_blank">[DOI]
+              <a onclick="display('wen2015abnormal')" style="color: #1c3ed3">
+                [Bib] </a>
+              <div style="display: none;" class="BibtexExpand" id="wen2015abnormal">
+                <pre class="bibtex">
 @inproceedings{wen2015abnormal,
   title="Abnormal Event Detection via Adaptive Cascade Dictionary Learning",
   author="Hui {Wen} and Shiming {Ge} and Shuixian {Chen} and Hongtao {Wang} and Limin {Sun}",
@@ -1918,24 +2033,25 @@ pages={3387-3397}
   year="2015"
 }
              </pre>
-            </div>
-          </a></div>
-      </div>
-
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/662-45646-0_33.webp">
-        <div class="pauthors">Rui Yang, Shiming Ge, Kaixuan Xie, Shuixian Chen.</div>
-        <div class="ptitle">Eye Localization Based on Multi-Channel Correlation Filter Bank.
+              </div>
+            </a>
+          </div>
         </div>
-        <div class="pvenue">In Chinese Conference on Pattern Recognition (CCPR), 2014, 483: 325-334.</div>
-        <div class="plink">
 
-          <a href="./pdfs/2014-ICME-Eye Localization Based on Correlation Filter Bank.pdf" target="_blank">[PDF]</a>
-          <a href="http://link.springer.com/10.1007/978-3-662-45646-0_33" target="_blank">[DOI]</a>
-          <a onclick="display('yang2014eye')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="yang2014eye">
-            <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/662-45646-0_33.webp">
+          <div class="pauthors">Rui Yang, Shiming Ge, Kaixuan Xie, Shuixian Chen.</div>
+          <div class="ptitle">Eye Localization Based on Multi-Channel Correlation Filter Bank.
+          </div>
+          <div class="pvenue">In Chinese Conference on Pattern Recognition (CCPR), 2014, 483: 325-334.</div>
+          <div class="plink">
+
+            <a href="./pdfs/2014-ICME-Eye Localization Based on Correlation Filter Bank.pdf" target="_blank">[PDF]</a>
+            <a href="http://link.springer.com/10.1007/978-3-662-45646-0_33" target="_blank">[DOI]</a>
+            <a onclick="display('yang2014eye')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="yang2014eye">
+              <pre class="bibtex">
 @inproceedings{yang2014eye,
   title="Eye Localization Based on Multi-Channel Correlation Filter Bank",
   author="Rui {Yang} and Shiming {Ge} and Kaixuan {Xie} and Shuixian {Chen}",
@@ -1945,23 +2061,23 @@ pages={3387-3397}
   year="2014"
 }
            </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/286680040_Image.webp">
-        <div class="pauthors">Shiming Ge, Kaixuan Xie, Rui Yang, Zhiqiang Shi.</div>
-        <div class="ptitle">Image Completion Using Global Patch Matching and Optimal Seam Synthesis.
-        </div>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/286680040_Image.webp">
+          <div class="pauthors">Shiming Ge, Kaixuan Xie, Rui Yang, Zhiqiang Shi.</div>
+          <div class="ptitle">Image Completion Using Global Patch Matching and Optimal Seam Synthesis.
+          </div>
 
-        <div class="pvenue">In International Conference on Pattern Recognition (ICPR), 2014, 871-876.</div>
-        <div class="plink">
-          <a href="https://ieeexplore.ieee.org/document/6976870" target="_blank">[DOI]
-            <a onclick="display('ge2014image')" style="color: #1c3ed3">
-              [Bib] </a>
-            <div style="display: none;" class="BibtexExpand" id="ge2014image">
-              <pre class="bibtex">
+          <div class="pvenue">In International Conference on Pattern Recognition (ICPR), 2014, 871-876.</div>
+          <div class="plink">
+            <a href="https://ieeexplore.ieee.org/document/6976870" target="_blank">[DOI]
+              <a onclick="display('ge2014image')" style="color: #1c3ed3">
+                [Bib] </a>
+              <div style="display: none;" class="BibtexExpand" id="ge2014image">
+                <pre class="bibtex">
 @inproceedings{ge2014image,
   title="Image Completion Using Global Patch Matching and Optimal Seam Synthesis",
   author="Shiming {Ge} and Kaixuan {Xie} and Rui {Yang} and Zhiqiang {Shi}",
@@ -1971,23 +2087,24 @@ pages={3387-3397}
   year="2014"
 }
              </pre>
-            </div>
-          </a></div>
-      </div>
-
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/266657741_Poster.webp">
-        <div class="pauthors">Hui Wen, Qiang Li, Qi Han, Shiming Ge, Limin Sun.</div>
-        <div class="ptitle">Poster: Crowdsourcing for Video Traffic Surveillance.
+              </div>
+            </a>
+          </div>
         </div>
 
-        <div class="pvenue">Mobile Systems, Applications, and Services (MobiSys), 2014, 384.</div>
-        <div class="plink">
-          <a href="https://dl.acm.org/doi/10.1145/2594368.2601460" target="_blank">[DOI]</a>
-          <a onclick="display('2014Poster')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="2014Poster">
-            <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/266657741_Poster.webp">
+          <div class="pauthors">Hui Wen, Qiang Li, Qi Han, Shiming Ge, Limin Sun.</div>
+          <div class="ptitle">Poster: Crowdsourcing for Video Traffic Surveillance.
+          </div>
+
+          <div class="pvenue">Mobile Systems, Applications, and Services (MobiSys), 2014, 384.</div>
+          <div class="plink">
+            <a href="https://dl.acm.org/doi/10.1145/2594368.2601460" target="_blank">[DOI]</a>
+            <a onclick="display('2014Poster')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="2014Poster">
+              <pre class="bibtex">
 @inproceedings{10.1145/2594368.2601460,
   author = {Wen, Hui and Li, Qiang and Han, Qi and Ge, Shiming and Sun, Limin},
   title = {Poster: Crowdsourcing for Video Traffic Surveillance},
@@ -2005,22 +2122,22 @@ pages={3387-3397}
   series = {MobiSys '14}
 }
                  </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/247926928_Interactive.webp">
-        <div class="pauthors">Shiming Ge, Hao Wang, Kongqiao Wang, Lei Xu.</div>
-        <div class="ptitle">Interactive Sketch Template Creation from Realistic Pictures for Tracing Applications.
-        </div>
-        <div class="pvenue">Internet Multimedia Computing and Service (ICIMCS), 2009, 119-122.</div>
-        <div class="plink">
-          <a href="https://dl.acm.org/doi/10.1145/1734605.1734635" target="_blank">[DOI]</a>
-          <a onclick="display('ge-ICIMCS-2009')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="ge-ICIMCS-2009">
-            <pre class="bibtex">
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/247926928_Interactive.webp">
+          <div class="pauthors">Shiming Ge, Hao Wang, Kongqiao Wang, Lei Xu.</div>
+          <div class="ptitle">Interactive Sketch Template Creation from Realistic Pictures for Tracing Applications.
+          </div>
+          <div class="pvenue">Internet Multimedia Computing and Service (ICIMCS), 2009, 119-122.</div>
+          <div class="plink">
+            <a href="https://dl.acm.org/doi/10.1145/1734605.1734635" target="_blank">[DOI]</a>
+            <a onclick="display('ge-ICIMCS-2009')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="ge-ICIMCS-2009">
+              <pre class="bibtex">
 @article{ge-ICIMCS-2009,
   author = {ge, Shiming and Wang, Hao and Wang, Kongqiao and Xu, Lei},
   year = {2009},
@@ -2031,24 +2148,24 @@ pages={3387-3397}
   doi = {10.1145/1734605.1734635}
 }
              </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/1818719.1819106.webp">
-        <div class="pauthors">Shiming Ge, Kongqiao Wang, Hao Wang, Feng Zhao.</div>
-        <div class="ptitle">A Unified Gradient Domain Method for Seamless Image Processing.
-        </div>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/1818719.1819106.webp">
+          <div class="pauthors">Shiming Ge, Kongqiao Wang, Hao Wang, Feng Zhao.</div>
+          <div class="ptitle">A Unified Gradient Domain Method for Seamless Image Processing.
+          </div>
 
-        <div class="pvenue">In IEEE International Conference on Image Processing (ICIP), 2009, 1361-1364.
-        </div>
-        <div class="plink">
-          <a href="https://ieeexplore.ieee.org/document/5413557" target="_blank">[DOI]</a>
-          <a onclick="display('ge2009a')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="ge2009a">
-            <pre class="bibtex">
+          <div class="pvenue">In IEEE International Conference on Image Processing (ICIP), 2009, 1361-1364.
+          </div>
+          <div class="plink">
+            <a href="https://ieeexplore.ieee.org/document/5413557" target="_blank">[DOI]</a>
+            <a onclick="display('ge2009a')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="ge2009a">
+              <pre class="bibtex">
 @inproceedings{ge2009a,
   title="A Unified Gradient Domain Method for Seamless Image Processing",
   author="Shiming {Ge} and Kongqiao {Wang} and Hao {Wang} and Feng {Zhao}",
@@ -2058,24 +2175,24 @@ pages={3387-3397}
   year="2009"
 }
            </pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="paper">
-        <img height="110px" width="210px" src="./img/publication2/97967.webp">
-        <div class="pauthors">Feng Zhao, Hao Wang, Xiujuan Chai, Shiming Ge.</div>
-        <div class="ptitle">A Fast and Effective Outlier Detection Method for Matching Uncalibrated Images.
-        </div>
+        <div class="paper">
+          <img height="110px" width="210px" src="./img/publication2/97967.webp">
+          <div class="pauthors">Feng Zhao, Hao Wang, Xiujuan Chai, Shiming Ge.</div>
+          <div class="ptitle">A Fast and Effective Outlier Detection Method for Matching Uncalibrated Images.
+          </div>
 
-        <div class="pvenue">In IEEE International Conference on Image Processing (ICIP), 2009, 2097-2100.
-        </div>
-        <div class="plink">
-          <a href="https://ieeexplore.ieee.org/document/5414409/" target="_blank">[DOI]</a>
-          <a onclick="display('zhao2009a')" style="color: #1c3ed3">
-            [Bib] </a>
-          <div style="display: none;" class="BibtexExpand" id="zhao2009a">
-            <pre class="bibtex">
+          <div class="pvenue">In IEEE International Conference on Image Processing (ICIP), 2009, 2097-2100.
+          </div>
+          <div class="plink">
+            <a href="https://ieeexplore.ieee.org/document/5414409/" target="_blank">[DOI]</a>
+            <a onclick="display('zhao2009a')" style="color: #1c3ed3">
+              [Bib] </a>
+            <div style="display: none;" class="BibtexExpand" id="zhao2009a">
+              <pre class="bibtex">
 @inproceedings{zhao2009a,
   title="A Fast and Effective Outlier Detection Method for Matching Uncalibrated Images",
   author="Feng {Zhao} and Hao {Wang} and Xiujuan {Chai} and Shiming {Ge}",
@@ -2085,201 +2202,205 @@ pages={3387-3397}
   year="2009"
 }
            </pre>
+            </div>
           </div>
         </div>
       </div>
-      <h3>专利</h3>
-      <table class="table table-striped" style="word-wrap:break-word; table-layout:fixed;">
-        <thead>
+
+      <div id="patents_list">
+        <h3>专利</h3>
+        <table class="table table-striped" style="word-wrap:break-word; table-layout:fixed;">
+          <thead>
+            <tr>
+              <th>主要完成人</th>
+              <th>名称</th>
+              <th>授权号/申请号</th>
+              <th>申请日期</th>
+              <th>授权日期</th>
+            </tr>
+          </thead>
           <tr>
-            <th>主要完成人</th>
-            <th>名称</th>
-            <th>授权号/申请号</th>
-            <th>申请日期</th>
-            <th>授权日期</th>
+            <td>葛仕明;文辉;陈水仙;秦伟俊;孙利民</td>
+            <td>一种在线视频目标跟踪方法和装置</td>
+            <td>ZL201310390529.4</td>
+            <td>2013/08/30</td>
+            <td>2017/01/25</td>
           </tr>
-        </thead>
-        <tr>
-          <td>葛仕明;文辉;陈水仙;秦伟俊;孙利民</td>
-          <td>一种在线视频目标跟踪方法和装置</td>
-          <td>ZL201310390529.4</td>
-          <td>2013/08/30</td>
-          <td>2017/01/25</td>
-        </tr>
-        <tr>
-          <td>葛仕明;文辉;杨睿;陈水仙;孙利民</td>
-          <td>一种基于多摄像头的在线目标跟踪方法及系统</td>
-          <td>ZL201410332199.8</td>
-          <td>2014/07/14</td>
-          <td>2017/06/16</td>
-        </tr>
-        <tr>
-          <td>葛仕明;杨睿;陈水仙;文辉;孙利民</td>
-          <td>一种图像生物特征保护方法和装置及信息恢复方法</td>
-          <td>ZL201410158736.1</td>
-          <td>2014/04/18</td>
-          <td>2017/06/16</td>
-        </tr>
-        <tr>
-          <td>葛仕明;杜丰宇;解凯旋;杨睿;孙利民</td>
-          <td>一种基于分级迭代的大规模图像样本标注方法及系统</td>
-          <td>ZL201510226393.2</td>
-          <td>2015/05/06</td>
-          <td>2018/10/30</td>
-        </tr>
-        <tr>
-          <td>葛仕明;解凯旋;罗朝;叶奇挺;孙利民</td>
-          <td>基于级联深度学习的交通标志识别方法和系统</td>
-          <td>ZL201610388492.5</td>
-          <td>2016/06/02</td>
-          <td>2019/07/05</td>
-        </tr>
-        <tr>
-          <td>葛仕明;王啸宇;罗朝;解凯旋;李逸超</td>
-          <td>一种基于视觉检测的速度自动控制方法</td>
-          <td>ZL201610176917.6</td>
-          <td>2016/03/25</td>
-          <td>2019/01/14</td>
-        </tr>
-        <tr>
-          <td>葛仕明</td>
-          <td>一种人脸检测方法及装置</td>
-          <td>ZL201710127367.3</td>
-          <td>2017/03/06</td>
-          <td>2019/10/25</td>
-        </tr>
-        <tr>
-          <td>葛仕明</td>
-          <td>虚拟角色图像的构建方法及装置、存储介质</td>
-          <td>CN201710555575.3</td>
-          <td>2017/07/10</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>葛仕明</td>
-          <td>双盲隐私保护的人脸检索方法与系统</td>
-          <td>CN201810903319.3</td>
-          <td>2018/08/09</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>葛仕明</td>
-          <td>一种低分辨率人脸识别方法及装置</td>
-          <td>CN201810698280.6</td>
-          <td>2018/06/29</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>葛仕明</td>
-          <td>一种高性能视觉跟踪方法及装置</td>
-          <td>CN201810857145.1</td>
-          <td>2018/07/31</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>葛仕明;刘文瑜;赵胜伟</td>
-          <td>一种基于视觉的空间定位方法及系统</td>
-          <td>CN201810220678.9</td>
-          <td>2018/03/16</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>葛仕明;叶奇挺</td>
-          <td>一种面向噪声环境下的室内无线定位方法及装置</td>
-          <td>ZL201810757255.0</td>
-          <td>2018/07/11</td>
-          <td>2020/10/27</td>
-        </tr>
-        <tr>
-          <td>葛仕明;罗朝</td>
-          <td>一种面向资源受限环境的目标跟踪方法及装置</td>
-          <td>CN201810339409.4</td>
-          <td>2018/04/16</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>葛仕明</td>
-          <td>模型的训练方法和装置、存储介质、电子装置</td>
-          <td>CN201811197546.5</td>
-          <td>2018/10/15</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>葛仕明</td>
-          <td>一种遮挡人脸识别方法及装置</td>
-          <td>CN201910102357.3</td>
-          <td>2019/02/01</td>
-          <td>2020/11/20</td>
-        </tr>
-        <tr>
-          <td>葛仕明;李晨钰</td>
-          <td>一种弱标注数据的神经网络模型训练方法及装置</td>
-          <td>CN201910181274.8</td>
-          <td>2019/03/11</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>王伟平;葛仕明;刘博超;李晨钰</td>
-          <td>一种多方参与数据不共享的网络模型训练方法</td>
-          <td>CN202010940180.7</td>
-          <td>2020/09/09</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>葛仕明;张岱墀;李晨钰;化盈盈;王伟平</td>
-          <td>一种视频虚假人脸检测方法及装置</td>
-          <td>CN202010995945.7</td>
-          <td>2020/09/21</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>葛仕明;刘浩林;刘博超;王伟平;</td>
-          <td>一种基于少量公共数据的隐私模型训练方法及装置</td>
-          <td>CN202011065611.6</td>
-          <td>2020/09/30</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>葛仕明;卢江虎;王伟平</td>
-          <td>一种基于联邦学习的受控共享学习方法及系统</td>
-          <td>CN202011203717.8</td>
-          <td>2020/11/02</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>葛仕明;化盈盈</td>
-          <td>一种深度神经网络模型可视化解释方法及系统</td>
-          <td>CN202110088772.5</td>
-          <td>2021/01/22</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>软著</h3>
-      <table class="table table-striped" style="word-wrap:break-word; table-layout:fixed;">
-        <thead>
           <tr>
-            <th>主要完成人</th>
-            <th>名称</th>
-            <th>登记日期</th>
+            <td>葛仕明;文辉;杨睿;陈水仙;孙利民</td>
+            <td>一种基于多摄像头的在线目标跟踪方法及系统</td>
+            <td>ZL201410332199.8</td>
+            <td>2014/07/14</td>
+            <td>2017/06/16</td>
           </tr>
-        </thead>
-        <tr>
-          <td>葛仕明;叶奇挺
-          </td>
-          <td>中科院信工所蒙面人脸数据收集整理标注系统
-          </td>
-          <td>2018/04/01
-          </td>
-        </tr>
-        <tr>
-          <td>葛仕明;李世鲲
-          </td>
-          <td>弱标注深度众包学习系统
-          </td>
-          <td>2020/10/01
-          </td>
-        </tr>
-      </table>
+          <tr>
+            <td>葛仕明;杨睿;陈水仙;文辉;孙利民</td>
+            <td>一种图像生物特征保护方法和装置及信息恢复方法</td>
+            <td>ZL201410158736.1</td>
+            <td>2014/04/18</td>
+            <td>2017/06/16</td>
+          </tr>
+          <tr>
+            <td>葛仕明;杜丰宇;解凯旋;杨睿;孙利民</td>
+            <td>一种基于分级迭代的大规模图像样本标注方法及系统</td>
+            <td>ZL201510226393.2</td>
+            <td>2015/05/06</td>
+            <td>2018/10/30</td>
+          </tr>
+          <tr>
+            <td>葛仕明;解凯旋;罗朝;叶奇挺;孙利民</td>
+            <td>基于级联深度学习的交通标志识别方法和系统</td>
+            <td>ZL201610388492.5</td>
+            <td>2016/06/02</td>
+            <td>2019/07/05</td>
+          </tr>
+          <tr>
+            <td>葛仕明;王啸宇;罗朝;解凯旋;李逸超</td>
+            <td>一种基于视觉检测的速度自动控制方法</td>
+            <td>ZL201610176917.6</td>
+            <td>2016/03/25</td>
+            <td>2019/01/14</td>
+          </tr>
+          <tr>
+            <td>葛仕明</td>
+            <td>一种人脸检测方法及装置</td>
+            <td>ZL201710127367.3</td>
+            <td>2017/03/06</td>
+            <td>2019/10/25</td>
+          </tr>
+          <tr>
+            <td>葛仕明</td>
+            <td>虚拟角色图像的构建方法及装置、存储介质</td>
+            <td>CN201710555575.3</td>
+            <td>2017/07/10</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>葛仕明</td>
+            <td>双盲隐私保护的人脸检索方法与系统</td>
+            <td>CN201810903319.3</td>
+            <td>2018/08/09</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>葛仕明</td>
+            <td>一种低分辨率人脸识别方法及装置</td>
+            <td>CN201810698280.6</td>
+            <td>2018/06/29</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>葛仕明</td>
+            <td>一种高性能视觉跟踪方法及装置</td>
+            <td>CN201810857145.1</td>
+            <td>2018/07/31</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>葛仕明;刘文瑜;赵胜伟</td>
+            <td>一种基于视觉的空间定位方法及系统</td>
+            <td>CN201810220678.9</td>
+            <td>2018/03/16</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>葛仕明;叶奇挺</td>
+            <td>一种面向噪声环境下的室内无线定位方法及装置</td>
+            <td>ZL201810757255.0</td>
+            <td>2018/07/11</td>
+            <td>2020/10/27</td>
+          </tr>
+          <tr>
+            <td>葛仕明;罗朝</td>
+            <td>一种面向资源受限环境的目标跟踪方法及装置</td>
+            <td>CN201810339409.4</td>
+            <td>2018/04/16</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>葛仕明</td>
+            <td>模型的训练方法和装置、存储介质、电子装置</td>
+            <td>CN201811197546.5</td>
+            <td>2018/10/15</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>葛仕明</td>
+            <td>一种遮挡人脸识别方法及装置</td>
+            <td>CN201910102357.3</td>
+            <td>2019/02/01</td>
+            <td>2020/11/20</td>
+          </tr>
+          <tr>
+            <td>葛仕明;李晨钰</td>
+            <td>一种弱标注数据的神经网络模型训练方法及装置</td>
+            <td>CN201910181274.8</td>
+            <td>2019/03/11</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>王伟平;葛仕明;刘博超;李晨钰</td>
+            <td>一种多方参与数据不共享的网络模型训练方法</td>
+            <td>CN202010940180.7</td>
+            <td>2020/09/09</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>葛仕明;张岱墀;李晨钰;化盈盈;王伟平</td>
+            <td>一种视频虚假人脸检测方法及装置</td>
+            <td>CN202010995945.7</td>
+            <td>2020/09/21</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>葛仕明;刘浩林;刘博超;王伟平;</td>
+            <td>一种基于少量公共数据的隐私模型训练方法及装置</td>
+            <td>CN202011065611.6</td>
+            <td>2020/09/30</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>葛仕明;卢江虎;王伟平</td>
+            <td>一种基于联邦学习的受控共享学习方法及系统</td>
+            <td>CN202011203717.8</td>
+            <td>2020/11/02</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>葛仕明;化盈盈</td>
+            <td>一种深度神经网络模型可视化解释方法及系统</td>
+            <td>CN202110088772.5</td>
+            <td>2021/01/22</td>
+            <td></td>
+          </tr>
+        </table>
+        <h3>软著</h3>
+        <table class="table table-striped" style="word-wrap:break-word; table-layout:fixed;">
+          <thead>
+            <tr>
+              <th>主要完成人</th>
+              <th>名称</th>
+              <th>登记日期</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>葛仕明;叶奇挺
+            </td>
+            <td>中科院信工所蒙面人脸数据收集整理标注系统
+            </td>
+            <td>2018/04/01
+            </td>
+          </tr>
+          <tr>
+            <td>葛仕明;李世鲲
+            </td>
+            <td>弱标注深度众包学习系统
+            </td>
+            <td>2020/10/01
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
 
   </div>
