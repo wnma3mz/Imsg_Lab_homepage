@@ -27,9 +27,9 @@
       var button_paper = document.getElementById("button_paper");
 
       $("#button_paper").click(function () {
-        if (button_paper.style.backgroundColor != 'Transparent') {
-          $("#paper_list").toggle();
+        if (window.getComputedStyle(button_paper, null).backgroundColor == 'rgba(0, 0, 0, 0)') {
           $("#patents_list").toggle();
+          $("#paper_list").toggle();
           button_patents.style.backgroundColor = 'Transparent';
           button_patents.style.color = '#1c3ed3';
           button_paper.style.backgroundColor = '#1c3ed3';
@@ -37,7 +37,7 @@
         }
       });
       $("#button_patents").click(function () {
-        if (button_patents.style.backgroundColor != 'Transparent') {
+        if (window.getComputedStyle(button_patents, null).backgroundColor == 'rgba(0, 0, 0, 0)') {
           $("#patents_list").toggle();
           $("#paper_list").toggle();
           button_patents.style.backgroundColor = '#1c3ed3';
