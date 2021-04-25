@@ -75,6 +75,8 @@
       outline: none;
       grid-column: 1 / 7;
       grid-row: 1;
+      text-align: center;
+      display: block;
     }
 
     #button_patents {
@@ -87,6 +89,8 @@
       outline: none;
       grid-column: 7 / 7;
       grid-row: 2 / 1;
+      text-align: center;
+      display: block;
     }
 
     #button_2021 {
@@ -269,9 +273,9 @@
 
     <div class="container mt-2">
       <div id="button_select">
-        <button type="button" id="button_paper" class="header container main-menu menu-item-publication">Papers</button>
-        <button type="button" id="button_patents" class="header container main-menu menu-item-publication">Patents and
-          Software Publications</button>
+        <a type="button" id="button_paper" class="header container"><span>Papers</span></a>
+        <a type="button" id="button_patents" class="header container">Patents and
+          Software Publications</a>
         <!-- <button type="button" id="button_2021">2021</button>
         <button type="button" id="button_2020">2020</button>
         <button type="button" id="button_2019">2019</button>
