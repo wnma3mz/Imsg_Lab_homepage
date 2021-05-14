@@ -1,0 +1,250 @@
+<!-- <script src="http://www.google.com/jsapi" type="text/javascript"></script> -->
+<!-- <script type="text/javascript">google.load("jquery", "1.3.2");</script> -->
+
+<style type="text/css">
+    body {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 300;
+        font-size: 18px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1000px;
+    }
+
+    h1 {
+        font-weight: 300;
+    }
+
+    .disclaimerbox {
+        background-color: #eee;
+        border: 1px solid #eeeeee;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        padding: 20px;
+    }
+
+    video.header-vid {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+
+    img.header-img {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+
+    img.rounded {
+        border: 0px solid #eeeeee;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+
+    a:link,
+    a:visited {
+        color: #1367a7;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #208799;
+    }
+
+    td.dl-link {
+        height: 160px;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .vert-cent {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+
+    p {
+        text-align: justify;
+    }
+</style>
+
+<html>
+
+
+<head>
+    <link rel="icon" href="../favicon.png" type="image/x-icon">
+    <title>Understanding and Fighting Deepfake</title>
+    <!-- <meta property="og:image" content="./asset/splash.png" /> -->
+    <meta property="og:title" content="Understanding and Fighting Deepfake" />
+</head>
+
+<body>
+    <br>
+    <center>
+        <span style="font-size:26px" id="1"><strong>Detecting Deepfake Videos with Temporal Dropout 3DCNN</strong></span><br>
+        <br><br>
+        <table align=center width=1000px>
+            <tr>
+                <td align=center width=1000px>
+                    <span style="font-size:20px"><a href="#">Daichi Zhang</a></span> &emsp;
+                    <span style="font-size:20px"><a href="#">Chenyu Li</a></span> &emsp;
+                    <span style="font-size:20px"><a href="#">Fanzhao Lin</a></span> &emsp;
+                    <span style="font-size:20px"><a href="#">Dan Zeng</a></span> &emsp;
+                    <span style="font-size:20px"><a href="../people/geshiming.html" target="_blank">Shiming
+                            Ge</a></span> &emsp;
+                </td>
+            </tr>
+        </table>
+
+        <br>
+        <br>
+
+        <table align=center width=900px>
+            <tr>
+                <td align=center width=300px>
+                    <span style="font-size:20px"><a href='https://doi.org/10.1145/3394171.3413959'> Paper [
+                            IJCAI2021]</a></span> &emsp;&emsp;
+                    <!-- <span style="font-size:20px"><a href='http://www.robots.ox.ac.uk/~vgg/blog/self-labelling-via-simultaneous-clustering-and-representation-learning.html'> Blogpost</a></span> &emsp;&emsp;
+		<span style="font-size:20px"><a href='https://github.com/yukimasano/self-label'> Code [PyTorch]</a></span> -->
+                </td>
+            </tr>
+        </table>
+    </center>
+    <br>
+
+    <table align=center width=800px>
+        <tr>
+            <td width=600px>
+                <center>
+                    <img class="rounded" src="../img/research2/TD3DCNN21.webp" height="400px"></img>
+                    <br>
+                </center>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <hr>
+
+    <table align=center width=900px>
+        <center>
+            <h3><strong>Abstract</strong></h3>
+        </center>
+        <p>
+            While the abuse of deepfake technology has brought about a serious impact on human society, the detection of deepfake videos is still very challenging due to their highly photorealistic synthesis on each frame. To address that, this paper aims to leverage the possible inconsistent cues among video frames and proposes a Temporal Dropout 3-Dimensional Convolutional Neural Network (TD-3DCNN) to detect deepfake videos. In the approach, the fixed-length frame volumes sampled from a video are fed into a 3-Dimensional Convolutional Neural Network (3DCNN) to extract features across different scales and identified whether they are real or fake. Especially, a temporal dropout operation is introduced to randomly sample frames in each batch. It serves as a simple yet effective data augmentation and can enhance the representation and generalization ability, avoiding model overfitting and improving detecting accuracy. In this way, the resulting video-level classifier is accurate and effective to identify deepfake videos. Extensive experiments on benchmarks including Celeb-DF(v2) and DFDC clearly demonstrate the effectiveness and generalization capacity of our approach
+       </p>
+    </table>
+    <hr>
+
+    <table align=center width=900px>
+        <center>
+            <h3><strong>BibTex</strong></h3>
+        </center>
+        <pre>
+            <span class="inner-pre" style="font-size: 14px">
+@inproceedings{Daichi2021IJCAI,
+  author = {Daichi Zhang, and Chenyu Li, and Fanzhao Lin, and Dan Zeng, and Shiming Ge},
+  title = {Detecting Deepfake Videos with Temporal Dropout 3DCNN},
+  booktitle = {Proceedings of the 30th International Joint Conference on Artificial Intelligence},
+  pages={565–573},
+  year = {2020},
+}         
+</span>
+        </pre>
+    </table>
+    <hr>
+
+    <br><br>
+
+    <br>
+    <center>
+        <span style="font-size:26px" id="ge2020cascaded"><strong>Interpret the Predictions of Deep Networks via Re-label Distillation</strong></span><br>
+        <br><br>
+
+        <table align=center width=1000px>
+            <tr>
+                <td align=center width=1000px>
+                    <span style="font-size:20px"><a href="#">Yingying Hua</a></span> &emsp;
+                    <span style="font-size:20px"><a href="../people/geshiming.html" target="_blank">Shiming
+                            Ge</a></span> &emsp;
+                    <span style="font-size:20px"><a href="#">Daichi Zhang</a></span> &emsp;
+                </td>
+            </tr>
+        </table>
+
+
+        <br>
+        <br>
+
+        <table align=center width=900px>
+            <tr>
+                <td align=center width=300px>
+                    <span style="font-size:20px"><a href='https://ieeexplore.ieee.org/document/9069312'> Paper [ICME2021]</a></span> &emsp;&emsp;
+                    <!-- <span style="font-size:20px"><a href='http://www.robots.ox.ac.uk/~vgg/blog/self-labelling-via-simultaneous-clustering-and-representation-learning.html'> Blogpost</a></span> &emsp;&emsp;
+		<span style="font-size:20px"><a href='https://github.com/yukimasano/self-label'> Code [PyTorch]</a></span> -->
+                </td>
+            </tr>
+        </table>
+    </center>
+    <br>
+
+    <table align=center width=800px>
+        <tr>
+            <td width=600px>
+                <center>
+                    <img class="rounded" src="../img/research2/Re-labelDistillation21.webp" height="270px"></img>
+                    <br>
+                </center>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <hr>
+
+    <table align=center width=900px>
+        <center>
+            <h3><strong>Abstract</strong></h3>
+        </center>
+        <p>
+            Interpreting the predictions of a black-box deep network can facilitate the reliability of its deployment. In this work, we
+propose a re-label distillation approach to learn a direct map from the input to the prediction in a self-supervision manner. The image is projected into a VAE subspace to generate some synthetic images by randomly perturbing its latent vector. Then, these synthetic images can be annotated into one of two classes by identifying whether their labels shift. After that, using the labels annotated by the deep network as teacher, a linear student model is trained to approximate the annotations by mapping these synthetic images to the classes. In this manner, these re-labeled synthetic images can well describe the local classification mechanism of the deep network, and the learned student can provide a more intuitive explanation towards the predictions. Extensive experiments verify the effectiveness of our approach qualitatively and quantitatively.</p>
+    </table>
+    <hr>
+
+    <table align=center width=900px>
+        <center>
+            <h3><strong>BibTex</strong></h3>
+        </center>
+        <pre>
+            <span class="inner-pre" style="font-size: 14px">
+@ARTICLE{9069312,
+    author={S. {Hua} and C. {Zhang} and S. {Li} and D. {Zeng} and D. {Tao}},
+    journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+    title={Cascaded Correlation Refinement for Robust Deep Tracking}, 
+    year={2021},
+    volume={32},
+    number={3},
+    pages={1276-1288},
+    doi={10.1109/TNNLS.2020.2984256}
+}
+</span>
+        </pre>
+    <hr>
+
+
+</body>
+
+</html>
